@@ -12,6 +12,5 @@
 
 @property (assign, nonatomic) NSView *eventDelegate;
 
-- (BOOL)acceptsFirstResponder;
 
 @end

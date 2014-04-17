@@ -52,4 +52,6 @@
 
 - (void)searchForString:(NSString *)aString;
 
+- (void)selectFirstResponder;
+
 @end

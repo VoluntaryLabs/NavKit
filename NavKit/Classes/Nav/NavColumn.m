@@ -13,7 +13,7 @@
 #import "CustomSearchField.h"
 #import "Theme.h"
 //#import <BitMessageKit/BitMessageKit.h>
-#import <objc/runtime.h>
+#import <objc/runtime.h> // for associations on button to set action - should we switch to custom button?
 #import "NavNode.h"
 
 @implementation NavColumn
@@ -751,6 +751,11 @@
     self.lastSelectedChild = nil;
     [self reloadData];
     [self.navView shouldSelectNode:nil inColumn:self];
+}
+
+- (void)selectFirstResponder
+{
+    
 }
 
 @end

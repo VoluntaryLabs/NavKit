@@ -60,8 +60,6 @@
 		AAE31DE918FF1C0700405754 /* NavKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE31DCC18FF1C0700405754 /* NavKit.framework */; };
 		AAE31DEF18FF1C0700405754 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAE31DED18FF1C0700405754 /* InfoPlist.strings */; };
 		AAE31DF118FF1C0700405754 /* NavKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE31DF018FF1C0700405754 /* NavKitTests.m */; };
-		AAE31E0E18FF1C7000405754 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAE31DFD18FF1C7000405754 /* InfoPlist.strings */; };
-		AAE31E1A18FF1C7000405754 /* NavKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAE31E0B18FF1C7000405754 /* NavKit-Info.plist */; };
 		AAE31E1B18FF1C7000405754 /* NavKit-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AAE31E0C18FF1C7000405754 /* NavKit-Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		AAE31E1C18FF1C7000405754 /* NavKit.h in Headers */ = {isa = PBXBuildFile; fileRef = AAE31E0D18FF1C7000405754 /* NavKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AAE31EE018FF213300405754 /* FoundationCategoriesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE31EDF18FF213300405754 /* FoundationCategoriesKit.framework */; };
@@ -153,7 +151,6 @@
 		AAE31DEC18FF1C0700405754 /* NavKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NavKitTests-Info.plist"; sourceTree = "<group>"; };
 		AAE31DEE18FF1C0700405754 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AAE31DF018FF1C0700405754 /* NavKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavKitTests.m; sourceTree = "<group>"; };
-		AAE31DFE18FF1C7000405754 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AAE31E0B18FF1C7000405754 /* NavKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NavKit-Info.plist"; sourceTree = "<group>"; };
 		AAE31E0C18FF1C7000405754 /* NavKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NavKit-Prefix.pch"; sourceTree = "<group>"; };
 		AAE31E0D18FF1C7000405754 /* NavKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavKit.h; sourceTree = "<group>"; };
@@ -353,7 +350,6 @@
 			isa = PBXGroup;
 			children = (
 				AA86B99618FF336700D3BDB0 /* Classes */,
-				AAE31DFD18FF1C7000405754 /* InfoPlist.strings */,
 				AAE31E0B18FF1C7000405754 /* NavKit-Info.plist */,
 				AAE31E0C18FF1C7000405754 /* NavKit-Prefix.pch */,
 				AAE31E0D18FF1C7000405754 /* NavKit.h */,
@@ -505,8 +501,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAE31E0E18FF1C7000405754 /* InfoPlist.strings in Resources */,
-				AAE31E1A18FF1C7000405754 /* NavKit-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,14 +576,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				AAE31DEE18FF1C0700405754 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		AAE31DFD18FF1C7000405754 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AAE31DFE18FF1C7000405754 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

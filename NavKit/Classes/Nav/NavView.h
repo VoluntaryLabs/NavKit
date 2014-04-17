@@ -12,6 +12,10 @@
 
 @class NavColumn;
 
+@protocol NavViewProtocol <NSObject>
+- (void)selectFirstResponder;
+@end
+
 @interface NavView : NSView
 
 @property (strong, nonatomic) NSMutableArray *navColumns;

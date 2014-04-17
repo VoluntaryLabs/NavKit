@@ -7,7 +7,7 @@
 //
 
 #import "NSView+sizing.h"
-#import <objc/runtime.h>
+//#import <objc/runtime.h>
 
 @implementation NSView (sizing)
 

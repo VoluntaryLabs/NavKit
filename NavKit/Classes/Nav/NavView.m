@@ -9,9 +9,8 @@
 #import "NavView.h"
 #import "NavColumn.h"
 #import "NSView+sizing.h"
-#import <objc/runtime.h>
 #import "CustomSearchField.h"
-//#import <BitmessageKit/BitmessageKit.h>
+//#import <objc/runtime.h>
 
 @implementation NavView
 
@@ -217,7 +216,6 @@
     return nil;
 }
 
-
 /*
 - (BOOL)acceptsFirstResponder
 {
@@ -260,16 +258,14 @@
     if ([inColumn respondsToSelector:@selector(selectRowIndex:)])
     {
         [inColumn selectRowIndex:0];
-        //[self shouldSelectNode:[inColumn nodeA] inColumn:inColumn];
         [inColumn.window makeFirstResponder:inColumn.tableView];
+        
+        //[self shouldSelectNode:[inColumn nodeA] inColumn:inColumn];
         //[inColumn.tableView becomeFirstResponder];
     }
-    else if ([inColumn respondsToSelector:@selector(selectFirstResponder)])
+    else
     {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        [inColumn performSelector:@selector(selectFirstResponder) withObject:nil];
-#pragma clang diagnostic pop
+        [inColumn selectFirstResponder];
     }
 }
 
