@@ -54,6 +54,10 @@
 		AA86B9F418FF336800D3BDB0 /* ResizingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9C718FF336700D3BDB0 /* ResizingScrollView.m */; };
 		AA86BA0318FF40C400D3BDB0 /* NavWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86BA0118FF40C400D3BDB0 /* NavWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA86BA0418FF40C400D3BDB0 /* NavWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86BA0218FF40C400D3BDB0 /* NavWindow.m */; };
+		AAA2E6BE190073A10098C357 /* NavAppController.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA2E6BC190073A10098C357 /* NavAppController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAA2E6BF190073A10098C357 /* NavAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA2E6BD190073A10098C357 /* NavAppController.m */; };
+		AAA2E6C2190077830098C357 /* NavProgressController.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA2E6C0190077830098C357 /* NavProgressController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAA2E6C3190077830098C357 /* NavProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA2E6C1190077830098C357 /* NavProgressController.m */; };
 		AAE31DD018FF1C0700405754 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE31DCF18FF1C0700405754 /* Cocoa.framework */; };
 		AAE31DE518FF1C0700405754 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE31DE418FF1C0700405754 /* XCTest.framework */; };
 		AAE31DE618FF1C0700405754 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE31DCF18FF1C0700405754 /* Cocoa.framework */; };
@@ -137,6 +141,10 @@
 		AA86B9C718FF336700D3BDB0 /* ResizingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResizingScrollView.m; sourceTree = "<group>"; };
 		AA86BA0118FF40C400D3BDB0 /* NavWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavWindow.h; sourceTree = "<group>"; };
 		AA86BA0218FF40C400D3BDB0 /* NavWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavWindow.m; sourceTree = "<group>"; };
+		AAA2E6BC190073A10098C357 /* NavAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavAppController.h; sourceTree = "<group>"; };
+		AAA2E6BD190073A10098C357 /* NavAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavAppController.m; sourceTree = "<group>"; };
+		AAA2E6C0190077830098C357 /* NavProgressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavProgressController.h; sourceTree = "<group>"; };
+		AAA2E6C1190077830098C357 /* NavProgressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavProgressController.m; sourceTree = "<group>"; };
 		AAE31DCC18FF1C0700405754 /* NavKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NavKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE31DCF18FF1C0700405754 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AAE31DD218FF1C0700405754 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -218,6 +226,10 @@
 		AA86B9A818FF336700D3BDB0 /* Nav */ = {
 			isa = PBXGroup;
 			children = (
+				AAA2E6C0190077830098C357 /* NavProgressController.h */,
+				AAA2E6C1190077830098C357 /* NavProgressController.m */,
+				AAA2E6BC190073A10098C357 /* NavAppController.h */,
+				AAA2E6BD190073A10098C357 /* NavAppController.m */,
 				AA86BA0118FF40C400D3BDB0 /* NavWindow.h */,
 				AA86BA0218FF40C400D3BDB0 /* NavWindow.m */,
 				AA86B9B218FF336700D3BDB0 /* NavView.h */,
@@ -373,6 +385,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAA2E6C2190077830098C357 /* NavProgressController.h in Headers */,
+				AAA2E6BE190073A10098C357 /* NavAppController.h in Headers */,
 				AA86B9E518FF336800D3BDB0 /* ThemeDictionary.h in Headers */,
 				AA86B9D418FF336700D3BDB0 /* NSView+sizing.h in Headers */,
 				AA86B9ED18FF336800D3BDB0 /* ColoredView.h in Headers */,
@@ -530,10 +544,12 @@
 				AA86B9CD18FF336700D3BDB0 /* NSDate+extra.m in Sources */,
 				AA86B9EA18FF336800D3BDB0 /* BMRoundButtonView.m in Sources */,
 				AA86B9F218FF336800D3BDB0 /* MarginTextView.m in Sources */,
+				AAA2E6C3190077830098C357 /* NavProgressController.m in Sources */,
 				AA86B9D318FF336700D3BDB0 /* NSTextView+extra.m in Sources */,
 				AA86B9E618FF336800D3BDB0 /* ThemeDictionary.m in Sources */,
 				AA86B9EE18FF336800D3BDB0 /* ColoredView.m in Sources */,
 				AA86B9CB18FF336700D3BDB0 /* NSColor+Hex.m in Sources */,
+				AAA2E6BF190073A10098C357 /* NavAppController.m in Sources */,
 				AA86B9E418FF336800D3BDB0 /* Theme.m in Sources */,
 				AA86B9C918FF336700D3BDB0 /* NSColor+array.m in Sources */,
 				AA86B9D118FF336700D3BDB0 /* NSScrollView+extra.m in Sources */,
