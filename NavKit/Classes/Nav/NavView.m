@@ -25,6 +25,8 @@
     self = [super initWithFrame:frameRect];
     self.navColumns = [NSMutableArray array];
     self.actionStripHeight = 40.0;
+    [self setAutoresizesSubviews:YES];
+    [self setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable];
     return self;
 }
 

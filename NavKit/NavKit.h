@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import "NavWindow.h"
 #import "NavColumn.h"
 #import "NavNode.h"
 #import "NavRowView.h"

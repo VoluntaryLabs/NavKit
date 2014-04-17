@@ -52,6 +52,8 @@
 		AA86B9F218FF336800D3BDB0 /* MarginTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9C518FF336700D3BDB0 /* MarginTextView.m */; };
 		AA86B9F318FF336800D3BDB0 /* ResizingScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9C618FF336700D3BDB0 /* ResizingScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA86B9F418FF336800D3BDB0 /* ResizingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9C718FF336700D3BDB0 /* ResizingScrollView.m */; };
+		AA86BA0318FF40C400D3BDB0 /* NavWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86BA0118FF40C400D3BDB0 /* NavWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA86BA0418FF40C400D3BDB0 /* NavWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86BA0218FF40C400D3BDB0 /* NavWindow.m */; };
 		AAE31DD018FF1C0700405754 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE31DCF18FF1C0700405754 /* Cocoa.framework */; };
 		AAE31DE518FF1C0700405754 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE31DE418FF1C0700405754 /* XCTest.framework */; };
 		AAE31DE618FF1C0700405754 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE31DCF18FF1C0700405754 /* Cocoa.framework */; };
@@ -135,6 +137,8 @@
 		AA86B9C518FF336700D3BDB0 /* MarginTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarginTextView.m; sourceTree = "<group>"; };
 		AA86B9C618FF336700D3BDB0 /* ResizingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResizingScrollView.h; sourceTree = "<group>"; };
 		AA86B9C718FF336700D3BDB0 /* ResizingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResizingScrollView.m; sourceTree = "<group>"; };
+		AA86BA0118FF40C400D3BDB0 /* NavWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavWindow.h; sourceTree = "<group>"; };
+		AA86BA0218FF40C400D3BDB0 /* NavWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavWindow.m; sourceTree = "<group>"; };
 		AAE31DCC18FF1C0700405754 /* NavKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NavKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE31DCF18FF1C0700405754 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AAE31DD218FF1C0700405754 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -217,6 +221,10 @@
 		AA86B9A818FF336700D3BDB0 /* Nav */ = {
 			isa = PBXGroup;
 			children = (
+				AA86BA0118FF40C400D3BDB0 /* NavWindow.h */,
+				AA86BA0218FF40C400D3BDB0 /* NavWindow.m */,
+				AA86B9B218FF336700D3BDB0 /* NavView.h */,
+				AA86B9B318FF336700D3BDB0 /* NavView.m */,
 				AA86B9A918FF336700D3BDB0 /* NavColumn.h */,
 				AA86B9AA18FF336700D3BDB0 /* NavColumn.m */,
 				AA86B9AB18FF336700D3BDB0 /* NavNode.h */,
@@ -226,8 +234,6 @@
 				AA86B9AF18FF336700D3BDB0 /* NavTableCell.m */,
 				AA86B9B018FF336700D3BDB0 /* NavTableView.h */,
 				AA86B9B118FF336700D3BDB0 /* NavTableView.m */,
-				AA86B9B218FF336700D3BDB0 /* NavView.h */,
-				AA86B9B318FF336700D3BDB0 /* NavView.m */,
 			);
 			path = Nav;
 			sourceTree = "<group>";
@@ -395,6 +401,7 @@
 				AA86B9CC18FF336700D3BDB0 /* NSDate+extra.h in Headers */,
 				AA86B9E118FF336700D3BDB0 /* NavView.h in Headers */,
 				AAE31E1C18FF1C7000405754 /* NavKit.h in Headers */,
+				AA86BA0318FF40C400D3BDB0 /* NavWindow.h in Headers */,
 				AAE31E1B18FF1C7000405754 /* NavKit-Prefix.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,6 +528,7 @@
 				AA86B9E818FF336800D3BDB0 /* BMButton.m in Sources */,
 				AA86B9D718FF336700D3BDB0 /* NSWindow+positioning.m in Sources */,
 				AA86B9F418FF336800D3BDB0 /* ResizingScrollView.m in Sources */,
+				AA86BA0418FF40C400D3BDB0 /* NavWindow.m in Sources */,
 				AA86B9E018FF336700D3BDB0 /* NavTableView.m in Sources */,
 				AA86B9F018FF336800D3BDB0 /* CustomSearchField.m in Sources */,
 				AA86B9DC18FF336700D3BDB0 /* NavRowView.m in Sources */,
