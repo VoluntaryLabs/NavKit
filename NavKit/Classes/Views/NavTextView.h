@@ -1,5 +1,5 @@
 //
-//  BMTextView.h
+//  NavTextView.h
 //  Bitmessage
 //
 //  Created by Steve Dekorte on 3/4/14.
@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface BMTextView : NSTextView
+@interface NavTextView : NSTextView
 
 - (void)setupForEditing;
 - (void)setupForDisplay;

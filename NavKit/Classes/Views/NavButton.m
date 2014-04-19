@@ -1,16 +1,16 @@
 //
-//  BMButton.m
+//  NavButton.m
 //  Bitmessage
 //
 //  Created by Steve Dekorte on 3/4/14.
 //  Copyright (c) 2014 Bitmarkets.org. All rights reserved.
 //
 
-#import "BMButton.h"
+#import "NavButton.h"
 #import "NSView+sizing.h"
 #import "Theme.h"
 
-@implementation BMButton
+@implementation NavButton
 
 - (BOOL)isOpaque
 {

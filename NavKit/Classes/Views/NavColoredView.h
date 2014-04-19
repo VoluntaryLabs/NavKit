@@ -1,5 +1,5 @@
 //
-//  ColoredView.h
+//  NavColoredView.h
 //  Bitmarket
 //
 //  Created by Steve Dekorte on 2/9/14.
@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ColoredView : NSView
+@interface NavColoredView : NSView
 
 @property (strong, nonatomic) NSColor *backgroundColor;
 

@@ -1,14 +1,14 @@
 //
-//  BMRoundButtonView.h
+//  NavRoundButtonView.h
 //  Bitmessage
 //
 //  Created by Steve Dekorte on 3/30/14.
 //  Copyright (c) 2014 Bitmarkets.org. All rights reserved.
 //
 
-#import "BMButton.h"
+#import "NavButton.h"
 
-@interface BMRoundButtonView : BMButton
+@interface NavRoundButtonView : NavButton
 
 @property (strong, nonatomic) NSColor *backgroundColor;
 @property (assign, nonatomic) CGFloat cornerRadius;

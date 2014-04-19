@@ -38,20 +38,20 @@
 		AA86B9E418FF336800D3BDB0 /* Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9B618FF336700D3BDB0 /* Theme.m */; };
 		AA86B9E518FF336800D3BDB0 /* ThemeDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9B718FF336700D3BDB0 /* ThemeDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA86B9E618FF336800D3BDB0 /* ThemeDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9B818FF336700D3BDB0 /* ThemeDictionary.m */; };
-		AA86B9E718FF336800D3BDB0 /* BMButton.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9BA18FF336700D3BDB0 /* BMButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA86B9E818FF336800D3BDB0 /* BMButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9BB18FF336700D3BDB0 /* BMButton.m */; };
-		AA86B9E918FF336800D3BDB0 /* BMRoundButtonView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9BC18FF336700D3BDB0 /* BMRoundButtonView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA86B9EA18FF336800D3BDB0 /* BMRoundButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9BD18FF336700D3BDB0 /* BMRoundButtonView.m */; };
-		AA86B9EB18FF336800D3BDB0 /* BMTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9BE18FF336700D3BDB0 /* BMTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA86B9EC18FF336800D3BDB0 /* BMTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9BF18FF336700D3BDB0 /* BMTextView.m */; };
-		AA86B9ED18FF336800D3BDB0 /* ColoredView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9C018FF336700D3BDB0 /* ColoredView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA86B9EE18FF336800D3BDB0 /* ColoredView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9C118FF336700D3BDB0 /* ColoredView.m */; };
-		AA86B9EF18FF336800D3BDB0 /* CustomSearchField.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9C218FF336700D3BDB0 /* CustomSearchField.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA86B9F018FF336800D3BDB0 /* CustomSearchField.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9C318FF336700D3BDB0 /* CustomSearchField.m */; };
-		AA86B9F118FF336800D3BDB0 /* MarginTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9C418FF336700D3BDB0 /* MarginTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA86B9F218FF336800D3BDB0 /* MarginTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9C518FF336700D3BDB0 /* MarginTextView.m */; };
-		AA86B9F318FF336800D3BDB0 /* ResizingScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9C618FF336700D3BDB0 /* ResizingScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA86B9F418FF336800D3BDB0 /* ResizingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9C718FF336700D3BDB0 /* ResizingScrollView.m */; };
+		AA86B9E718FF336800D3BDB0 /* NavButton.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9BA18FF336700D3BDB0 /* NavButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA86B9E818FF336800D3BDB0 /* NavButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9BB18FF336700D3BDB0 /* NavButton.m */; };
+		AA86B9E918FF336800D3BDB0 /* NavRoundButtonView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9BC18FF336700D3BDB0 /* NavRoundButtonView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA86B9EA18FF336800D3BDB0 /* NavRoundButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9BD18FF336700D3BDB0 /* NavRoundButtonView.m */; };
+		AA86B9EB18FF336800D3BDB0 /* NavTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9BE18FF336700D3BDB0 /* NavTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA86B9EC18FF336800D3BDB0 /* NavTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9BF18FF336700D3BDB0 /* NavTextView.m */; };
+		AA86B9ED18FF336800D3BDB0 /* NavColoredView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9C018FF336700D3BDB0 /* NavColoredView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA86B9EE18FF336800D3BDB0 /* NavColoredView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9C118FF336700D3BDB0 /* NavColoredView.m */; };
+		AA86B9EF18FF336800D3BDB0 /* NavSearchField.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9C218FF336700D3BDB0 /* NavSearchField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA86B9F018FF336800D3BDB0 /* NavSearchField.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9C318FF336700D3BDB0 /* NavSearchField.m */; };
+		AA86B9F118FF336800D3BDB0 /* NavMarginTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9C418FF336700D3BDB0 /* NavMarginTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA86B9F218FF336800D3BDB0 /* NavMarginTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9C518FF336700D3BDB0 /* NavMarginTextView.m */; };
+		AA86B9F318FF336800D3BDB0 /* NavResizingScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9C618FF336700D3BDB0 /* NavResizingScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA86B9F418FF336800D3BDB0 /* NavResizingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9C718FF336700D3BDB0 /* NavResizingScrollView.m */; };
 		AA86BA0318FF40C400D3BDB0 /* NavWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86BA0118FF40C400D3BDB0 /* NavWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA86BA0418FF40C400D3BDB0 /* NavWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86BA0218FF40C400D3BDB0 /* NavWindow.m */; };
 		AAA2E6BE190073A10098C357 /* NavAppController.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA2E6BC190073A10098C357 /* NavAppController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -125,20 +125,20 @@
 		AA86B9B618FF336700D3BDB0 /* Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Theme.m; sourceTree = "<group>"; };
 		AA86B9B718FF336700D3BDB0 /* ThemeDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeDictionary.h; sourceTree = "<group>"; };
 		AA86B9B818FF336700D3BDB0 /* ThemeDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeDictionary.m; sourceTree = "<group>"; };
-		AA86B9BA18FF336700D3BDB0 /* BMButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMButton.h; sourceTree = "<group>"; };
-		AA86B9BB18FF336700D3BDB0 /* BMButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMButton.m; sourceTree = "<group>"; };
-		AA86B9BC18FF336700D3BDB0 /* BMRoundButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMRoundButtonView.h; sourceTree = "<group>"; };
-		AA86B9BD18FF336700D3BDB0 /* BMRoundButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMRoundButtonView.m; sourceTree = "<group>"; };
-		AA86B9BE18FF336700D3BDB0 /* BMTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMTextView.h; sourceTree = "<group>"; };
-		AA86B9BF18FF336700D3BDB0 /* BMTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMTextView.m; sourceTree = "<group>"; };
-		AA86B9C018FF336700D3BDB0 /* ColoredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColoredView.h; sourceTree = "<group>"; };
-		AA86B9C118FF336700D3BDB0 /* ColoredView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColoredView.m; sourceTree = "<group>"; };
-		AA86B9C218FF336700D3BDB0 /* CustomSearchField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSearchField.h; sourceTree = "<group>"; };
-		AA86B9C318FF336700D3BDB0 /* CustomSearchField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSearchField.m; sourceTree = "<group>"; };
-		AA86B9C418FF336700D3BDB0 /* MarginTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarginTextView.h; sourceTree = "<group>"; };
-		AA86B9C518FF336700D3BDB0 /* MarginTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarginTextView.m; sourceTree = "<group>"; };
-		AA86B9C618FF336700D3BDB0 /* ResizingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResizingScrollView.h; sourceTree = "<group>"; };
-		AA86B9C718FF336700D3BDB0 /* ResizingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResizingScrollView.m; sourceTree = "<group>"; };
+		AA86B9BA18FF336700D3BDB0 /* NavButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavButton.h; sourceTree = "<group>"; };
+		AA86B9BB18FF336700D3BDB0 /* NavButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavButton.m; sourceTree = "<group>"; };
+		AA86B9BC18FF336700D3BDB0 /* NavRoundButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavRoundButtonView.h; sourceTree = "<group>"; };
+		AA86B9BD18FF336700D3BDB0 /* NavRoundButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavRoundButtonView.m; sourceTree = "<group>"; };
+		AA86B9BE18FF336700D3BDB0 /* NavTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavTextView.h; sourceTree = "<group>"; };
+		AA86B9BF18FF336700D3BDB0 /* NavTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavTextView.m; sourceTree = "<group>"; };
+		AA86B9C018FF336700D3BDB0 /* NavColoredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavColoredView.h; sourceTree = "<group>"; };
+		AA86B9C118FF336700D3BDB0 /* NavColoredView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavColoredView.m; sourceTree = "<group>"; };
+		AA86B9C218FF336700D3BDB0 /* NavSearchField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavSearchField.h; sourceTree = "<group>"; };
+		AA86B9C318FF336700D3BDB0 /* NavSearchField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavSearchField.m; sourceTree = "<group>"; };
+		AA86B9C418FF336700D3BDB0 /* NavMarginTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavMarginTextView.h; sourceTree = "<group>"; };
+		AA86B9C518FF336700D3BDB0 /* NavMarginTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavMarginTextView.m; sourceTree = "<group>"; };
+		AA86B9C618FF336700D3BDB0 /* NavResizingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavResizingScrollView.h; sourceTree = "<group>"; };
+		AA86B9C718FF336700D3BDB0 /* NavResizingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavResizingScrollView.m; sourceTree = "<group>"; };
 		AA86BA0118FF40C400D3BDB0 /* NavWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavWindow.h; sourceTree = "<group>"; };
 		AA86BA0218FF40C400D3BDB0 /* NavWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavWindow.m; sourceTree = "<group>"; };
 		AAA2E6BC190073A10098C357 /* NavAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavAppController.h; sourceTree = "<group>"; };
@@ -261,20 +261,20 @@
 		AA86B9B918FF336700D3BDB0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AA86B9BA18FF336700D3BDB0 /* BMButton.h */,
-				AA86B9BB18FF336700D3BDB0 /* BMButton.m */,
-				AA86B9BC18FF336700D3BDB0 /* BMRoundButtonView.h */,
-				AA86B9BD18FF336700D3BDB0 /* BMRoundButtonView.m */,
-				AA86B9BE18FF336700D3BDB0 /* BMTextView.h */,
-				AA86B9BF18FF336700D3BDB0 /* BMTextView.m */,
-				AA86B9C018FF336700D3BDB0 /* ColoredView.h */,
-				AA86B9C118FF336700D3BDB0 /* ColoredView.m */,
-				AA86B9C218FF336700D3BDB0 /* CustomSearchField.h */,
-				AA86B9C318FF336700D3BDB0 /* CustomSearchField.m */,
-				AA86B9C418FF336700D3BDB0 /* MarginTextView.h */,
-				AA86B9C518FF336700D3BDB0 /* MarginTextView.m */,
-				AA86B9C618FF336700D3BDB0 /* ResizingScrollView.h */,
-				AA86B9C718FF336700D3BDB0 /* ResizingScrollView.m */,
+				AA86B9BA18FF336700D3BDB0 /* NavButton.h */,
+				AA86B9BB18FF336700D3BDB0 /* NavButton.m */,
+				AA86B9BC18FF336700D3BDB0 /* NavRoundButtonView.h */,
+				AA86B9BD18FF336700D3BDB0 /* NavRoundButtonView.m */,
+				AA86B9BE18FF336700D3BDB0 /* NavTextView.h */,
+				AA86B9BF18FF336700D3BDB0 /* NavTextView.m */,
+				AA86B9C018FF336700D3BDB0 /* NavColoredView.h */,
+				AA86B9C118FF336700D3BDB0 /* NavColoredView.m */,
+				AA86B9C218FF336700D3BDB0 /* NavSearchField.h */,
+				AA86B9C318FF336700D3BDB0 /* NavSearchField.m */,
+				AA86B9C418FF336700D3BDB0 /* NavMarginTextView.h */,
+				AA86B9C518FF336700D3BDB0 /* NavMarginTextView.m */,
+				AA86B9C618FF336700D3BDB0 /* NavResizingScrollView.h */,
+				AA86B9C718FF336700D3BDB0 /* NavResizingScrollView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -389,12 +389,12 @@
 				AAA2E6BE190073A10098C357 /* NavAppController.h in Headers */,
 				AA86B9E518FF336800D3BDB0 /* ThemeDictionary.h in Headers */,
 				AA86B9D418FF336700D3BDB0 /* NSView+sizing.h in Headers */,
-				AA86B9ED18FF336800D3BDB0 /* ColoredView.h in Headers */,
+				AA86B9ED18FF336800D3BDB0 /* NavColoredView.h in Headers */,
 				AA86B9D618FF336700D3BDB0 /* NSWindow+positioning.h in Headers */,
-				AA86B9F118FF336800D3BDB0 /* MarginTextView.h in Headers */,
-				AA86B9F318FF336800D3BDB0 /* ResizingScrollView.h in Headers */,
+				AA86B9F118FF336800D3BDB0 /* NavMarginTextView.h in Headers */,
+				AA86B9F318FF336800D3BDB0 /* NavResizingScrollView.h in Headers */,
 				AA86B9DB18FF336700D3BDB0 /* NavRowView.h in Headers */,
-				AA86B9E718FF336800D3BDB0 /* BMButton.h in Headers */,
+				AA86B9E718FF336800D3BDB0 /* NavButton.h in Headers */,
 				AA86B9DD18FF336700D3BDB0 /* NavTableCell.h in Headers */,
 				AA86B9DA18FF336700D3BDB0 /* NavNode.h in Headers */,
 				AA86B9D218FF336700D3BDB0 /* NSTextView+extra.h in Headers */,
@@ -402,12 +402,12 @@
 				AA86B9CE18FF336700D3BDB0 /* NSEvent+keys.h in Headers */,
 				AA86B9E318FF336700D3BDB0 /* Theme.h in Headers */,
 				AA86B9C818FF336700D3BDB0 /* NSColor+array.h in Headers */,
-				AA86B9EF18FF336800D3BDB0 /* CustomSearchField.h in Headers */,
+				AA86B9EF18FF336800D3BDB0 /* NavSearchField.h in Headers */,
 				AA86B9CA18FF336700D3BDB0 /* NSColor+Hex.h in Headers */,
-				AA86B9E918FF336800D3BDB0 /* BMRoundButtonView.h in Headers */,
+				AA86B9E918FF336800D3BDB0 /* NavRoundButtonView.h in Headers */,
 				AA86B9DF18FF336700D3BDB0 /* NavTableView.h in Headers */,
 				AA86B9D818FF336700D3BDB0 /* NavColumn.h in Headers */,
-				AA86B9EB18FF336800D3BDB0 /* BMTextView.h in Headers */,
+				AA86B9EB18FF336800D3BDB0 /* NavTextView.h in Headers */,
 				AA86B9CC18FF336700D3BDB0 /* NSDate+extra.h in Headers */,
 				AA86B9E118FF336700D3BDB0 /* NavView.h in Headers */,
 				AAE31E1C18FF1C7000405754 /* NavKit.h in Headers */,
@@ -533,21 +533,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA86B9E818FF336800D3BDB0 /* BMButton.m in Sources */,
+				AA86B9E818FF336800D3BDB0 /* NavButton.m in Sources */,
 				AA86B9D718FF336700D3BDB0 /* NSWindow+positioning.m in Sources */,
-				AA86B9F418FF336800D3BDB0 /* ResizingScrollView.m in Sources */,
+				AA86B9F418FF336800D3BDB0 /* NavResizingScrollView.m in Sources */,
 				AA86BA0418FF40C400D3BDB0 /* NavWindow.m in Sources */,
 				AA86B9E018FF336700D3BDB0 /* NavTableView.m in Sources */,
-				AA86B9F018FF336800D3BDB0 /* CustomSearchField.m in Sources */,
+				AA86B9F018FF336800D3BDB0 /* NavSearchField.m in Sources */,
 				AA86B9DC18FF336700D3BDB0 /* NavRowView.m in Sources */,
 				AA86B9DE18FF336700D3BDB0 /* NavTableCell.m in Sources */,
 				AA86B9CD18FF336700D3BDB0 /* NSDate+extra.m in Sources */,
-				AA86B9EA18FF336800D3BDB0 /* BMRoundButtonView.m in Sources */,
-				AA86B9F218FF336800D3BDB0 /* MarginTextView.m in Sources */,
+				AA86B9EA18FF336800D3BDB0 /* NavRoundButtonView.m in Sources */,
+				AA86B9F218FF336800D3BDB0 /* NavMarginTextView.m in Sources */,
 				AAA2E6C3190077830098C357 /* NavProgressController.m in Sources */,
 				AA86B9D318FF336700D3BDB0 /* NSTextView+extra.m in Sources */,
 				AA86B9E618FF336800D3BDB0 /* ThemeDictionary.m in Sources */,
-				AA86B9EE18FF336800D3BDB0 /* ColoredView.m in Sources */,
+				AA86B9EE18FF336800D3BDB0 /* NavColoredView.m in Sources */,
 				AA86B9CB18FF336700D3BDB0 /* NSColor+Hex.m in Sources */,
 				AAA2E6BF190073A10098C357 /* NavAppController.m in Sources */,
 				AA86B9E418FF336800D3BDB0 /* Theme.m in Sources */,
@@ -556,7 +556,7 @@
 				AA86B9E218FF336700D3BDB0 /* NavView.m in Sources */,
 				AA86B9D518FF336700D3BDB0 /* NSView+sizing.m in Sources */,
 				AA86B9D918FF336700D3BDB0 /* NavColumn.m in Sources */,
-				AA86B9EC18FF336800D3BDB0 /* BMTextView.m in Sources */,
+				AA86B9EC18FF336800D3BDB0 /* NavTextView.m in Sources */,
 				AA86B9CF18FF336700D3BDB0 /* NSEvent+keys.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

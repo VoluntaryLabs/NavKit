@@ -8,22 +8,22 @@
 
 #import <Cocoa/Cocoa.h>
 #import "NavView.h"
-#import "ColoredView.h"
-#import "CustomSearchField.h"
+#import "NavColoredView.h"
+#import "NavSearchField.h"
 #import "NavTableView.h"
 
-@interface NavColumn : NSView <NSTableViewDataSource, NSTableViewDelegate, CustomSearchFieldDelegate>
+@interface NavColumn : NSView <NSTableViewDataSource, NSTableViewDelegate, NavSearchFieldDelegate>
 
 @property (assign, nonatomic) NavView *navView;
 @property (strong, nonatomic) id <NavNode> node;
-@property (strong, nonatomic) CustomSearchField *searchField;
+@property (strong, nonatomic) NavSearchField *searchField;
 
 @property (strong, nonatomic) NSScrollView *scrollView;
 @property (strong, nonatomic) NavTableView *tableView;
 @property (strong, nonatomic) NSTableColumn *tableColumn;
-@property (strong, nonatomic) ColoredView *documentView; // view within scrollview containing headerView and tableView
+@property (strong, nonatomic) NavColoredView *documentView; // view within scrollview containing headerView and tableView
 
-@property (strong, nonatomic) ColoredView *headerView; // top of document view
+@property (strong, nonatomic) NavColoredView *headerView; // top of document view
 
 @property (strong, nonatomic) NSView *contentView; // replaces scrollview
 

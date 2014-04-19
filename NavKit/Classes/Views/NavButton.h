@@ -1,5 +1,5 @@
 //
-//  BMButton.h
+//  NavButton.h
 //  Bitmessage
 //
 //  Created by Steve Dekorte on 3/4/14.
@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface BMButton : NSButton
+@interface NavButton : NSButton
 
 @property (strong, nonatomic) NSColor *textColor;
 

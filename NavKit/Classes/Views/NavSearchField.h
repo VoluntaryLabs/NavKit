@@ -1,5 +1,5 @@
 //
-//  CustomSearchField.h
+//  NavSearchField.h
 //  Bitmessage
 //
 //  Created by Steve Dekorte on 2/19/14.
@@ -8,13 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
-@protocol CustomSearchFieldDelegate <NSObject>
+@protocol NavSearchFieldDelegate <NSObject>
 - (void)searchForString:(NSString *)aString;
 @end
 
-@interface CustomSearchField : NSSearchField <NSAnimationDelegate, NSTextFieldDelegate>
+@interface NavSearchField : NSSearchField <NSAnimationDelegate, NSTextFieldDelegate>
 
-@property (assign, nonatomic) id <CustomSearchFieldDelegate> searchDelegate;
+@property (assign, nonatomic) id <NavSearchFieldDelegate> searchDelegate;
 
 @property (assign, nonatomic) BOOL isExpanded;
 @property (strong, nonatomic) NSAnimation *expandAnimation;

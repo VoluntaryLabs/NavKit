@@ -9,7 +9,7 @@
 #import "NavView.h"
 #import "NavColumn.h"
 #import "NSView+sizing.h"
-#import "CustomSearchField.h"
+#import "NavSearchField.h"
 //#import <objc/runtime.h>
 
 @implementation NavView

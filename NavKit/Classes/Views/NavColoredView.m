@@ -1,14 +1,14 @@
 //
-//  ColoredView.m
+//  NavColoredView.m
 //  Bitmarket
 //
 //  Created by Steve Dekorte on 2/9/14.
 //  Copyright (c) 2014 Bitmarkets.org. All rights reserved.
 //
 
-#import "ColoredView.h"
+#import "NavColoredView.h"
 
-@implementation ColoredView
+@implementation NavColoredView
 
 - (BOOL)isOpaque
 {

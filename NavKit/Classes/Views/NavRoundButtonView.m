@@ -1,15 +1,15 @@
 //
-//  BMRoundButtonView.m
+//  NavRoundButtonView.m
 //  Bitmessage
 //
 //  Created by Steve Dekorte on 3/30/14.
 //  Copyright (c) 2014 Bitmarkets.org. All rights reserved.
 //
 
-#import "BMRoundButtonView.h"
+#import "NavRoundButtonView.h"
 #import "NSView+sizing.h"
 
-@implementation BMRoundButtonView
+@implementation NavRoundButtonView
 
 - (id)initWithFrame:(NSRect)frame
 {

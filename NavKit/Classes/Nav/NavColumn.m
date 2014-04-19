@@ -10,7 +10,7 @@
 #import "NavTableCell.h"
 #import "NSView+sizing.h"
 #import "NSEvent+keys.h"
-#import "CustomSearchField.h"
+#import "NavSearchField.h"
 #import "Theme.h"
 //#import <BitMessageKit/BitMessageKit.h>
 #import <objc/runtime.h> // for associations on button to set action - should we switch to custom button?
@@ -76,12 +76,12 @@
     
     if (NO)
     {
-        self.documentView = [[ColoredView alloc] initWithFrame:NSMakeRect(0, 0, 100, 100)];
+        self.documentView = [[NavColoredView alloc] initWithFrame:NSMakeRect(0, 0, 100, 100)];
         [self.scrollView setDocumentView:self.documentView];
         [self.documentView setFrame:NSMakeRect(0, 0, 1000, 1000)];
         
         
-         self.headerView = [[ColoredView alloc] initWithFrame:NSMakeRect(0, 0, self.width, 150)];
+         self.headerView = [[NavColoredView alloc] initWithFrame:NSMakeRect(0, 0, self.width, 150)];
          if (self.headerView)
          {
              [self.documentView addSubview:self.headerView];
@@ -399,8 +399,8 @@
 - (void)setContentView:(NSView *)aView
 {
     [(NavColumn *)aView setNavView:self.navView];
-    //aView = [[ColoredView alloc] initWithFrame:NSMakeRect(0, 0, 100, 100)];
-    //[(ColoredView *)aView setBackgroundColor:[NSColor redColor]];
+    //aView = [[NavColoredView alloc] initWithFrame:NSMakeRect(0, 0, 100, 100)];
+    //[(NavColoredView *)aView setBackgroundColor:[NSColor redColor]];
     [self setAutoresizesSubviews:YES];
     [self setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
     [aView setAutoresizingMask:aView.autoresizingMask | NSViewWidthSizable];
@@ -425,7 +425,7 @@
     }
     
     //[self setMaxWidth:aView.i];
-    self.headerView = (ColoredView *)aView;
+    self.headerView = (NavColoredView *)aView;
     [self.documentView addSubview:aView];
     [self.documentView addSubview:self.tableView];
     [self updateDocumentView:nil];
@@ -677,6 +677,8 @@
             //NSLog(@"button width %i", (int)width);
         }
         
+        [button setToolTip:action];
+        
         [button setTarget:self];
         [button setAction:@selector(hitActionButton:)];
         [self.actionStrip addSubview:button];
@@ -686,11 +688,12 @@
  
     if ([self.node canSearch])
     {
-        _searchField = [[CustomSearchField alloc] initWithFrame:NSMakeRect(0, 0, 20, buttonHeight)];
+        _searchField = [[NavSearchField alloc] initWithFrame:NSMakeRect(0, 0, 20, buttonHeight)];
         [_searchField setSearchDelegate:self];
         [self.actionStrip addSubview:_searchField];
         [_searchField setupExpanded];
         [_searchField setupCollapsed];
+        [_searchField setToolTip:@"search"];
     }
     else
     {

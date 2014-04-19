@@ -1,5 +1,5 @@
 //
-//  ResizingScrollView.h
+//  NavResizingScrollView.h
 //  Bitmarket
 //
 //  Created by Steve Dekorte on 2/6/14.
@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ResizingScrollView : NSScrollView
+@interface NavResizingScrollView : NSScrollView
 
 @end

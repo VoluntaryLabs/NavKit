@@ -29,11 +29,11 @@
 #import "Theme.h"
 #import "ThemeDictionary.h"
 
-#import "BMTextView.h"
-#import "BMRoundButtonView.h"
-#import "ColoredView.h"
-#import "CustomSearchField.h"
-#import "BMButton.h"
-#import "MarginTextView.h"
-#import "ResizingScrollView.h"
+#import "NavTextView.h"
+#import "NavRoundButtonView.h"
+#import "NavColoredView.h"
+#import "NavSearchField.h"
+#import "NavButton.h"
+#import "NavMarginTextView.h"
+#import "NavResizingScrollView.h"
 

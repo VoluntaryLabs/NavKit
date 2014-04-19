@@ -1,14 +1,14 @@
 //
-//  MarginTextView.m
+//  NavMarginTextView.m
 //  Bitmessage
 //
 //  Created by Steve Dekorte on 2/16/14.
 //  Copyright (c) 2014 Bitmarkets.org. All rights reserved.
 //
 
-#import "MarginTextView.h"
+#import "NavMarginTextView.h"
 
-@implementation MarginTextView
+@implementation NavMarginTextView
 
 - (void)setupInset
 {

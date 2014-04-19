@@ -1,15 +1,15 @@
 //
-//  BMTextView.m
+//  NavTextView.m
 //  Bitmessage
 //
 //  Created by Steve Dekorte on 3/4/14.
 //  Copyright (c) 2014 Bitmarkets.org. All rights reserved.
 //
 
-#import "BMTextView.h"
+#import "NavTextView.h"
 #import "Theme.h"
 
-@implementation BMTextView
+@implementation NavTextView
 
 - (BOOL)isOpaque
 {

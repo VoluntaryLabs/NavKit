@@ -1,5 +1,5 @@
 //
-//  MarginTextView.h
+//  NavMarginTextView.h
 //  Bitmessage
 //
 //  Created by Steve Dekorte on 2/16/14.
@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface MarginTextView : NSTextView
+@interface NavMarginTextView : NSTextView
 
 @end

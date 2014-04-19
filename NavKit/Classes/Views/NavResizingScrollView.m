@@ -1,15 +1,15 @@
 //
-//  ResizingScrollView.m
+//  NavResizingScrollView.m
 //  Bitmarket
 //
 //  Created by Steve Dekorte on 2/6/14.
 //  Copyright (c) 2014 Bitmarkets.org. All rights reserved.
 //
 
-#import "ResizingScrollView.h"
+#import "NavResizingScrollView.h"
 #import "NSView+sizing.h"
 
-@implementation ResizingScrollView
+@implementation NavResizingScrollView
 
 - (void)viewWillStartLiveResize
 {
