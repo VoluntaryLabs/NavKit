@@ -1,21 +1,21 @@
 //
-//  ThemeDictionary.m
+//  NavThemeDictionary .m
 //  Bitmessage
 //
 //  Created by Steve Dekorte on 3/14/14.
 //  Copyright (c) 2014 Bitmarkets.org. All rights reserved.
 //
 
-#import "ThemeDictionary.h"
+#import "NavThemeDictionary.h"
 #import "NSColor+array.h"
 #import "NSColor+Hex.h"
 #import <FoundationCategoriesKit/FoundationCategoriesKit.h>
 
-@implementation ThemeDictionary
+@implementation NavThemeDictionary 
 
-+ (ThemeDictionary *)withDict:(NSDictionary *)dict;
++ (NavThemeDictionary  *)withDict:(NSDictionary *)dict;
 {
-    ThemeDictionary *t = [[ThemeDictionary alloc] init];
+    NavThemeDictionary  *t = [[NavThemeDictionary  alloc] init];
     t.dict = dict;
     return t;
 }

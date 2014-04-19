@@ -1,5 +1,5 @@
 //
-//  ThemeDictionary.h
+//  NavThemeDictionary.h
 //  Bitmessage
 //
 //  Created by Steve Dekorte on 3/14/14.
@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ThemeDictionary : NSObject
+@interface NavThemeDictionary  : NSObject
 
 @property (strong) NSDictionary *dict;
 
-+ (ThemeDictionary *)withDict:(NSDictionary *)dict;
++ (NavThemeDictionary  *)withDict:(NSDictionary *)dict;
 
 - (NSColor *)selectedBgColor;
 - (NSColor *)unselectedBgColor;

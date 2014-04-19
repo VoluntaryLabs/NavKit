@@ -159,7 +159,7 @@
 
 - (NSColor *)bgColor
 {
-    return [Theme.sharedTheme formBackgroundColor];
+    return [NavTheme.sharedNavTheme formBackgroundColor];
 }
 
 - (NSRect)drawFrame

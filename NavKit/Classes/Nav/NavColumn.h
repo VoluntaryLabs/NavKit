@@ -37,7 +37,7 @@
 
 - (void)didAddToNavView;
 - (void)prepareToDisplay;
-- (ThemeDictionary *)themeDict;
+- (NavThemeDictionary  *)themeDict;
 
 - (id <NavNode>)selectedNode;
 - (NSInteger)columnIndex;

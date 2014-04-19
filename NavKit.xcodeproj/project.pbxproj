@@ -34,10 +34,10 @@
 		AA86B9E018FF336700D3BDB0 /* NavTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9B118FF336700D3BDB0 /* NavTableView.m */; };
 		AA86B9E118FF336700D3BDB0 /* NavView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9B218FF336700D3BDB0 /* NavView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA86B9E218FF336700D3BDB0 /* NavView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9B318FF336700D3BDB0 /* NavView.m */; };
-		AA86B9E318FF336700D3BDB0 /* Theme.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9B518FF336700D3BDB0 /* Theme.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA86B9E418FF336800D3BDB0 /* Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9B618FF336700D3BDB0 /* Theme.m */; };
-		AA86B9E518FF336800D3BDB0 /* ThemeDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9B718FF336700D3BDB0 /* ThemeDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA86B9E618FF336800D3BDB0 /* ThemeDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9B818FF336700D3BDB0 /* ThemeDictionary.m */; };
+		AA86B9E318FF336700D3BDB0 /* NavTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9B518FF336700D3BDB0 /* NavTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA86B9E418FF336800D3BDB0 /* NavTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9B618FF336700D3BDB0 /* NavTheme.m */; };
+		AA86B9E518FF336800D3BDB0 /* NavThemeDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9B718FF336700D3BDB0 /* NavThemeDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA86B9E618FF336800D3BDB0 /* NavThemeDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9B818FF336700D3BDB0 /* NavThemeDictionary.m */; };
 		AA86B9E718FF336800D3BDB0 /* NavButton.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9BA18FF336700D3BDB0 /* NavButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA86B9E818FF336800D3BDB0 /* NavButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9BB18FF336700D3BDB0 /* NavButton.m */; };
 		AA86B9E918FF336800D3BDB0 /* NavRoundButtonView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9BC18FF336700D3BDB0 /* NavRoundButtonView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -121,10 +121,10 @@
 		AA86B9B118FF336700D3BDB0 /* NavTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavTableView.m; sourceTree = "<group>"; };
 		AA86B9B218FF336700D3BDB0 /* NavView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavView.h; sourceTree = "<group>"; };
 		AA86B9B318FF336700D3BDB0 /* NavView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavView.m; sourceTree = "<group>"; };
-		AA86B9B518FF336700D3BDB0 /* Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Theme.h; sourceTree = "<group>"; };
-		AA86B9B618FF336700D3BDB0 /* Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Theme.m; sourceTree = "<group>"; };
-		AA86B9B718FF336700D3BDB0 /* ThemeDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeDictionary.h; sourceTree = "<group>"; };
-		AA86B9B818FF336700D3BDB0 /* ThemeDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeDictionary.m; sourceTree = "<group>"; };
+		AA86B9B518FF336700D3BDB0 /* NavTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavTheme.h; sourceTree = "<group>"; };
+		AA86B9B618FF336700D3BDB0 /* NavTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavTheme.m; sourceTree = "<group>"; };
+		AA86B9B718FF336700D3BDB0 /* NavThemeDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavThemeDictionary.h; sourceTree = "<group>"; };
+		AA86B9B818FF336700D3BDB0 /* NavThemeDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavThemeDictionary.m; sourceTree = "<group>"; };
 		AA86B9BA18FF336700D3BDB0 /* NavButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavButton.h; sourceTree = "<group>"; };
 		AA86B9BB18FF336700D3BDB0 /* NavButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavButton.m; sourceTree = "<group>"; };
 		AA86B9BC18FF336700D3BDB0 /* NavRoundButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavRoundButtonView.h; sourceTree = "<group>"; };
@@ -250,10 +250,10 @@
 		AA86B9B418FF336700D3BDB0 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
-				AA86B9B518FF336700D3BDB0 /* Theme.h */,
-				AA86B9B618FF336700D3BDB0 /* Theme.m */,
-				AA86B9B718FF336700D3BDB0 /* ThemeDictionary.h */,
-				AA86B9B818FF336700D3BDB0 /* ThemeDictionary.m */,
+				AA86B9B518FF336700D3BDB0 /* NavTheme.h */,
+				AA86B9B618FF336700D3BDB0 /* NavTheme.m */,
+				AA86B9B718FF336700D3BDB0 /* NavThemeDictionary.h */,
+				AA86B9B818FF336700D3BDB0 /* NavThemeDictionary.m */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -387,7 +387,7 @@
 			files = (
 				AAA2E6C2190077830098C357 /* NavProgressController.h in Headers */,
 				AAA2E6BE190073A10098C357 /* NavAppController.h in Headers */,
-				AA86B9E518FF336800D3BDB0 /* ThemeDictionary.h in Headers */,
+				AA86B9E518FF336800D3BDB0 /* NavThemeDictionary.h in Headers */,
 				AA86B9D418FF336700D3BDB0 /* NSView+sizing.h in Headers */,
 				AA86B9ED18FF336800D3BDB0 /* NavColoredView.h in Headers */,
 				AA86B9D618FF336700D3BDB0 /* NSWindow+positioning.h in Headers */,
@@ -400,7 +400,7 @@
 				AA86B9D218FF336700D3BDB0 /* NSTextView+extra.h in Headers */,
 				AA86B9D018FF336700D3BDB0 /* NSScrollView+extra.h in Headers */,
 				AA86B9CE18FF336700D3BDB0 /* NSEvent+keys.h in Headers */,
-				AA86B9E318FF336700D3BDB0 /* Theme.h in Headers */,
+				AA86B9E318FF336700D3BDB0 /* NavTheme.h in Headers */,
 				AA86B9C818FF336700D3BDB0 /* NSColor+array.h in Headers */,
 				AA86B9EF18FF336800D3BDB0 /* NavSearchField.h in Headers */,
 				AA86B9CA18FF336700D3BDB0 /* NSColor+Hex.h in Headers */,
@@ -546,11 +546,11 @@
 				AA86B9F218FF336800D3BDB0 /* NavMarginTextView.m in Sources */,
 				AAA2E6C3190077830098C357 /* NavProgressController.m in Sources */,
 				AA86B9D318FF336700D3BDB0 /* NSTextView+extra.m in Sources */,
-				AA86B9E618FF336800D3BDB0 /* ThemeDictionary.m in Sources */,
+				AA86B9E618FF336800D3BDB0 /* NavThemeDictionary.m in Sources */,
 				AA86B9EE18FF336800D3BDB0 /* NavColoredView.m in Sources */,
 				AA86B9CB18FF336700D3BDB0 /* NSColor+Hex.m in Sources */,
 				AAA2E6BF190073A10098C357 /* NavAppController.m in Sources */,
-				AA86B9E418FF336800D3BDB0 /* Theme.m in Sources */,
+				AA86B9E418FF336800D3BDB0 /* NavTheme.m in Sources */,
 				AA86B9C918FF336700D3BDB0 /* NSColor+array.m in Sources */,
 				AA86B9D118FF336700D3BDB0 /* NSScrollView+extra.m in Sources */,
 				AA86B9E218FF336700D3BDB0 /* NavView.m in Sources */,

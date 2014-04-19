@@ -7,7 +7,7 @@
 //
 
 #import "NavTextView.h"
-#import "Theme.h"
+#import "NavTheme.h"
 
 @implementation NavTextView
 
@@ -36,13 +36,13 @@
 
 - (void)setFontSize:(CGFloat)pointSize
 {
-    self.font = [NSFont fontWithName:[Theme.sharedTheme lightFontName] size:pointSize];
+    self.font = [NSFont fontWithName:[NavTheme.sharedNavTheme lightFontName] size:pointSize];
 }
 
 - (void)setupForDisplay
 {
-    self.font = [NSFont fontWithName:[Theme.sharedTheme lightFontName] size:16.0];
-    self.textColor = [Theme.sharedTheme formText3Color];
+    self.font = [NSFont fontWithName:[NavTheme.sharedNavTheme lightFontName] size:16.0];
+    self.textColor = [NavTheme.sharedNavTheme formText3Color];
     self.editable = NO;
     [self setAlignment:NSCenterTextAlignment];
     [self setRichText:NO];
@@ -56,8 +56,8 @@
 
 - (void)setupForEditing
 {
-    self.font = [NSFont fontWithName:[Theme.sharedTheme lightFontName] size:24.0];
-    self.textColor = [Theme.sharedTheme formText1Color];
+    self.font = [NSFont fontWithName:[NavTheme.sharedNavTheme lightFontName] size:24.0];
+    self.textColor = [NavTheme.sharedNavTheme formText1Color];
     self.editable = YES;
     [self setRichText:NO];
     //[self setDrawsBackground:NO];
@@ -67,12 +67,12 @@
     [self setAutoresizingMask: NSViewWidthSizable | NSViewMinYMargin | NSViewMaxYMargin];
     [self setAlignment:NSCenterTextAlignment];
     [self setRichText:NO];
-    [self setInsertionPointColor:[Theme.sharedTheme formTextCursorColor]];
+    [self setInsertionPointColor:[NavTheme.sharedNavTheme formTextCursorColor]];
     
     [self setSelectedTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
-      [Theme.sharedTheme formTextSelectedBgColor], NSBackgroundColorAttributeName,
-      [Theme.sharedTheme formText1Color], NSForegroundColorAttributeName,
+      [NavTheme.sharedNavTheme formTextSelectedBgColor], NSBackgroundColorAttributeName,
+      [NavTheme.sharedNavTheme formText1Color], NSForegroundColorAttributeName,
       nil]];
 }
 

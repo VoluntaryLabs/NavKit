@@ -26,8 +26,8 @@
 #import "NSView+sizing.h"
 #import "NSWindow+positioning.h"
 
-#import "Theme.h"
-#import "ThemeDictionary.h"
+#import "NavTheme.h"
+#import "NavThemeDictionary.h"
 
 #import "NavTextView.h"
 #import "NavRoundButtonView.h"

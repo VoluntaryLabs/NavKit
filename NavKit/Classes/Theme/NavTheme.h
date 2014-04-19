@@ -7,19 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ThemeDictionary.h"
+#import "NavThemeDictionary.h"
 
-@interface Theme : NSObject
+@interface NavTheme : NSObject
 
 @property (strong) NSMutableDictionary *dict;
 @property (strong, nonatomic) NSMutableDictionary *themeDicts;
 
-+ (Theme *)sharedTheme;
++ (NavTheme *)sharedNavTheme;
 
 + (id)objectForKey:(NSString *)k;
 - (id)objectForKey:(NSString *)key;
 
-- (ThemeDictionary *)themeForColumn:(NSInteger)columnIndex;
+- (NavThemeDictionary  *)themeForColumn:(NSInteger)columnIndex;
 
 // --- helpers ---
 

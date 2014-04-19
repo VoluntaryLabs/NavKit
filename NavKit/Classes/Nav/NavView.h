@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "NavNode.h"
-#import "Theme.h"
+#import "NavTheme.h"
 
 @class NavColumn;
 

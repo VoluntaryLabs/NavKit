@@ -8,7 +8,7 @@
 
 #import "NavButton.h"
 #import "NSView+sizing.h"
-#import "Theme.h"
+#import "NavTheme.h"
 
 @implementation NavButton
 
@@ -24,9 +24,9 @@
     {
         [self setButtonType:NSMomentaryChangeButton];
         [self setBordered:NO];
-        [self setFont:[NSFont fontWithName:[Theme.sharedTheme lightFontName] size:14.0]];
+        [self setFont:[NSFont fontWithName:[NavTheme.sharedNavTheme lightFontName] size:14.0]];
         [self setAutoresizingMask: NSViewMinXMargin | NSViewMaxYMargin];
-        self.textColor = [Theme.sharedTheme formText1Color];
+        self.textColor = [NavTheme.sharedNavTheme formText1Color];
         [self setAlignment:NSCenterTextAlignment];
     }
     return self;
@@ -34,7 +34,7 @@
 
 - (void)setFontSize:(CGFloat)pointSize
 {
-    self.font = [NSFont fontWithName:[Theme.sharedTheme lightFontName] size:pointSize];
+    self.font = [NSFont fontWithName:[NavTheme.sharedNavTheme lightFontName] size:pointSize];
 }
 
 - (void)setActionTitle:(NSString *)anAction

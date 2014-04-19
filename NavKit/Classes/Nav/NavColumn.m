@@ -11,7 +11,7 @@
 #import "NSView+sizing.h"
 #import "NSEvent+keys.h"
 #import "NavSearchField.h"
-#import "Theme.h"
+#import "NavTheme.h"
 //#import <BitMessageKit/BitMessageKit.h>
 #import <objc/runtime.h> // for associations on button to set action - should we switch to custom button?
 #import "NavNode.h"
@@ -390,9 +390,9 @@
     [self layoutActionStrip];
 }
 
-- (ThemeDictionary *)themeDict
+- (NavThemeDictionary  *)themeDict
 {
-    return [Theme.sharedTheme themeForColumn:self.columnIndex];
+    return [NavTheme.sharedNavTheme themeForColumn:self.columnIndex];
 }
 
 
@@ -655,7 +655,7 @@
         NSButton *button = [[NSButton alloc] initWithFrame:NSMakeRect(0, 0, 50, buttonHeight)];
         [button setButtonType:NSMomentaryChangeButton];
         [button setBordered:NO];
-        [button setFont:[NSFont fontWithName:[Theme.sharedTheme lightFontName] size:14.0]];
+        [button setFont:[NSFont fontWithName:[NavTheme.sharedNavTheme lightFontName] size:14.0]];
         [button setAutoresizingMask: NSViewMinXMargin | NSViewMaxYMargin];
         
          NSString *imageName = [NSString stringWithFormat:@"%@_active", action];

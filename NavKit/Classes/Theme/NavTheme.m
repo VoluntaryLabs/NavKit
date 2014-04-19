@@ -6,22 +6,22 @@
 //  Copyright (c) 2014 Bitmarkets.org. All rights reserved.
 //
 
-#import "Theme.h"
+#import "NavTheme.h"
 #import "NSColor+array.h"
 #import <FoundationCategoriesKit/FoundationCategoriesKit.h>
 
-@implementation Theme
+@implementation NavTheme
 
-static Theme *sharedTheme = nil;
+static NavTheme *sharedNavTheme = nil;
 
-+ (Theme *)sharedTheme
++ (NavTheme *)sharedNavTheme
 {
-    if (!sharedTheme)
+    if (!sharedNavTheme)
     {
-        sharedTheme = [[[self class] alloc] init];
+        sharedNavTheme = [[[self class] alloc] init];
     }
     
-    return sharedTheme;
+    return sharedNavTheme;
 }
 
 - (id)init
@@ -54,32 +54,32 @@ static Theme *sharedTheme = nil;
     //NSLog(@"themeDicts: %@", self.themeDicts);
 }
 
-- (NSDictionary *)currentTheme
+- (NSDictionary *)currentNavTheme
 {
     return [self.themeDicts objectForKey:@"default"];
 }
 
 - (id)objectForKey:(NSString *)k
 {
-    return [self.currentTheme objectForKey:k];
+    return [self.currentNavTheme objectForKey:k];
 }
 
 - (NSColor *)colorForKey:(NSString *)k
 {
-    id value = [self.currentTheme objectForKey:k];
+    id value = [self.currentNavTheme objectForKey:k];
     return [NSColor colorWithObject:value];
 }
 
 + (id)objectForKey:(NSString *)k
 {
-    return [self.sharedTheme objectForKey:k];
+    return [self.sharedNavTheme objectForKey:k];
 }
 
 // --- column themes ---------------------------
 
-- (ThemeDictionary *)themeForColumn:(NSInteger)columnIndex
+- (NavThemeDictionary  *)themeForColumn:(NSInteger)columnIndex
 {
-    NSArray *columnThemes = [self.currentTheme objectForKey:@"columns"];
+    NSArray *columnThemes = [self.currentNavTheme objectForKey:@"columns"];
     NSDictionary *dict = columnThemes.lastObject;
     
     if (columnIndex < columnThemes.count)
@@ -87,7 +87,7 @@ static Theme *sharedTheme = nil;
         dict = [columnThemes objectAtIndex:columnIndex];
     }
     
-    return [ThemeDictionary withDict:dict];
+    return [NavThemeDictionary  withDict:dict];
 }
 
 // helpers
@@ -142,12 +142,12 @@ static Theme *sharedTheme = nil;
 
 - (NSString *)lightFontName
 {
-    return [self.currentTheme objectForKey:@"lightFontName"];
+    return [self.currentNavTheme objectForKey:@"lightFontName"];
 }
 
 - (NSString *)mediumFontName
 {
-    return [self.currentTheme objectForKey:@"mediumFontName"];
+    return [self.currentNavTheme objectForKey:@"mediumFontName"];
 }
 
 // forward
@@ -168,7 +168,7 @@ static Theme *sharedTheme = nil;
 - (BOOL)respondsToSelector:(SEL)aSelector
 {
     NSString *propertyName = NSStringFromSelector(aSelector);
-    //return [self.currentTheme objectForKey:propertyName] != nil;
+    //return [self.currentNavTheme objectForKey:propertyName] != nil;
     return YES;
 }
 
@@ -183,7 +183,7 @@ static Theme *sharedTheme = nil;
     }
     else
     {
-        result = [self.currentTheme objectForKey:propertyName];
+        result = [self.currentNavTheme objectForKey:propertyName];
     }
     
     if (result == nil)
@@ -200,7 +200,7 @@ static Theme *sharedTheme = nil;
 
 - (id)objectForPath:(NSString *)path
 {
-    id value = [self.currentTheme objectForPath:path];
+    id value = [self.currentNavTheme objectForPath:path];
     return value;
 }
 
@@ -291,7 +291,7 @@ static Theme *sharedTheme = nil;
 
 - (void)setSelectedThemePath:(NSString *)aPath
 {
-    NSDictionary *attributes = [Theme.sharedTheme attributesDictForPath:aPath];
+    NSDictionary *attributes = [NavTheme.sharedNavTheme attributesDictForPath:aPath];
 
     if (!self.window)
     {
@@ -306,7 +306,7 @@ static Theme *sharedTheme = nil;
 
 - (void)setThemePath:(NSString *)aPath
 {
-    NSDictionary *attributes = [Theme.sharedTheme attributesDictForPath:aPath];
+    NSDictionary *attributes = [NavTheme.sharedNavTheme attributesDictForPath:aPath];
     
     NSFont *font = [attributes objectForKey:NSFontAttributeName];
     if (font && [self respondsToSelector:@selector(setFont:)])
@@ -341,7 +341,7 @@ static Theme *sharedTheme = nil;
 
     if ([self respondsToSelector:@selector(setAlignment:)])
     {
-        [(id)self setAlignment:[Theme.sharedTheme alignmentForPath:aPath]];
+        [(id)self setAlignment:[NavTheme.sharedNavTheme alignmentForPath:aPath]];
     }
     
 
@@ -355,7 +355,7 @@ static Theme *sharedTheme = nil;
 
 - (void)setThemePath:(NSString *)aPath
 {
-    NSDictionary *attributes = [Theme.sharedTheme attributesDictForPath:aPath];
+    NSDictionary *attributes = [NavTheme.sharedNavTheme attributesDictForPath:aPath];
     
      NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]
          initWithString:self.title
@@ -381,7 +381,7 @@ static Theme *sharedTheme = nil;
     
     if ([self respondsToSelector:@selector(setAlignment:)])
     {
-        //[(id)self setAlignment:[Theme.sharedTheme alignmentForPath:aPath]];
+        //[(id)self setAlignment:[NavTheme.sharedNavTheme alignmentForPath:aPath]];
     }
     
     [self setNeedsDisplay:YES];
@@ -394,7 +394,7 @@ static Theme *sharedTheme = nil;
 
 - (void)setThemePath:(NSString *)aPath
 {
-    NSDictionary *attributes = [Theme.sharedTheme attributesDictForPath:aPath];
+    NSDictionary *attributes = [NavTheme.sharedNavTheme attributesDictForPath:aPath];
     
     [self setFont:[attributes objectForKey:NSFontAttributeName]];
     [self setTextColor:[attributes objectForKey:NSForegroundColorAttributeName]];
@@ -412,7 +412,7 @@ static Theme *sharedTheme = nil;
 
 - (void)setThemePath:(NSString *)aPath
 {
-    NSDictionary *attributes = [Theme.sharedTheme attributesDictForPath:aPath];
+    NSDictionary *attributes = [NavTheme.sharedNavTheme attributesDictForPath:aPath];
     [self setFont:[attributes objectForKey:NSFontAttributeName]];
     [self setTextColor:[attributes objectForKey:NSForegroundColorAttributeName]];
     

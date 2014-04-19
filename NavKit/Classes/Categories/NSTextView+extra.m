@@ -7,7 +7,7 @@
 //
 
 #import "NSTextView+extra.h"
-#import "Theme.h"
+#import "NavTheme.h"
 #import <FoundationCategoriesKit/FoundationCategoriesKit.h>
 
 @implementation NSTextView (extra)

@@ -2,7 +2,7 @@
 
 #import "NavTableCell.h"
 #import "NavColumn.h"
-#import "Theme.h"
+#import "NavTheme.h"
 
 @implementation NavTableCell
 
@@ -132,7 +132,7 @@
         return [self.navColumn.themeDict activeFontName];
     }
     
-    return [Theme.sharedTheme lightFontName];
+    return [NavTheme.sharedNavTheme lightFontName];
 }
 */
 
@@ -148,17 +148,17 @@
 
 - (NSDictionary *)titleAttributes
 {
-    return [Theme.sharedTheme attributesDictForPath:[NSString stringWithFormat:@"item/%@/title", self.stateName]];
+    return [NavTheme.sharedNavTheme attributesDictForPath:[NSString stringWithFormat:@"item/%@/title", self.stateName]];
 }
 
 - (NSDictionary *)subtitleAttributes
 {
-    return [Theme.sharedTheme attributesDictForPath:[NSString stringWithFormat:@"item/%@/subtitle", self.stateName]];
+    return [NavTheme.sharedNavTheme attributesDictForPath:[NSString stringWithFormat:@"item/%@/subtitle", self.stateName]];
 }
 
 - (NSDictionary *)noteAttributes
 {
-    return [Theme.sharedTheme attributesDictForPath:[NSString stringWithFormat:@"item/%@/note", self.stateName]];
+    return [NavTheme.sharedNavTheme attributesDictForPath:[NSString stringWithFormat:@"item/%@/note", self.stateName]];
 }
 
 - (NSImage *)icon
