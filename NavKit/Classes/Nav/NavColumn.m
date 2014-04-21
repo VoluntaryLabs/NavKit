@@ -292,17 +292,17 @@
         
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(nodeChanged:)
-                                                     name:@"BMNodeChanged"
+                                                     name:@"NavNodeChanged"
                                                    object:_node];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(nodeRemovedChild:)
-                                                     name:@"BMNodeRemovedChild"
+                                                     name:@"NavNodeRemovedChild"
                                                    object:_node];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(nodeAddedChild:)
-                                                     name:@"BMNodeAddedChild"
+                                                     name:@"NavNodeAddedChild"
                                                    object:_node];
         
         
