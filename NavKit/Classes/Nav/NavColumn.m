@@ -14,7 +14,6 @@
 #import "NavTheme.h"
 //#import <BitMessageKit/BitMessageKit.h>
 #import <objc/runtime.h> // for associations on button to set action - should we switch to custom button?
-#import "NavNode.h"
 
 @implementation NavColumn
 
@@ -210,7 +209,7 @@
 
 - (void)nodeAddedChild:(NSNotification *)note
 {
-    id <NavNode> node = self.node;
+    NavNode * node = self.node;
     
     if (node)
     {
@@ -255,7 +254,7 @@
 {
     NSInteger rowIndex = 0;
     
-    for (id <NavNode> child in self.allChildren)
+    for (NavNode * child in self.allChildren)
     {
         if ([[child nodeTitle] isEqualToString:aName])
         {
@@ -282,7 +281,7 @@
     [self setWidth:w];
 }
 
-- (void)setNode:(id<NavNode>)node
+- (void)setNode:(NavNode *)node
 {
     if (_node != node)
     {
@@ -431,7 +430,7 @@
     [self updateDocumentView:nil];
 }
 
-- (id <NavNode>)nodeForRow:(NSInteger)rowIndex
+- (NavNode *)nodeForRow:(NSInteger)rowIndex
 {
     if (rowIndex < self.allChildren.count)
     {
@@ -441,7 +440,7 @@
     return nil;
 }
 
-- (NSInteger)rowForNode:(id <NavNode>)aNode
+- (NSInteger)rowForNode:(NavNode *)aNode
 {
     NSInteger rowIndex = 0;
     
@@ -485,7 +484,7 @@
 
 - (BOOL)tableView:(NSTableView *)aTableView shouldSelectRow:(NSInteger)rowIndex
 {
-    id <NavNode> node = [self nodeForRow:rowIndex];
+    NavNode * node = [self nodeForRow:rowIndex];
 
     if (node.nodeParentInlines)
     {
@@ -529,7 +528,7 @@
     [aCell setNavColumn:self];
 }
 
-- (id <NavNode>)selectedNode
+- (NavNode *)selectedNode
 {
     NSInteger selectedRow = [self.tableView selectedRow];
     
@@ -603,7 +602,7 @@
 
 - (void)delete
 {
-    id <NavNode> node = [self selectedNode];
+    NavNode * node = [self selectedNode];
     [self sendAction:@"delete" toNode:node];
 }
 
@@ -720,7 +719,7 @@
     [self sendAction:action toNode:self.node];
 }
     
-- (void)sendAction:(NSString *)action toNode:(id <NavNode>)aNode
+- (void)sendAction:(NSString *)action toNode:(NavNode *)aNode
 {
     NSString *verifyMessage = [aNode verifyActionMessage:action];
     

@@ -4,7 +4,7 @@
 
 @interface NavAppController : NSObject <NSApplicationDelegate>
 
-@property (strong, nonatomic) id <NavNode> rootNode;
+@property (strong, nonatomic) NavNode * rootNode;
 @property (strong, nonatomic) NavWindow *navWindow;
 @property (strong, nonatomic) NavProgressController *progressController;
 @property (strong, nonatomic) NSDockTile *dockTile;

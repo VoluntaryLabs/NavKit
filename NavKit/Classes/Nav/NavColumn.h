@@ -15,7 +15,7 @@
 @interface NavColumn : NSView <NSTableViewDataSource, NSTableViewDelegate, NavSearchFieldDelegate>
 
 @property (assign, nonatomic) NavView *navView;
-@property (strong, nonatomic) id <NavNode> node;
+@property (strong, nonatomic) NavNode * node;
 @property (strong, nonatomic) NavSearchField *searchField;
 
 @property (strong, nonatomic) NSScrollView *scrollView;
@@ -31,7 +31,7 @@
 @property (assign, nonatomic) BOOL isUpdating;
 @property (assign, nonatomic) CGFloat actionStripHeight;
 
-@property (strong, nonatomic) id <NavNode> lastSelectedChild;
+@property (strong, nonatomic) NavNode * lastSelectedChild;
 
 @property (assign, nonatomic) BOOL isInlined;
 
@@ -39,7 +39,7 @@
 - (void)prepareToDisplay;
 - (NavThemeDictionary  *)themeDict;
 
-- (id <NavNode>)selectedNode;
+- (NavNode *)selectedNode;
 - (NSInteger)columnIndex;
 
 - (void)selectRowIndex:(NSInteger)rowIndex;

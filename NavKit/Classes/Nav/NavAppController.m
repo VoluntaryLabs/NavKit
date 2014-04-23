@@ -76,7 +76,7 @@
     return [[_navWindow.navView navColumns] firstObject];
 }
 
-- (void)setRootNode:(id<NavNode>)aNode
+- (void)setRootNode:(NavNode *)aNode
 {
     _rootNode = aNode;
     

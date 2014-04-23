@@ -12,7 +12,7 @@
 @interface NavRowView : NSTableRowView
 
 @property (assign, nonatomic) CGFloat leftMarginRatio;
-@property (strong, nonatomic) id <NavNode> node;
+@property (strong, nonatomic) NavNode * node;
 //@property (assign, nonatomic) BOOL isSelected;
 @property (assign, nonatomic) NSTableView *tableView;
 @property (assign, nonatomic) NSInteger rowIndex;

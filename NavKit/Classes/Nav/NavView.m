@@ -29,7 +29,7 @@
     return self;
 }
 
-- (void)setRootNode:(id<NavNode>)rootNode
+- (void)setRootNode:(NavNode *)rootNode
 {
     _rootNode = rootNode;
     [self reload];
@@ -47,7 +47,7 @@
     [self addColumnForNode:self.rootNode];
 }
 
-- (NavColumn *)addColumnForNode:(id <NavNode>)node
+- (NavColumn *)addColumnForNode:(NavNode *)node
 {
     NavColumn *column = [[NavColumn alloc] initWithFrame:NSMakeRect(0, 0, 100, self.height)];
     [column setNode:node];
@@ -82,7 +82,7 @@
     return f.origin.x + f.size.width;
 }
 
-- (BOOL)shouldSelectNode:(id <NavNode>)node inColumn:inColumn
+- (BOOL)shouldSelectNode:(NavNode *)node inColumn:inColumn
 {
     NSMutableArray *toRemove = [NSMutableArray array];
     
@@ -139,7 +139,7 @@
     NavColumn *column = nil;
     NavColumn *lastColumn = nil;
     
-    for (id <NavNode> node in nodes)
+    for (NavNode * node in nodes)
     {
         column = [self addColumnForNode:node];
         
@@ -199,7 +199,7 @@
 }
 */
 
-- (id <NavNode>)lastNode
+- (NavNode *)lastNode
 {
     NSEnumerator *e = [self.navColumns reverseObjectEnumerator];
     id column = nil;

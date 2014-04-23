@@ -11,7 +11,6 @@
 #import "NavAppController.h"
 #import "NavWindow.h"
 #import "NavColumn.h"
-#import "NavNode.h"
 #import "NavRowView.h"
 #import "NavTableCell.h"
 #import "NavTableView.h"

@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "NavNode.h"
+#import <NavNodeKit/NavNodeKit.h>
 #import "NavTheme.h"
 
 @class NavColumn;
@@ -19,11 +19,11 @@
 @interface NavView : NSView
 
 @property (strong, nonatomic) NSMutableArray *navColumns;
-@property (strong, nonatomic) id <NavNode> rootNode;
+@property (strong, nonatomic) NavNode * rootNode;
 //@property (strong, nonatomic) IBOutlet NSSearchField *searchField;
 @property (assign, nonatomic) CGFloat actionStripHeight;
 
-- (BOOL)shouldSelectNode:(id <NavNode>)node inColumn:inColumn;
+- (BOOL)shouldSelectNode:(NavNode *)node inColumn:inColumn;
 
 - (BOOL)canHandleAction:(SEL)aSel;
 - (void)handleAction:(SEL)aSel;
