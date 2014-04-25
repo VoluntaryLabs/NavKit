@@ -27,6 +27,10 @@
 
 - (void)drawRect:(NSRect)dirtyRect
 {
+    NSMutableDictionary *att = [NSMutableDictionary dictionaryWithDictionary:self.titleAttributes];
+    NSColor *backgroundColor = [att objectForKey:NSBackgroundColorAttributeName];
+    [att removeObjectForKey:NSBackgroundColorAttributeName];
+    
     [self lockFocus];
     
     CGContextRef ctx = (CGContextRef)[[NSGraphicsContext currentContext]
@@ -36,7 +40,7 @@
     
 	CGPathRef roundedRectPath = [self newPathForRoundedRect:frame radius:_cornerRadius];
     
-	[self.backgroundColor set];
+	[backgroundColor set];
     
 	CGContextAddPath(ctx, roundedRectPath);
 	CGContextFillPath(ctx);
@@ -44,7 +48,6 @@
 	CGPathRelease(roundedRectPath);
 
     
-    NSDictionary *att = self.titleAttributes;
     //CGFloat fontSize = [(NSFont *)[att objectForKey:NSFontAttributeName] pointSize];
     
     CGFloat width = [[[NSAttributedString alloc] initWithString:self.title attributes:att] size].width;
@@ -59,7 +62,7 @@
 
 
 
-- (CGPathRef) newPathForRoundedRect:(CGRect)rect radius:(CGFloat)radius
+- (CGPathRef)newPathForRoundedRect:(CGRect)rect radius:(CGFloat)radius
 {
 	CGMutablePathRef retPath = CGPathCreateMutable();
     

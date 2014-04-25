@@ -11,6 +11,7 @@
 
 @implementation NavTableView
 
+/*
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
@@ -22,6 +23,7 @@
     
     return self;
 }
+*/
 
 - (void)drawRect:(NSRect)dirtyRect
 {

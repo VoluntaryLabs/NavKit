@@ -139,13 +139,20 @@
     NavColumn *column = nil;
     NavColumn *lastColumn = nil;
     
-    for (NavNode * node in nodes)
+    for (NavNode *node in nodes)
     {
-        column = [self addColumnForNode:node];
-        
-        if (lastColumn)
+        if ([node isKindOfClass:[NSString class]])
         {
-            [lastColumn justSelectNode:node];
+            [lastColumn selectItemNamed:(NSString *)node];
+        }
+        else
+        {
+            column = [self addColumnForNode:node];
+            
+            if (lastColumn)
+            {
+                [lastColumn justSelectNode:node];
+            }
         }
         
         lastColumn = column;

@@ -305,12 +305,12 @@
 		AA86B9A818FF336700D3BDB0 /* Nav */ = {
 			isa = PBXGroup;
 			children = (
+				AAA2E6BC190073A10098C357 /* NavAppController.h */,
+				AAA2E6BD190073A10098C357 /* NavAppController.m */,
 				AA1FC89A190200E400D00431 /* NavInfoNode.h */,
 				AA1FC89B190200E400D00431 /* NavInfoNode.m */,
 				AAA2E6C0190077830098C357 /* NavProgressController.h */,
 				AAA2E6C1190077830098C357 /* NavProgressController.m */,
-				AAA2E6BC190073A10098C357 /* NavAppController.h */,
-				AAA2E6BD190073A10098C357 /* NavAppController.m */,
 				AA86BA0118FF40C400D3BDB0 /* NavWindow.h */,
 				AA86BA0218FF40C400D3BDB0 /* NavWindow.m */,
 				AA86B9B218FF336700D3BDB0 /* NavView.h */,

@@ -309,7 +309,16 @@
 
         if (![node nodeView])
         {
-            [self setMaxWidth:node.nodeSuggestedWidth];
+            CGFloat w = node.nodeSuggestedWidth;
+            
+            if (w)
+            {
+                [self setMaxWidth:w];
+            }
+            else
+            {
+                [self setMaxWidth:1000];
+            }
         }
         
         [self.tableView reloadData];
@@ -319,26 +328,30 @@
     }
 }
 
+- (void)fitWidthToRemainingSpace
+{
+    CGFloat w = fabs(self.navView.width - self.x);
+    [self setWidth:w];
+}
+
 - (void)didAddToNavView
 {
-    if ([self.node nodeView] && [[self.node children] count] == 0)
+    if (([self.node nodeView] && [[self.node children] count] == 0))
     {
         NSView *nodeView = [self.node nodeView];
         
-        [self setWidth:fabs(self.navView.width - self.x)];
-        /*
-        [self setHeight:self.navView.height];
-        [nodeView setX:0];
-        [nodeView setY:0];
-        */
+        [self fitWidthToRemainingSpace];
         [nodeView setFrameSize:self.frame.size];
         [self setContentView:nodeView];
+    }
+    else if (self.node.nodeSuggestedWidth == 0)
+    {
+        [self fitWidthToRemainingSpace];
     }
     
     [self.tableView setBackgroundColor:self.themeDict.unselectedBgColor];
     // if using document view
     [self.documentView setBackgroundColor:self.tableView.backgroundColor];
-    //[self.scrollView setBackgroundColor:self.tableView.backgroundColor];
 }
 
 - (void)updateDocumentView:(NSNotification *)note
@@ -378,14 +391,20 @@
 {
     if (self.scrollView.superview)
     {
-        [self setMaxWidth:self.node.nodeSuggestedWidth];
+        if (self.node.nodeSuggestedWidth > 0)
+        {
+            [self setMaxWidth:self.node.nodeSuggestedWidth];
+        }
+        else
+        {
+            [self fitWidthToRemainingSpace];
+        }
     }
     else if (self.contentView)
     {
         [self setMaxWidth:self.contentView.width];
     }
     
-    //[self setMaxWidth:400];
     [self layoutActionStrip];
 }
 
@@ -393,6 +412,14 @@
 {
     return [NavTheme.sharedNavTheme themeForColumn:self.columnIndex];
 }
+
+/*
+- (void)makeScrollViewFill
+{
+    [self.scrollView setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
+    //self.scrollView.frame = self.scollFrameSansStrip;
+}
+*/
 
 
 - (void)setContentView:(NSView *)aView
