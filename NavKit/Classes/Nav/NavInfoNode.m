@@ -10,4 +10,16 @@
 
 @implementation NavInfoNode
 
+- (id)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.nodeSuggestedWidth = 300;
+    }
+    
+    return self;
+}
+
 @end
