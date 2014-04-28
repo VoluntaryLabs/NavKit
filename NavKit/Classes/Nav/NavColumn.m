@@ -774,7 +774,7 @@
 
 - (void)searchForString:(NSString *)aString
 {
-    NSLog(@"searchForString '%@'", aString);
+    //NSLog(@"searchForString '%@'", aString);
     
     [self.node search:aString];
     self.lastSelectedChild = nil;
