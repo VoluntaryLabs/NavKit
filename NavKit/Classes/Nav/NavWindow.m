@@ -14,7 +14,7 @@
 + (NavWindow *)newWindow
 {
     NavWindow *instance = [[NavWindow alloc]
-                           initWithContentRect:NSMakeRect(0, 0, 1800, 700)
+                           initWithContentRect:NSMakeRect(0, 0, 1600, 700)
                            styleMask:  NSTitledWindowMask |
                                        NSClosableWindowMask |
                                        NSMiniaturizableWindowMask |
