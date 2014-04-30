@@ -37,10 +37,11 @@
                               backing:bufferingType
                                 defer:deferCreation];
     
-    
+    // add main view
     _navView = [[NavView alloc] initWithFrame:contentRect];
     [self.contentView addSubview:_navView];
     
+    // setup progress indicator
     _progressIndicator = [[NSProgressIndicator alloc] initWithFrame:NSMakeRect(5, ((NSView *)self.contentView).height - 22, 16, 16)];
     [self.contentView addSubview:_progressIndicator];
     [_progressIndicator setUsesThreadedAnimation:YES];
@@ -48,6 +49,10 @@
     [_progressIndicator setBezeled:NO];
     [_progressIndicator setDisplayedWhenStopped:NO];
     [_progressIndicator setStyle:NSProgressIndicatorSpinningStyle];
+    
+    // add full screen support to window
+    [[NSApplication sharedApplication] setPresentationOptions:NSFullScreenWindowMask];
+    [self setCollectionBehavior:NSWindowCollectionBehaviorFullScreenPrimary];
     
     return self;
 }
