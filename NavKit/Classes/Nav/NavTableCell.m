@@ -234,7 +234,7 @@
                forAttributes:titleAttributes];
         
         [title drawAtPoint:NSMakePoint(cellFrame.origin.x + leftMargin,
-                                      cellFrame.origin.y + cellFrame.size.height*.2 - fontSize/2.0 - 3)
+                                      cellFrame.origin.y + cellFrame.size.height*.2 - fontSize/2.0 - 5)
            withAttributes:titleAttributes];
         
         NSDictionary *subtitleAttributes = self.subtitleAttributes;
@@ -245,7 +245,7 @@
                forAttributes:titleAttributes];
         
         [subtitle drawAtPoint:NSMakePoint(cellFrame.origin.x + leftMargin,
-                                       cellFrame.origin.y + cellFrame.size.height*.6 - subtitleFontSize/2.0 - 3)
+                                       cellFrame.origin.y + cellFrame.size.height*.6 - subtitleFontSize/2.0 - 5)
             withAttributes:subtitleAttributes];
     }
     
@@ -262,7 +262,7 @@
 
             
             [note drawAtPoint:NSMakePoint(cellFrame.origin.x + f.size.width - width - rightMargin,
-                                           cellFrame.origin.y + cellFrame.size.height*.5 - fontSize/2.0 - 6)
+                                           cellFrame.origin.y + cellFrame.size.height*.5 - fontSize/2.0 - 5)
                 withAttributes:noteAttributes];
         }
     }
