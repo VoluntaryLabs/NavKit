@@ -245,8 +245,10 @@
         NSDictionary *subtitleAttributes = self.subtitleAttributes;
         CGFloat subtitleFontSize = [(NSFont *)[subtitleAttributes objectForKey:NSFontAttributeName] pointSize];
         
+        CGFloat maxSubtitleWidth = hasNote ? f.size.width*.7 : f.size.width - 10.0;
+        
         subtitle = [self string:subtitle
-              clippedToWidth:f.size.width*.7
+              clippedToWidth:maxSubtitleWidth
                forAttributes:titleAttributes];
         
         [subtitle drawAtPoint:NSMakePoint(cellFrame.origin.x + leftMargin,
