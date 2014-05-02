@@ -215,6 +215,9 @@
         return;
     }
     
+    BOOL hasNote = [self.node respondsToSelector:@selector(nodeNote)] && self.node.nodeNote;
+        
+    
     if (!subtitle)
     {
         NSDictionary *titleAttributes = self.titleAttributes;
@@ -229,8 +232,10 @@
         NSDictionary *titleAttributes = self.titleAttributes;
         CGFloat fontSize = [(NSFont *)[titleAttributes objectForKey:NSFontAttributeName] pointSize];
 
+        CGFloat maxTitleWidth = hasNote ? f.size.width*.6 : f.size.width - 10.0;
+        
         title = [self string:title
-              clippedToWidth:f.size.width*.6
+              clippedToWidth:maxTitleWidth
                forAttributes:titleAttributes];
         
         [title drawAtPoint:NSMakePoint(cellFrame.origin.x + leftMargin,

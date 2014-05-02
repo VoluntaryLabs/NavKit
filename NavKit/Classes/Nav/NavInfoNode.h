@@ -10,9 +10,9 @@
 
 @interface NavInfoNode : NavNode
 
-@property (strong) NSString *nodeTitle;
-@property (strong) NSString *nodeSubtitle;
-@property (strong) NSString *nodeNote;
-@property (assign) CGFloat nodeSuggestedWidth;
+@property (strong, nonatomic) NSString *nodeTitle;
+@property (strong, nonatomic) NSString *nodeSubtitle;
+@property (strong, nonatomic) NSString *nodeNote;
+@property (assign, nonatomic) CGFloat nodeSuggestedWidth;
 
 @end

@@ -22,4 +22,20 @@
     return self;
 }
 
+- (NSView *)nodeView
+{
+    NSView *view = [super nodeView];
+    return view;
+}
+
+- (NSString *)nodeNote
+{
+    if (!_nodeNote)
+    {
+        return [super nodeNote];
+    }
+    
+    return _nodeNote;
+}
+
 @end

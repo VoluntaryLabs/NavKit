@@ -336,10 +336,10 @@
 
 - (void)didAddToNavView
 {
-    if (([self.node nodeView] && [[self.node children] count] == 0))
+    NSView *nodeView = [self.node nodeView];
+    
+    if ((nodeView && [[self.node children] count] == 0))
     {
-        NSView *nodeView = [self.node nodeView];
-        
         [self fitWidthToRemainingSpace];
         [nodeView setFrameSize:self.frame.size];
         [self setContentView:nodeView];
