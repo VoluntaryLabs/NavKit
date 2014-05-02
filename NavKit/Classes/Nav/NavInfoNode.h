@@ -15,4 +15,6 @@
 @property (strong, nonatomic) NSString *nodeNote;
 @property (assign, nonatomic) CGFloat nodeSuggestedWidth;
 
+- (void)composeChildrenFromPropertyNames:(NSArray *)names;
+
 @end

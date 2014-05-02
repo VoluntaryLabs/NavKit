@@ -38,4 +38,21 @@
     return _nodeNote;
 }
 
+- (void)composeChildrenFromPropertyNames:(NSArray *)names
+{
+    NSMutableArray *children = [NSMutableArray array];
+    
+    for (NSString *name in names)
+    {
+        SEL sel = NSSelectorFromString(name);
+        NSObject *value = [self performSelector:sel withObject:nil];
+        NavInfoNode *childNode = [[NavInfoNode alloc] init];
+        childNode.nodeTitle = name.capitalizedString;
+        childNode.nodeSubtitle = value.description;
+        [children addObject:childNode];
+    }
+    
+    [self setChildren:children];
+}
+
 @end
