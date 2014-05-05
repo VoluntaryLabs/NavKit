@@ -45,7 +45,10 @@
     for (NSString *name in names)
     {
         SEL sel = NSSelectorFromString(name);
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         NSObject *value = [self performSelector:sel withObject:nil];
+#pragma clang diagnostic pop
         NavInfoNode *childNode = [[NavInfoNode alloc] init];
         childNode.nodeTitle = name.capitalizedString;
         childNode.nodeSubtitle = value.description;
