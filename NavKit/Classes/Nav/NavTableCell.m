@@ -269,7 +269,7 @@
 
             
             [note drawAtPoint:NSMakePoint(cellFrame.origin.x + f.size.width - width - rightMargin,
-                                           cellFrame.origin.y + cellFrame.size.height*.5 - fontSize/2.0 /*- 5*/)
+                                           cellFrame.origin.y + cellFrame.size.height*.5 - fontSize/2.0 - 4)
                 withAttributes:noteAttributes];
         }
     }
