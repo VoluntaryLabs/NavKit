@@ -53,6 +53,7 @@
         childNode.nodeTitle = name.capitalizedString;
         childNode.nodeSubtitle = value.description;
         [children addObject:childNode];
+        [childNode setNodeParent:self];
     }
     
     [self setChildren:children];

@@ -11,5 +11,6 @@
 @interface NSDate (extra)
 
 - (NSString *)itemDateString;
+- (NSString *)itemDateTimeString;
 
 @end
