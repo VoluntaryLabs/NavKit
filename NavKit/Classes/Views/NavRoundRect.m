@@ -19,6 +19,7 @@
     _backgroundColor = [NSColor blackColor];
     _outlineColor    = [NSColor blackColor];
     
+    _cornerRadius = 6;
     _outlineWidth = 1;
     
     return self;
@@ -39,13 +40,13 @@
     
 	CGContextAddPath(ctx, roundedRectPath);
     
-    if (self.isFilled)
+    if (self.isOutlined)
     {
         CGContextSetLineWidth(ctx, self.outlineWidth);
         CGContextDrawPath(ctx, kCGPathStroke);
     }
     
-    if (self.isOutlined)
+    if (self.isFilled)
     {
         CGContextFillPath(ctx);
     }

@@ -20,7 +20,6 @@
         _backgroundColor = [NSColor blackColor];
         _cornerRadius = 3;
         [self setTextColor:[NSColor whiteColor]];
-        _lineWidth = 1;
     }
     
     return self;
@@ -44,20 +43,9 @@
 	[backgroundColor set];
     
 	CGContextAddPath(ctx, roundedRectPath);
-    
-    if (self.isOutlined)
-    {
-        CGContextSetLineWidth(ctx, self.lineWidth);
-        CGContextDrawPath(ctx, kCGPathStroke);
-    }
-    else
-    {
-        CGContextFillPath(ctx);
-    }
+    CGContextFillPath(ctx);
 
-    
 	CGPathRelease(roundedRectPath);
-
     
     //CGFloat fontSize = [(NSFont *)[att objectForKey:NSFontAttributeName] pointSize];
     
