@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) NSColor *backgroundColor;
 @property (assign, nonatomic) CGFloat cornerRadius;
+@property (assign, nonatomic) BOOL isFilled;
 
 @property (assign, nonatomic) BOOL isOutlined;
 @property (assign, nonatomic) CGFloat outlineWidth;

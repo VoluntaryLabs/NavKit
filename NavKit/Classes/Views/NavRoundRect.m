@@ -16,7 +16,7 @@
     
     _frame = NSMakeRect(0, 0, 100, 100);
     
-    _backgroundColor = [NSColor whiteColor];
+    _backgroundColor = [NSColor blackColor];
     _outlineColor    = [NSColor blackColor];
     
     _outlineWidth = 1;
@@ -39,14 +39,15 @@
     
 	CGContextAddPath(ctx, roundedRectPath);
     
-    if (self.isOutlined)
-    {
-        CGContextFillPath(ctx);
-    }
-    else
+    if (self.isFilled)
     {
         CGContextSetLineWidth(ctx, self.outlineWidth);
         CGContextDrawPath(ctx, kCGPathStroke);
+    }
+    
+    if (self.isOutlined)
+    {
+        CGContextFillPath(ctx);
     }
     
 	CGPathRelease(roundedRectPath);
