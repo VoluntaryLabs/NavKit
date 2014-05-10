@@ -94,7 +94,7 @@
                                  descriptionWithCalendarFormat:@"%Y" timeZone:nil
                                  locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
 
-        NSString *time = [[NSDate date]
+        NSString *time = [date
                                  descriptionWithCalendarFormat:@"%H:%M:%S" timeZone:nil
                                  locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
         
