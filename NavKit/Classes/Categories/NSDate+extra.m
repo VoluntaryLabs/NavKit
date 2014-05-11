@@ -94,11 +94,15 @@
                                  descriptionWithCalendarFormat:@"%Y" timeZone:nil
                                  locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
 
-        NSString *time = [date
-                                 descriptionWithCalendarFormat:@"%H:%M:%S" timeZone:nil
-                                 locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"h:mm:ss a"];
+        NSString *time = [formatter stringFromDate:date];
+    
+        //NSString *time = [date descriptionWithCalendarFormat:@"%H:%M:%S" timeZone:nil
+        //locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
         
         BOOL sameYear = [messageYear isEqualToString:currentYear];
+        
         
         /*
          if (hours < 1)
