@@ -657,6 +657,14 @@
 
 - (void)updateActionStrip
 {
+    if ([self.node.nodeView respondsToSelector:@selector(handlesNodeActions)])
+    {
+        if ([(id)(self.node.nodeView) handlesNodeActions])
+        {
+            return;
+        }
+    }
+    
     [_actionStrip setWidth:self.width];
     //[_actionStrip setBackgroundColor:[NSColor redColor]];
     
