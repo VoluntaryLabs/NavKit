@@ -30,7 +30,9 @@
 #import "NavThemeDictionary.h"
 
 #import "NavTextView.h"
+#import "NavAdvTextView.h"
 #import "NavRoundButtonView.h"
+#import "NavRoundRect.h"
 #import "NavColoredView.h"
 #import "NavSearchField.h"
 #import "NavButton.h"

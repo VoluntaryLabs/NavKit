@@ -705,7 +705,7 @@
             NSDictionary *att = [NSDictionary dictionaryWithObjectsAndKeys:
                                  [button font], NSFontAttributeName,
                                  nil];
-            CGFloat width = [[[NSAttributedString alloc] initWithString:action attributes:att] size].width;
+            CGFloat width = [[[NSAttributedString alloc] initWithString:action attributes:att] size].width + 15;
             [button setTitle:action];
             [button setWidth:width];
             //NSLog(@"button width %i", (int)width);
