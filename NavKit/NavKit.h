@@ -23,6 +23,7 @@
 #import "NSScrollView+extra.h"
 #import "NSTextView+extra.h"
 #import "NSView+sizing.h"
+#import "NSImage+nav.h"
 #import "NSWindow+positioning.h"
 
 #import "NavTheme.h"
