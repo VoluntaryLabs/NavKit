@@ -10,44 +10,104 @@
 #import "NavTextView.h"
 #import "NavAdvTextView.h"
 #import "NavTheme.h"
+#import "NSView+sizing.h"
 
 @implementation NavSlotView
 
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code here.
+    
+    if (self)
+    {
+        _labelText = [[NavTextView alloc] initWithFrame:NSMakeRect(0, 0, 100, 30)];
+        //[_labelText setThemePath:@""];
+        [self addSubview:_labelText];
+        [_labelText setEditable:NO];
+        
+        
+        _valueText = [[NavAdvTextView alloc] initWithFrame:NSMakeRect(0, 0, 100, 30)];
+        [self addSubview:_valueText];
+        _valueText.endsOnReturn = YES;
+        [_valueText setDelegate:self];
     }
+    
     return self;
 }
 
-- (void)drawRect:(NSRect)dirtyRect
+- (void)setFrame:(NSRect)frameRect
 {
-    [super drawRect:dirtyRect];
+    [super setFrame:frameRect];
+    [self layout];
+}
+
+- (void)layout
+{
+    [_valueText setX:0];
+    [_valueText setY:0];
+    [_valueText setWidth:self.width];
     
-    // Drawing code here.
+    [_labelText setWidth:self.width];
+    [_labelText placeYAbove:_labelText margin:10.0];
+    [self setHeight:_labelText.maxY];
 }
 
+// text delegate
 
-- (NavTextView *)newLabel
+- (void)updateActions
 {
-    NavTextView *label = [[NavTextView alloc] initWithFrame:NSMakeRect(0, 0, 350, 24)];
-    [label setThemePath:@"address/label"];
-    //[label setThemePath:@"address/line"];
-    //[label setDelegate:self];
-    [label setEditable:NO];
-    return label;
+    
 }
 
-- (NavAdvTextView *)newLine
+- (void)syncToSlot
 {
-    NavAdvTextView *line = [[NavAdvTextView alloc] initWithFrame:NSMakeRect(0, 0, 350, 24)];
-    //line.uneditedTextString = @"";
-    [line setEditedThemePath:@"address/line"];
-    //[line setDelegate:self];
-    line.endsOnReturn = YES;
-    return line;
+    
+}
+
+- (void)textDidChange:(NSNotification *)aNotification
+{
+    NSTextView *aTextView = [aNotification object];
+    
+    if ([aTextView respondsToSelector:@selector(textDidChange)])
+    {
+        [(NavAdvTextView *)aTextView textDidChange];
+    }
+    
+    [self updateActions];
+    [self syncToSlot]; // to show on table cell
+    [self layout];
+}
+
+- (BOOL)control:(NSControl *)control textShouldEndEditing:(NSText *)aTextView
+{
+    if ([aTextView respondsToSelector:@selector(textDidBeginEditing)])
+    {
+        [(NavAdvTextView *)aTextView textShouldBeginEditing];
+    }
+    
+    return YES;
+}
+
+- (void)textDidBeginEditing:(NSText *)aTextView
+{
+    if ([aTextView respondsToSelector:@selector(textDidBeginEditing)])
+    {
+        [(NavAdvTextView *)aTextView textDidBeginEditing];
+    }
+}
+
+- (void)textDidEndEditing:(NSNotification *)aNotification
+{
+    NSTextView *aTextView = [aNotification object];
+    
+    if ([aTextView respondsToSelector:@selector(textDidEndEditing)])
+    {
+        [(NavAdvTextView *)aTextView textDidEndEditing];
+    }
+    
+    [[aNotification object] endEditing];
+    [self syncToSlot];
+    [self updateActions];
 }
 
 @end

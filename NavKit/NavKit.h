@@ -39,5 +39,3 @@
 #import "NavMarginTextView.h"
 #import "NavResizingScrollView.h"
 
-#import "NavInfoNode.h"
-
