@@ -1,21 +1,24 @@
 //
-//  NavSlotView.h
+//  NavDataSlotView.h
 //  NavKit
 //
 //  Created by Steve Dekorte on 5/21/14.
 //  Copyright (c) 2014 voluntary.net. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import "NavSlotView.h"
+#import "NavTextView.h"
 #import "NavAdvTextView.h"
-#import <NavNodeKit/NavNodeKit.h>
 
-@interface NavSlotView : NSView <NSTextViewDelegate>
+@interface NavDataSlotView : NavSlotView <NSTextViewDelegate>
 
-@property (assign, nonatomic) NavSlot *slot;
+@property (assign, nonatomic) NavDataSlot *dataSlot;
 
 @property (strong, nonatomic) NavTextView    *labelText;
 @property (strong, nonatomic) NavAdvTextView *valueText;
 
+- (void)setNextKeySlotView:(NavDataSlotView *)nextView;
+
+- (void)syncToSlot;
 
 @end

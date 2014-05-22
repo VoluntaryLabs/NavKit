@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+// browser
+
 #import "NavAppController.h"
 #import "NavWindow.h"
 #import "NavColumn.h"
@@ -15,6 +17,8 @@
 #import "NavTableCell.h"
 #import "NavTableView.h"
 #import "NavView.h"
+
+// cocoa categories
 
 #import "NSColor+array.h"
 #import "NSColor+Hex.h"
@@ -25,6 +29,8 @@
 #import "NSView+sizing.h"
 #import "NSImage+nav.h"
 #import "NSWindow+positioning.h"
+
+// theme
 
 #import "NavTheme.h"
 #import "NavThemeDictionary.h"
@@ -38,4 +44,12 @@
 #import "NavButton.h"
 #import "NavMarginTextView.h"
 #import "NavResizingScrollView.h"
+
+// mirror
+
+#import "NavMirrorView.h"
+#import "NavSlotView.h"
+#import "NavDataSlotView.h"
+#import "NavActionSlotView.h"
+
 

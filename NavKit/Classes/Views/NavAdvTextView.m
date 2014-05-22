@@ -94,15 +94,24 @@
 
 - (void)useUneditedTextStringIfNeeded
 {
-    if ([self.string hasPrefix:self.uneditedTextString])
+    if (self.uneditedTextString)
     {
-        self.string = [self.string after:self.self.uneditedTextString];
+        if ([self.string hasPrefix:self.uneditedTextString])
+        {
+            self.string = [self.string after:self.self.uneditedTextString];
+        }
+        
+        if ([self.string isEqualToString:@""])
+        {
+            self.string = self.uneditedTextString;
+        }
     }
-    
-    if ([self.string isEqualToString:@""])
-    {
-        self.string = self.uneditedTextString;
-    }
+}
+
+- (void)setEditedThemePath:(NSString *)editedThemePath
+{
+    _editedThemePath = editedThemePath;
+    [self updateTheme];
 }
 
 - (void)updateTheme
