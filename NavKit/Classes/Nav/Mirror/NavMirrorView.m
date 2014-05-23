@@ -34,6 +34,7 @@
 - (void)layout
 {
     CGFloat margin = 25.0;
+    [_group setAllSubviewToWidth:400.0];
     [_group stackSubviewsBottomToTopWithMargin:margin];
     [_group sizeAndRepositionSubviewsToFit];
     [_group stackSubviewsTopToBottomWithMargin:margin];
@@ -110,16 +111,17 @@
     for (NavActionSlot *actionSlot in self.node.navMirror.actionSlots)
     {
         NavActionSlotView *slotView = (NavActionSlotView *)actionSlot.slotView;
-        slotView.width = self.width;
         
         if (slotView)
         {
-            [slotView setWidth:self.width];
+            //[slotView setWidth:self.width];
             [_group addSubview:slotView];
         }
         
         [slotView syncFromSlot];
     }
+    
+    [self layout];
     
     [self setNeedsDisplay:YES];
 }

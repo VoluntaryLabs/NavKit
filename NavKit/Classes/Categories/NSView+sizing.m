@@ -463,4 +463,13 @@
     [self setHeight:self.maxYOfSubviews];
 }
 
+- (void)setAllSubviewToWidth:(CGFloat)aWidth
+{
+    for (NSView *subview in self.subviews)
+    {
+        [subview setWidth:aWidth];
+    }
+}
+
+
 @end

@@ -73,4 +73,6 @@
 
 - (void)sizeAndRepositionSubviewsToFit;
 
+- (void)setAllSubviewToWidth:(CGFloat)aWidth;
+
 @end
