@@ -84,29 +84,31 @@
 {
     [_group removeAllSubviews];
     
-    NavDataSlot *lastDataSlot = self.node.navMirror.dataSlots.lastObject;
-    NavDataSlotView *lastSlotView = (id)lastDataSlot.slotView;
-    NavDataSlotView *slotView = nil;
-    
-    for (NavDataSlot *dataSlot in self.node.navMirror.dataSlots)
     {
-        slotView = (NavDataSlotView *)dataSlot.slotView;
+        NavDataSlot *lastDataSlot = self.node.navMirror.dataSlots.lastObject;
+        NavDataSlotView *lastSlotView = (id)lastDataSlot.slotView;
+        NavDataSlotView *slotView = nil;
         
-        if (slotView)
+        for (NavDataSlot *dataSlot in self.node.navMirror.dataSlots)
         {
-            [slotView setWidth:self.width];
-            [slotView.labelText setThemePath:@"address/label"];
-            [slotView.valueText setEditedThemePath:@"address/line"];
-            [_group addSubview:slotView];
+            slotView = (NavDataSlotView *)dataSlot.slotView;
+            
+            if (slotView)
+            {
+                [slotView setWidth:self.width];
+                [slotView.labelText setThemePath:@"address/label"];
+                [slotView.valueText setEditedThemePath:@"address/line"];
+                [slotView.valueText setSuffix:dataSlot.valueSuffix];
+                [_group addSubview:slotView];
+            }
+            
+            [lastSlotView setNextKeySlotView:slotView];
+            lastSlotView = slotView;
         }
         
-        [lastSlotView setNextKeySlotView:slotView];
-        lastSlotView = slotView;
+        NavDataSlot *firstDataSlot = self.node.navMirror.dataSlots.firstObject;
+        [lastSlotView setNextKeySlotView:(NavDataSlotView *)firstDataSlot.slotView];
     }
-    
-    NavDataSlot *firstDataSlot = self.node.navMirror.dataSlots.firstObject;
-    [lastSlotView setNextKeySlotView:(NavDataSlotView *)firstDataSlot.slotView];
-    
     
     for (NavActionSlot *actionSlot in self.node.navMirror.actionSlots)
     {

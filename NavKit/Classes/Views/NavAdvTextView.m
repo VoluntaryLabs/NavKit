@@ -33,17 +33,26 @@
 
 - (void)setSuffix:(NSString *)aString
 {
-    if (!self.suffixView)
+    if (aString)
     {
-        self.suffixView = [[NavTextView alloc] initWithFrame:NSMakeRect(0, 0, 300, self.height)];
-        self.suffixView.autoresizingMask = self.autoresizingMask;
-        [self.suffixView setEditable:NO];
-        [self.suffixView setSelectable:NO];
-        [self.superview addSubview:self.suffixView];
+        if (!self.suffixView)
+        {
+            self.suffixView = [[NavTextView alloc] initWithFrame:NSMakeRect(0, 0, 300, self.height)];
+            self.suffixView.autoresizingMask = self.autoresizingMask;
+            [self.suffixView setEditable:NO];
+            [self.suffixView setSelectable:NO];
+            [self.superview addSubview:self.suffixView];
+        }
+        
+        self.suffixView.string = aString.strip;
+        [self updateSuffixView];
+        [self updateTheme];
     }
-    
-    self.suffixView.string = aString.strip;
-    [self updateSuffixView];
+    else
+    {
+        [self.suffixView removeFromSuperview];
+        self.suffixView = nil;
+    }
 }
 
 - (void)setFrame:(NSRect)frameRect
@@ -63,7 +72,7 @@
 {
     if (self.suffixView)
     {
-        self.suffixView.x = self.textStorage.size.width + /*self.suffixView.textStorage.size.width*/ + 31;
+        self.suffixView.x = self.textStorage.size.width + /*self.suffixView.textStorage.size.width*/ + 3;
         self.suffixView.y = self.y + self.height - self.suffixView.height;
     }
 }
@@ -129,7 +138,8 @@
     
     [self setThemePath:themePath];
     [self.suffixView setThemePath:themePath];
-    [self.suffixView setHidden:!self.isReady];
+    //[self.suffixView setHidden:!self.isReady];
+    [self.suffixView setNeedsDisplay:YES];
     [self setNeedsDisplay:YES];
 }
 
