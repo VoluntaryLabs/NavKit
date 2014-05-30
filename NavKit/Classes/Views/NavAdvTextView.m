@@ -75,7 +75,10 @@
         self.suffixView.x = self.x + self.textStorage.size.width;
         self.suffixView.y = self.y + self.height - self.suffixView.height;
     }
+    
+    [self.suffixView setHidden:[self.string isEqualToString:self.uneditedTextString]];
 }
+
 
 - (BOOL)isReady
 {
