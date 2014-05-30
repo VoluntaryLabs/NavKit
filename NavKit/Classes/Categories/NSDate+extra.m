@@ -95,7 +95,8 @@
                                  locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
 
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"h:mm:ss a"];
+        //[formatter setDateFormat:@"h:mm:ss a"];
+        [formatter setDateFormat:@"h:mm a"];
         NSString *time = [formatter stringFromDate:date];
     
         //NSString *time = [date descriptionWithCalendarFormat:@"%H:%M:%S" timeZone:nil
