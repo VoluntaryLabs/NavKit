@@ -52,4 +52,8 @@
 #import "NavDataSlotView.h"
 #import "NavActionSlotView.h"
 
+// views
+
+#import "NavDescriptionView.h"
+
 
