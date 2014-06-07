@@ -115,12 +115,12 @@
         if (days < 1)
         {
             //return [NSString stringWithFormat:@"%ihr", (int)hours];
-            return [NSString stringWithFormat:@"%@ Today",  time];
+            return [NSString stringWithFormat:@"Today %@ ",  time];
         }
         
         if (days < 2)
         {
-            return [NSString stringWithFormat:@"%@ Yesterday",  time];
+            return [NSString stringWithFormat:@"Yesterday %@ ",  time];
         }
         
         /*

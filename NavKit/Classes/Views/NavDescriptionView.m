@@ -55,8 +55,8 @@
     {
         id anObject = ((id <NavDescriptionViewProtocol>)_node).descriptionJSONObject;
         
-        NSError *error;
-        NSData *data = [NSJSONSerialization dataWithJSONObject:anObject
+        NSError *error = nil;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:anObject
                                                        options:NSJSONWritingPrettyPrinted
                                                          error:&error];
 
@@ -68,7 +68,8 @@
         }
         else
         {
-            _textView.string = [NSString stringWithUTF8String:[data bytes]];
+            NSString *aString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+            _textView.string = aString;
         }
     }
     else
@@ -99,6 +100,9 @@
     }
     */
 
+    NSString *s = _textView.string;
+    NSLog(@"%@", s);
+    
     CGFloat margin = 30;
     
     [_textView setX:margin];
