@@ -79,7 +79,7 @@
     
     if (date)
     {
-        //return [NSString stringWithFormat:@"%@", date];
+        //NSString *testString = [NSString stringWithFormat:@"%@", date];
         
         NSTimeInterval dt = -[date timeIntervalSinceNow];
         NSInteger mins = dt/60;

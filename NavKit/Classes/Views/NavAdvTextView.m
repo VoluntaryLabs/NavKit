@@ -113,7 +113,7 @@
             self.string = [self.string after:self.self.uneditedTextString];
         }
         
-        if ([self.string isEqualToString:@""])
+        if ([self.string isEqualToString:@""] && self.window.firstResponder != self)
         {
             self.string = self.uneditedTextString;
         }
