@@ -197,10 +197,9 @@
 
     for (NSView *view in self.subviews)
     {
-        CGFloat w = view.width;
         [view setX:x];
         
-        x += w + margin;
+        x += view.width + margin;
     }
 }
 
@@ -471,5 +470,12 @@
     }
 }
 
+- (void)setAllSubviewToHeight:(CGFloat)aHeight
+{
+    for (NSView *subview in self.subviews)
+    {
+        [subview setHeight:aHeight];
+    }
+}
 
 @end

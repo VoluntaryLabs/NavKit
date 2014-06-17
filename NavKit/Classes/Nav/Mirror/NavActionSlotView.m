@@ -35,9 +35,25 @@
     [self setActionSlot:(NavActionSlot *)aSlot];
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)setActionSlot:(NavActionSlot *)actionSlot
 {
     _actionSlot = actionSlot;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(slotChanged:)
+                                                 name:nil
+                                               object:actionSlot];
+    
+    [self syncFromSlot];
+}
+
+- (void)slotChanged:(NSNotification *)aNote
+{
     [self syncFromSlot];
 }
 
