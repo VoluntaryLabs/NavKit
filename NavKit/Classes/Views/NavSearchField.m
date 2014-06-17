@@ -77,7 +77,7 @@
 {
     // only get's this if the magnifying glass icon was clicked
     NSPoint p = [self convertPoint:[event locationInWindow] fromView:nil];
-    NSLog(@"mouse position %i, %i", (int)p.x, (int)p.y);
+    //NSLog(@"mouse position %i, %i", (int)p.x, (int)p.y);
     [super mouseDown:event];
 
     if ((p.x < 20) && ([event type] == NSLeftMouseDown))

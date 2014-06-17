@@ -110,13 +110,16 @@
     {
         if ([self.string hasPrefix:self.uneditedTextString])
         {
-            self.string = [self.string after:self.self.uneditedTextString];
+            self.string = [self.string after:self.uneditedTextString];
+            [self updateTheme];
         }
         
         if ([self.string isEqualToString:@""] && self.window.firstResponder != self)
         {
             self.string = self.uneditedTextString;
+            [self updateTheme];
         }
+        
     }
 }
 

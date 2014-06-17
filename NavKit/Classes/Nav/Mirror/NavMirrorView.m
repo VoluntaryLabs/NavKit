@@ -64,12 +64,15 @@
 {
     if (_node != node)
     {
+        [[NSNotificationCenter defaultCenter] removeObserver:_node];
+        
         _node = node;
-        [self syncFromNode];
+        
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(nodeChanged:)
                                                      name:nil
                                                    object:_node];
+        [self syncFromNode];
     }
 }
 
