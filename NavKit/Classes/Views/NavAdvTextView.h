@@ -18,6 +18,7 @@
 @property (assign, nonatomic) BOOL endsOnReturn;
 @property (strong, nonatomic) NSString *lastString;
 @property (strong, nonatomic) NavRoundRect *roundRect;
+@property (assign, nonatomic) BOOL isValid;
 
 - (void)setSuffix:(NSString *)aString;
 

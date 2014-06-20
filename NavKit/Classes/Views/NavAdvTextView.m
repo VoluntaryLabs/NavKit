@@ -20,6 +20,7 @@
     {
         _roundRect = [[NavRoundRect alloc] init];
         [_roundRect setFrame:self.bounds];
+        _isValid = YES;
     }
     
     return self;
@@ -119,7 +120,6 @@
             self.string = self.uneditedTextString;
             [self updateTheme];
         }
-        
     }
 }
 
@@ -127,6 +127,15 @@
 {
     _editedThemePath = editedThemePath;
     [self updateTheme];
+}
+
+- (void)setIsValid:(BOOL)isValid
+{
+    if (_isValid != isValid)
+    {
+        _isValid = isValid;
+        [self updateTheme];
+    }
 }
 
 - (void)updateTheme
@@ -142,13 +151,17 @@
         themePath = _editedThemePath;
     }
     
+    if (!_isValid)
+    {
+        themePath = [_editedThemePath stringByAppendingString:@"-invalid"];
+    }
+    
     [self setThemePath:themePath];
     [self.suffixView setThemePath:themePath];
     //[self.suffixView setHidden:!self.isReady];
     [self.suffixView setNeedsDisplay:YES];
     [self setNeedsDisplay:YES];
 }
-
 
 /*
 - (void)forceToBeNumber

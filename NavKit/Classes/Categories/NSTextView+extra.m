@@ -21,10 +21,12 @@
         [self setSelectedRange:NSMakeRange(r.location, 0)];
     }
     
+    /*
     if (self.window.firstResponder == self)
     {
         [self.window makeFirstResponder:nil];
     }
+    */
 }
 
 - (BOOL)endEditingOnReturn
