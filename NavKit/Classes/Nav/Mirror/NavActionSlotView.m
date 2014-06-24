@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 voluntary.net. All rights reserved.
 //
 
+#import "NavMirrorView.h"
 #import "NavActionSlotView.h"
 #import "NSView+sizing.h"
 
@@ -86,6 +87,22 @@
 
 - (void)sendAction
 {
+    /*
+    NavMirrorView *mirrorView =  (NavMirrorView *)self.actionSlot.mirror.node.nodeView;
+    
+    if (mirrorView && [mirrorView respondsToSelector:@selector(shouldPerformActionSlot:)])
+    {
+        if ([mirrorView shouldPerformActionSlot:self.actionSlot])
+        {
+            [self.actionSlot sendAction];
+        }
+    }
+    else
+    {
+        [self.actionSlot sendAction];
+    }
+    */
+    
     [self.actionSlot sendAction];
 }
 

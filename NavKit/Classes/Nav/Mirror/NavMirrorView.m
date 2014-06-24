@@ -60,6 +60,19 @@
     [self prepareToDisplay];
 }
 
+/*
+- (NavNode *)node
+{
+    return self.mirror.node;
+}
+
+- (void)setMirror:(NavMirror *)aMirror
+{
+    _mirror = aMirror;
+    [self setNode:node];
+}
+*/
+
 - (void)setNode:(NavNode *)node
 {
     if (_node != node)
@@ -73,6 +86,12 @@
                                                      name:nil
                                                    object:_node];
         [self syncFromNode];
+        
+        // should move to mirror returning view instead?
+        if (node.navMirror)
+        {
+            node.navMirror.mirrorView = self;
+        }
     }
 }
 
@@ -167,5 +186,28 @@
 {
     
 }
+
+// --- delegate ---
+
+/*
+
+- (BOOL)shouldPerformActionSlot:(NavActionSlot *)navActionSlot
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(shouldPerformActionSlot:)])
+    {
+        return [_delegate shouldPerformActionSlot:navActionSlot];
+    }
+    
+    return YES;
+}
+
+- (void)didPerformActionSlot:(NavActionSlot *)navActionSlot
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(didPerformActionSlot:)])
+    {
+        return [_delegate didPerformActionSlot:navActionSlot];
+    }
+}
+*/
 
 @end
