@@ -25,9 +25,7 @@
 @property (strong, nonatomic) NSView *group;
 //@property (assign, nonatomic) id <NavMirrorViewDelegate> delegate;
 
-//- (NavNode *)node;
 
-- (void)prepareToDisplay;
 - (void)selectFirstResponder;
 
 - (BOOL)handlesNodeActions;

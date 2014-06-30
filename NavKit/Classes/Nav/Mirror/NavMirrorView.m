@@ -43,12 +43,6 @@
     [_group setY:_group.y + 30];
 }
 
-- (void)prepareToDisplay
-{
-    [self layout];
-    [self layout];
-}
-
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -57,7 +51,7 @@
 - (void)setFrame:(NSRect)frameRect
 {
     [super setFrame:frameRect];
-    [self prepareToDisplay];
+    [self layout];
 }
 
 /*

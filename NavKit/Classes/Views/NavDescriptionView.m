@@ -82,14 +82,6 @@
     //[self layout];
 }
 
-/*
-- (void)prepareToDisplay
-{
-    [self layout];
-    [self layout];
-}
-*/
-
 - (void)layout
 {
     /*

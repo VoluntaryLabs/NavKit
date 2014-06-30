@@ -85,6 +85,29 @@
     [_button setFrame:NSMakeRect(0, 0, self.width, self.height)];
 }
 
+- (BOOL)showAlertIfNeeded
+{
+    if (_actionSlot.verifyMessage)
+    {
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert addButtonWithTitle:[_actionSlot.visibleName capitalizedString]];
+        [alert addButtonWithTitle:@"Cancel"];
+        //[alert setMessageText:[NSString stringWithFormat:@"%@ for \"%@\"?", _actionSlot.visibleName, _actionSlot.mirror.nodeTitle]];
+        
+        [alert setMessageText:@"Warning"];
+        [alert setInformativeText:_actionSlot.verifyMessage];
+        [alert setAlertStyle:NSWarningAlertStyle];
+        
+        if ([alert runModal] == NSAlertSecondButtonReturn)
+        {
+            // cancel
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
 - (void)sendAction
 {
     /*
@@ -103,7 +126,10 @@
     }
     */
     
-    [self.actionSlot sendAction];
+    if (self.showAlertIfNeeded)
+    {
+        [self.actionSlot sendAction];
+    }
 }
 
 @end
