@@ -389,6 +389,53 @@ static NavTheme *sharedNavTheme = nil;
 
 @end
 
+
+@implementation NSCell (Theme)
+
+- (void)setThemePath:(NSString *)aPath
+{
+    NSDictionary *attributes = [NavTheme.sharedNavTheme attributesDictForPath:aPath];
+    
+    NSFont *font = [attributes objectForKey:NSFontAttributeName];
+    if (font && [self respondsToSelector:@selector(setFont:)])
+    {
+        [(id)self setFont:font];
+    }
+    
+    NSColor *color = [attributes objectForKey:NSForegroundColorAttributeName];
+    if (color && [self respondsToSelector:@selector(setTextColor:)])
+    {
+        [(id)self setTextColor:color];
+    }
+    if (color && [self respondsToSelector:@selector(setInsertionPointColor:)])
+    {
+        [(NSTextView *)self setInsertionPointColor:color];
+    }
+    
+    NSColor *bgColor = [attributes objectForKey:NSBackgroundColorAttributeName];
+    if (bgColor && [self respondsToSelector:@selector(setBackgroundColor:)])
+    {
+        [(id)self setBackgroundColor:bgColor];
+    }
+    else if ([self respondsToSelector:@selector(setDrawsBackground:)])
+    {
+        [(id)self setDrawsBackground:NO];
+    }
+    
+    if ([self respondsToSelector:@selector(setFocusRingType:)])
+    {
+        [(id)self setFocusRingType:NSFocusRingTypeNone];
+    }
+    
+    if ([self respondsToSelector:@selector(setAlignment:)])
+    {
+        [(id)self setAlignment:[NavTheme.sharedNavTheme alignmentForPath:aPath]];
+    }
+}
+
+
+@end
+
 /*
 @implementation NSTextView (theme)
 

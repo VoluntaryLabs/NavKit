@@ -54,6 +54,10 @@
 - (void)setThemePath:(NSString *)aPath;
 @end
 
+@interface NSCell (theme)
+- (void)setThemePath:(NSString *)aPath;
+@end
+
 /*
 @interface NSTextView (theme)
 - (void)setThemePath:(NSString *)aPath;
