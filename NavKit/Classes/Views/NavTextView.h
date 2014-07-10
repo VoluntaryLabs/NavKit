@@ -15,5 +15,6 @@
 
 
 - (void)setFontSize:(CGFloat)pointSize;
+- (NSSize)textSize;
 
 @end

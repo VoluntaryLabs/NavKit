@@ -19,7 +19,7 @@
     _backgroundColor = [NSColor blackColor];
     _outlineColor    = [NSColor blackColor];
     
-    _cornerRadius = 6;
+    _cornerRadius = 3; //6;
     _outlineWidth = 1;
     
     return self;

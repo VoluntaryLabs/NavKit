@@ -22,7 +22,7 @@
         [self setAutoresizesSubviews:NO];
         [self setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable];
 
-        _group = [[NSView alloc] initWithFrame:NSMakeRect(0, 0, self.width, 500)];
+        _group = [[NSView alloc] initWithFrame:NSMakeRect(0, 0, self.width, 350)];
         //[_group setBackgroundColor:[NSColor colorWithCalibratedWhite:.5 alpha:1.0]];
         //[_group setBackgroundColor:[NSColor clearColor]];
         [self addSubview:_group];        

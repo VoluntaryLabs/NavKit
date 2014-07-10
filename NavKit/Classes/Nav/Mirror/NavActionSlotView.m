@@ -18,8 +18,8 @@
     
     if (self)
     {
-        _button = [[NavRoundButtonView alloc] initWithFrame:NSMakeRect(0, 0, 350, 30)];
-        [_button setCornerRadius:6];
+        _button = [[NavRoundButtonView alloc] initWithFrame:NSMakeRect(0, 0, 350, 40)];
+        [_button setCornerRadius:3];
         [self addSubview:_button];
         [_button setTarget:self];
         [_button setAction:@selector(sendAction)];

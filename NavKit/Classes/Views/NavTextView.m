@@ -54,6 +54,15 @@
     [self setAutoresizingMask: NSViewWidthSizable | NSViewMinYMargin | NSViewMaxYMargin];
 }
 
+- (NSSize)textSize
+{
+    NSMutableDictionary *att = [NSMutableDictionary dictionary];
+    [att setObject:self.font forKey:NSFontAttributeName];
+    
+    CGSize size = [[[NSAttributedString alloc] initWithString:self.string attributes:att] size];
+    return size;
+}
+
 - (void)setupForEditing
 {
     self.font = [NSFont fontWithName:[NavTheme.sharedNavTheme lightFontName] size:24.0];

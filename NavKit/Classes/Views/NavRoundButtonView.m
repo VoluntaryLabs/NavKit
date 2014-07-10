@@ -49,12 +49,20 @@
     
     //CGFloat fontSize = [(NSFont *)[att objectForKey:NSFontAttributeName] pointSize];
     
-    CGFloat width = [[[NSAttributedString alloc] initWithString:self.title attributes:att] size].width;
+    CGSize fontSize = [[[NSAttributedString alloc] initWithString:self.title attributes:att] size];
+    //CGFloat width = [[[NSAttributedString alloc] initWithString:self.title attributes:att] size].width;
 
+    /*
     [self.title drawAtPoint:NSMakePoint(self.width/2.0 - width/2.0, 1)
                                         //-self.height/2.0)// + fontSize/2.0)
 //     self.height/2.0 - fontSize/2.0 - 0)
         withAttributes:att];
+    */
+    
+    NSPoint titlePoint = NSMakePoint(self.width/2.0 - fontSize.width/2.0,
+                                     self.height/2.0 - fontSize.height/2.0 - 1);
+    
+    [self.title drawAtPoint:titlePoint withAttributes:att];
 
     [self unlockFocus];
 }

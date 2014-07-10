@@ -15,6 +15,9 @@
 {
     self = [super initWithFrame:frame];
     
+    self.labelMaxX = frame.size.width/3;
+    self.horizonalSeparatorWidth = 10;
+    
     if (self)
     {
         _labelText = [[NavTextView alloc] initWithFrame:NSMakeRect(0, 0, 100, 20)];
@@ -49,6 +52,31 @@
 - (void)layout
 {
     [super layout];
+    [self layoutHorizontally];
+}
+
+- (CGFloat)labelWidth
+{
+    return _labelText.textSize.width;
+}
+
+- (void)layoutHorizontally
+{
+    [super layout];
+
+    [_labelText setAlignment:NSRightTextAlignment];
+    [_labelText setX:0];
+    [_labelText setWidth:self.labelMaxX];
+    
+    [_valueText setAlignment:NSLeftTextAlignment];
+    [_valueText setX:self.labelMaxX + self.horizonalSeparatorWidth];
+    [_valueText setY:0];
+    [_valueText setWidth:self.width - self.labelMaxX - self.horizonalSeparatorWidth];
+}
+
+- (void)layoutVeritcally
+{
+    [super layout];
     
     [_valueText setX:0];
     [_valueText setY:0];
@@ -56,7 +84,7 @@
     
     [_labelText setWidth:self.width];
     [_labelText placeYAbove:_valueText margin:3.0];
-//    [self setHeight:_labelText.maxY];
+    //    [self setHeight:_labelText.maxY];
 }
 
 - (void)syncFromSlot

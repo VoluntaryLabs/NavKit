@@ -74,5 +74,6 @@
 - (void)sizeAndRepositionSubviewsToFit;
 
 - (void)setAllSubviewToWidth:(CGFloat)aWidth;
+- (void)setAllSubviewToHeight:(CGFloat)aHeight;
 
 @end
