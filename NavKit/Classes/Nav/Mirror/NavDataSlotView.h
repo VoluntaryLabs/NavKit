@@ -25,4 +25,6 @@
 
 - (CGFloat)labelWidth;
 
+- (void)sizeForLineCount;
+
 @end

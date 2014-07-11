@@ -204,6 +204,8 @@
     if ([self.string isEqualToString:self.uneditedTextString])
     {
         self.string = @"";
+        [self updateTheme];
+        [self setNeedsDisplay:YES];
     }
 
     return [super becomeFirstResponder];
@@ -211,9 +213,13 @@
 
 - (BOOL)resignFirstResponder
 {
+    NSLog(@"resign");
+    
     if ([self.string.strip isEqualToString:@""])
     {
         self.string = self.uneditedTextString;
+        [self updateTheme];
+        NSLog(@"string on resign = '%@'", self.string);
     }
     
     return [super resignFirstResponder];
@@ -230,8 +236,20 @@
     
     unsigned int returnKeyCode = 36;
     unsigned int tabKeyCode    = 48;
+    unsigned int deleteCode    = 51;
+    
     
     unsigned int keyCode = [theEvent keyCode];
+    
+    if (keyCode == deleteCode) // hack
+    {
+        if (self.string.length == 1)
+        {
+            self.string = @"";
+            [self setNeedsDisplay:YES];
+            return;
+        }
+    }
     
     if (self.endsOnReturn)
     {

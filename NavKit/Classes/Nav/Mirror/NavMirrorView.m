@@ -33,6 +33,13 @@
 
 - (void)layout
 {
+    /*
+    for (NavSlotView *slotView in self.group.subviews)
+    {
+        [slotView layout];
+    }
+    */
+    
     CGFloat margin = 25.0;
     [_group setAllSubviewToWidth:400.0];
     [_group stackSubviewsBottomToTopWithMargin:margin];
@@ -115,6 +122,9 @@
                 [slotView.labelText setThemePath:@"address/label"];
                 [slotView.valueText setEditedThemePath:@"address/line"];
                 [slotView.valueText setSuffix:dataSlot.valueSuffix];
+                
+ 
+                
                 [_group addSubview:slotView];
             }
             

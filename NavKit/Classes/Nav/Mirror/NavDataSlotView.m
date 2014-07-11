@@ -52,6 +52,7 @@
 - (void)layout
 {
     [super layout];
+    [self sizeForLineCount];
     [self layoutHorizontally];
 }
 
@@ -66,12 +67,15 @@
 
     [_labelText setAlignment:NSRightTextAlignment];
     [_labelText setX:0];
+    [_labelText setY:self.height - _labelText.height];
     [_labelText setWidth:self.labelMaxX];
+    //[_labelText setHeight:self.height];
     
     [_valueText setAlignment:NSLeftTextAlignment];
     [_valueText setX:self.labelMaxX + self.horizonalSeparatorWidth];
     [_valueText setY:0];
     [_valueText setWidth:self.width - self.labelMaxX - self.horizonalSeparatorWidth];
+    [_valueText setHeight:self.height];
 }
 
 - (void)layoutVeritcally
@@ -163,5 +167,23 @@
 {
     self.valueText.nextKeyView = nextView.valueText;
 }
+
+- (void)sizeForLineCount
+{
+    NSNumber *lineCount = self.dataSlot.lineCount;
+    
+    /*
+    if (!lineCount)
+    {
+        lineCount = @1;
+    }
+    */
+    
+    if (lineCount)
+    {
+        [self setHeight:lineCount.doubleValue * (_labelText.font.pointSize * 1.2)];
+    }
+}
+
 
 @end
