@@ -65,4 +65,28 @@
     [self display];
 }
 
+- (BOOL)gotoNext
+{
+    NSView *next = [self nextKeyView];
+    
+    if (next)
+    {
+        BOOL shouldGoto = YES;
+        
+        if ([next respondsToSelector:@selector(isEditable)])
+        {
+            shouldGoto = [(NSTextView *)next isEditable];
+        }
+        
+        if (shouldGoto)
+        {
+            [self.window makeFirstResponder:next];
+            [next selectAll:nil];
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
 @end
