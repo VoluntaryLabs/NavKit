@@ -259,6 +259,12 @@ static NavTheme *sharedNavTheme = nil;
     return attributes;
 }
 
+- (BOOL)hasAlignmentForPath:(NSString *)path
+{
+    NSDictionary *dict = [self objectForPath:path];
+    return [dict objectForKey:@"align"] != nil;
+}
+
 - (NSTextAlignment)alignmentForPath:(NSString *)path // e,g, "item/selected"
 {
     NSDictionary *dict = [self objectForPath:path];
@@ -429,7 +435,10 @@ static NavTheme *sharedNavTheme = nil;
     
     if ([self respondsToSelector:@selector(setAlignment:)])
     {
-        [(id)self setAlignment:[NavTheme.sharedNavTheme alignmentForPath:aPath]];
+        if ([NavTheme.sharedNavTheme hasAlignmentForPath:aPath])
+        {
+            [(id)self setAlignment:[NavTheme.sharedNavTheme alignmentForPath:aPath]];
+        }
     }
 }
 
