@@ -21,6 +21,8 @@
 @property (strong, nonatomic) NSTimer *timer;
 @property (assign, nonatomic) float animationValue;
 //@property (assign, nonatomic) NSTimeInterval timerPeriod;
+@property (assign, nonatomic) CGFloat minWidth;
+@property (assign, nonatomic) CGFloat maxWidth;
 
 - (void)setupCollapsed;
 - (void)setupExpanded;

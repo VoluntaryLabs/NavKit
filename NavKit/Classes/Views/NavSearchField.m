@@ -53,6 +53,9 @@
         }
         */
         
+        _minWidth = 30.0;
+        _maxWidth = 120.0;
+        
         [self setDelegate:self];
     }
     
@@ -175,15 +178,6 @@
     [self setNeedsDisplay:YES];
 }
 
-- (CGFloat)minWidth
-{
-    return 30.0;
-}
-
-- (CGFloat)maxWidth
-{
-    return 150.0;
-}
 
 - (BOOL)control:(NSControl *)control textShouldBeginEditing:(NSText *)fieldEditor
 {
