@@ -36,9 +36,25 @@
                             styleMask:windowStyle
                               backing:bufferingType
                                 defer:deferCreation];
+
+    [self setupBrowser];
     
+    // add full screen support to window
+    [[NSApplication sharedApplication] setPresentationOptions:NSFullScreenWindowMask];
+    [self setCollectionBehavior:NSWindowCollectionBehaviorFullScreenPrimary];
+    
+    return self;
+}
+
+- (NSRect)contentFrame
+{
+    return ((NSView *)self.contentView).frame;
+}
+
+- (void)setupBrowser
+{
     // add main view
-    _navView = [[NavView alloc] initWithFrame:contentRect];
+    _navView = [[NavView alloc] initWithFrame:self.contentFrame];
     [self.contentView addSubview:_navView];
     
     // setup progress indicator
@@ -50,11 +66,22 @@
     [_progressIndicator setDisplayedWhenStopped:NO];
     [_progressIndicator setStyle:NSProgressIndicatorSpinningStyle];
     
-    // add full screen support to window
-    [[NSApplication sharedApplication] setPresentationOptions:NSFullScreenWindowMask];
-    [self setCollectionBehavior:NSWindowCollectionBehaviorFullScreenPrimary];
-    
-    return self;
+}
+
+- (void)showSplashView
+{
+    [_navView removeFromSuperview];
+    [_splashView setFrame:self.contentFrame];
+    [self.contentView addSubview:_splashView];
+    [_navView setHidden:YES];
+    [_progressIndicator setHidden:YES];
+}
+
+- (void)hideSplashView
+{
+    [_splashView removeFromSuperview];
+    [_navView setHidden:NO];
+    [_progressIndicator setHidden:NO];
 }
 
 @end

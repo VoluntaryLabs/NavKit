@@ -11,9 +11,14 @@
 
 @interface NavWindow : NSWindow
 
+@property (strong, nonatomic) NSView *splashView;
 @property (strong, nonatomic) NavView *navView;
 @property (strong, nonatomic) NSProgressIndicator *progressIndicator;
 
 + (NavWindow *)newWindow;
+
+- (void)showSplashView;
+- (void)hideSplashView;
+
 
 @end
