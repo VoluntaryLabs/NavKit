@@ -38,7 +38,7 @@
     {
         if (!self.suffixView)
         {
-            self.suffixView = [[NavTextView alloc] initWithFrame:NSMakeRect(0, 0, 300, self.height)];
+            self.suffixView = [[NavTextView alloc] initWithFrame:NSMakeRect(0, 0, 600, self.height)];
             self.suffixView.autoresizingMask = self.autoresizingMask;
             [self.suffixView setEditable:NO];
             [self.suffixView setSelectable:NO];
@@ -75,9 +75,12 @@
     {
         self.suffixView.x = self.x + self.textStorage.size.width;
         self.suffixView.y = self.y + self.height - self.suffixView.height;
+        
+        //CGFloat w = self.suffixView.textStorage.size.width;
+        //[self.suffixView setWidth:w];
+        
+        [self.suffixView setHidden:[self.string isEqualToString:self.uneditedTextString]];
     }
-    
-    [self.suffixView setHidden:[self.string isEqualToString:self.uneditedTextString]];
 }
 
 
@@ -213,13 +216,13 @@
 
 - (BOOL)resignFirstResponder
 {
-    NSLog(@"resign");
+    //NSLog(@"resign");
     
     if ([self.string.strip isEqualToString:@""])
     {
         self.string = self.uneditedTextString;
         [self updateTheme];
-        NSLog(@"string on resign = '%@'", self.string);
+        //NSLog(@"string on resign = '%@'", self.string);
     }
     
     return [super resignFirstResponder];

@@ -478,4 +478,26 @@
     }
 }
 
+- (void)drawVerticalLineAtX:(CGFloat)x
+{
+    NSBezierPath *aPath = [NSBezierPath bezierPath];
+    [aPath setLineCapStyle:NSSquareLineCapStyle];
+    [aPath setLineWidth:1.0];
+    [aPath moveToPoint:NSMakePoint(x, 0.0)];
+    [aPath lineToPoint:NSMakePoint(x, self.height)];
+    [aPath stroke];
+}
+
+- (void)drawHorizontalLineAtY:(CGFloat)y
+{
+    //[[NSColor colorWithCalibratedWhite:.7 alpha:1.0] set];
+    
+    NSBezierPath *aPath = [NSBezierPath bezierPath];
+    [aPath setLineCapStyle:NSSquareLineCapStyle];
+    [aPath setLineWidth:1.0];
+    [aPath moveToPoint:NSMakePoint(0.0, y)];
+    [aPath lineToPoint:NSMakePoint(self.width, y)];
+    [aPath stroke];
+}
+
 @end

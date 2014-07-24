@@ -3,6 +3,7 @@
 #import "NavTableCell.h"
 #import "NavColumn.h"
 #import "NavTheme.h"
+#import "NSCell+extra.h"
 
 @implementation NavTableCell
 
@@ -273,6 +274,32 @@
                 withAttributes:noteAttributes];
         }
     }
+
+    [[NSColor colorWithCalibratedWhite:.3 alpha:1.0] set];
+
+    /*
+    if (self.isSelected)
+    {
+        [NSGraphicsContext saveGraphicsState];
+        NSBezierPath* clipPath = [NSBezierPath bezierPath];
+        [clipPath appendBezierPathWithRect:cellFrame];
+        [clipPath addClip];
+       
+        [self drawHorizontalLineAtY:0 inRect:cellFrame];
+        [self drawHorizontalLineAtY:cellFrame.size.height inRect:cellFrame];
+
+        //[self drawVerticalLineAtX:0 inRect:cellFrame];
+        //[self drawVerticalLineAtX:cellFrame.size.width inRect:cellFrame];
+        
+        [NSGraphicsContext restoreGraphicsState];
+    }
+    */
+    
+    /*
+    [self drawVerticalLineAtX:0 inRect:cellFrame];
+    [self drawVerticalLineAtX:cellFrame.size.width inRect:cellFrame];
+    */
+
 }
 
 - (NSString *)string:(NSString *)s

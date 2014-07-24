@@ -11,19 +11,17 @@
 
 @implementation NavTableView
 
-/*
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
     
     if (self)
     {
-        // Initialization code here.
+        //[self setIntercellSpacing:NSMakeSize(10, 10)];
     }
     
     return self;
 }
-*/
 
 - (void)drawRect:(NSRect)dirtyRect
 {

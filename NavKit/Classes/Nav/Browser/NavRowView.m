@@ -230,6 +230,16 @@
                withAttributes:noteAttributes];
         }
     }
+    /*
+    //if (self.isSelected)
+    {
+        [self lockFocus];
+        [[NSColor colorWithCalibratedWhite:1.0 alpha:1.0] set];
+        [self drawHorizontalLineAtY:1];
+        [self drawHorizontalLineAtY:self.height-1];
+        [self unlockFocus];
+    }
+    */
 }
 
 - (NSString *)string:(NSString *)s

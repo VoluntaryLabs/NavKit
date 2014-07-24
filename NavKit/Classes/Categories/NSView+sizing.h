@@ -76,4 +76,9 @@
 - (void)setAllSubviewToWidth:(CGFloat)aWidth;
 - (void)setAllSubviewToHeight:(CGFloat)aHeight;
 
+// drawing
+
+- (void)drawHorizontalLineAtY:(CGFloat)y;
+- (void)drawVerticalLineAtX:(CGFloat)x;
+
 @end

@@ -17,8 +17,6 @@
 		AA09C84D192D582D00317130 /* NavColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = AA09C836192D582D00317130 /* NavColumn.m */; };
 		AA09C84E192D582D00317130 /* NavProgressController.h in Headers */ = {isa = PBXBuildFile; fileRef = AA09C837192D582D00317130 /* NavProgressController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA09C84F192D582D00317130 /* NavProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA09C838192D582D00317130 /* NavProgressController.m */; };
-		AA09C850192D582D00317130 /* NavRowView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA09C839192D582D00317130 /* NavRowView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA09C851192D582D00317130 /* NavRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA09C83A192D582D00317130 /* NavRowView.m */; };
 		AA09C854192D582D00317130 /* NavTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AA09C83D192D582D00317130 /* NavTableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA09C855192D582D00317130 /* NavTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA09C83E192D582D00317130 /* NavTableCell.m */; };
 		AA09C856192D582D00317130 /* NavTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA09C83F192D582D00317130 /* NavTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -50,6 +48,8 @@
 		AA0F52C519073A3800F7370B /* reply_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0F52B619073A3800F7370B /* reply_inactive.png */; };
 		AA0F52C619073A3800F7370B /* send_active.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0F52B719073A3800F7370B /* send_active.png */; };
 		AA0F52C719073A3800F7370B /* send_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0F52B819073A3800F7370B /* send_inactive.png */; };
+		AA38C16419808554003CDA68 /* NSCell+extra.h in Headers */ = {isa = PBXBuildFile; fileRef = AA38C16219808554003CDA68 /* NSCell+extra.h */; };
+		AA38C16519808554003CDA68 /* NSCell+extra.m in Sources */ = {isa = PBXBuildFile; fileRef = AA38C16319808554003CDA68 /* NSCell+extra.m */; };
 		AA803E9A193FD9C60090E619 /* NavDescriptionView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA803E98193FD9C60090E619 /* NavDescriptionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA803E9B193FD9C60090E619 /* NavDescriptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA803E99193FD9C60090E619 /* NavDescriptionView.m */; };
 		AA86B9C818FF336700D3BDB0 /* NSColor+array.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B99818FF336700D3BDB0 /* NSColor+array.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -149,8 +149,6 @@
 		AA09C836192D582D00317130 /* NavColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavColumn.m; sourceTree = "<group>"; };
 		AA09C837192D582D00317130 /* NavProgressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavProgressController.h; sourceTree = "<group>"; };
 		AA09C838192D582D00317130 /* NavProgressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavProgressController.m; sourceTree = "<group>"; };
-		AA09C839192D582D00317130 /* NavRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavRowView.h; sourceTree = "<group>"; };
-		AA09C83A192D582D00317130 /* NavRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavRowView.m; sourceTree = "<group>"; };
 		AA09C83D192D582D00317130 /* NavTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavTableCell.h; sourceTree = "<group>"; };
 		AA09C83E192D582D00317130 /* NavTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavTableCell.m; sourceTree = "<group>"; };
 		AA09C83F192D582D00317130 /* NavTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavTableView.h; sourceTree = "<group>"; };
@@ -182,6 +180,8 @@
 		AA0F52B619073A3800F7370B /* reply_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply_inactive.png; sourceTree = "<group>"; };
 		AA0F52B719073A3800F7370B /* send_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = send_active.png; sourceTree = "<group>"; };
 		AA0F52B819073A3800F7370B /* send_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = send_inactive.png; sourceTree = "<group>"; };
+		AA38C16219808554003CDA68 /* NSCell+extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCell+extra.h"; sourceTree = "<group>"; };
+		AA38C16319808554003CDA68 /* NSCell+extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCell+extra.m"; sourceTree = "<group>"; };
 		AA803E98193FD9C60090E619 /* NavDescriptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavDescriptionView.h; sourceTree = "<group>"; };
 		AA803E99193FD9C60090E619 /* NavDescriptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavDescriptionView.m; sourceTree = "<group>"; };
 		AA86B99818FF336700D3BDB0 /* NSColor+array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+array.h"; sourceTree = "<group>"; };
@@ -284,8 +284,6 @@
 				AA09C836192D582D00317130 /* NavColumn.m */,
 				AA09C837192D582D00317130 /* NavProgressController.h */,
 				AA09C838192D582D00317130 /* NavProgressController.m */,
-				AA09C839192D582D00317130 /* NavRowView.h */,
-				AA09C83A192D582D00317130 /* NavRowView.m */,
 				AA09C83D192D582D00317130 /* NavTableCell.h */,
 				AA09C83E192D582D00317130 /* NavTableCell.m */,
 				AA09C83F192D582D00317130 /* NavTableView.h */,
@@ -375,6 +373,8 @@
 				AA86B9A718FF336700D3BDB0 /* NSWindow+positioning.m */,
 				AA09C7F5192C362C00317130 /* NSImage+nav.h */,
 				AA09C7F6192C362C00317130 /* NSImage+nav.m */,
+				AA38C16219808554003CDA68 /* NSCell+extra.h */,
+				AA38C16319808554003CDA68 /* NSCell+extra.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -548,12 +548,12 @@
 				AA86B9C818FF336700D3BDB0 /* NSColor+array.h in Headers */,
 				AA09C82F192D582800317130 /* NavAdvTextView.h in Headers */,
 				AA09C84A192D582D00317130 /* NavAppController.h in Headers */,
-				AA09C850192D582D00317130 /* NavRowView.h in Headers */,
 				AA09C86F192D5E7700317130 /* NavDataSlotView.h in Headers */,
 				AA09C84C192D582D00317130 /* NavColumn.h in Headers */,
 				AA09C871192D5E7700317130 /* NavMirrorView.h in Headers */,
 				AA09C858192D582D00317130 /* NavView.h in Headers */,
 				AA09C856192D582D00317130 /* NavTableView.h in Headers */,
+				AA38C16419808554003CDA68 /* NSCell+extra.h in Headers */,
 				AA09C86D192D5E7700317130 /* NavActionSlotView.h in Headers */,
 				AA09C854192D582D00317130 /* NavTableCell.h in Headers */,
 				AA09C84E192D582D00317130 /* NavProgressController.h in Headers */,
@@ -731,6 +731,7 @@
 				AA09C870192D5E7700317130 /* NavDataSlotView.m in Sources */,
 				AA86B9CD18FF336700D3BDB0 /* NSDate+extra.m in Sources */,
 				AA09C857192D582D00317130 /* NavTableView.m in Sources */,
+				AA38C16519808554003CDA68 /* NSCell+extra.m in Sources */,
 				AA86B9EA18FF336800D3BDB0 /* NavRoundButtonView.m in Sources */,
 				AA09C874192D5E7700317130 /* NavSlotView.m in Sources */,
 				AA86B9F218FF336800D3BDB0 /* NavMarginTextView.m in Sources */,
@@ -741,7 +742,6 @@
 				AA86B9CB18FF336700D3BDB0 /* NSColor+Hex.m in Sources */,
 				AA86B9E418FF336800D3BDB0 /* NavTheme.m in Sources */,
 				AA09C84D192D582D00317130 /* NavColumn.m in Sources */,
-				AA09C851192D582D00317130 /* NavRowView.m in Sources */,
 				AA86B9C918FF336700D3BDB0 /* NSColor+array.m in Sources */,
 				AA803E9B193FD9C60090E619 /* NavDescriptionView.m in Sources */,
 				AA09C855192D582D00317130 /* NavTableCell.m in Sources */,

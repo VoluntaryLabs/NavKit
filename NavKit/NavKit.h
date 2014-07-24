@@ -13,7 +13,7 @@
 #import "NavAppController.h"
 #import "NavWindow.h"
 #import "NavColumn.h"
-#import "NavRowView.h"
+//#import "NavRowView.h"
 #import "NavTableCell.h"
 #import "NavTableView.h"
 #import "NavView.h"

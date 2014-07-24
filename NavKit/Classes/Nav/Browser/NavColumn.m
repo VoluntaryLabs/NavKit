@@ -59,7 +59,7 @@
     
     self.tableView = [[NavTableView alloc] initWithFrame:self.scrollView.bounds];
     self.tableView.eventDelegate = self;
-    [self.tableView setIntercellSpacing:NSMakeSize(0, 0)];
+    [self.tableView setIntercellSpacing:NSMakeSize(0, 1)];
     
     [self.tableView setAutoresizesSubviews:YES];
     [self.tableView setAutoresizingMask:NSViewHeightSizable];
@@ -125,6 +125,14 @@
      [super drawRect:f];
      */
     [self setNeedsDisplay:NO];
+    
+    /*
+    [self lockFocus];
+    [[NSColor colorWithCalibratedWhite:1.0 alpha:1.0] set];
+    [self drawVerticalLineAtX:0];
+    [self drawVerticalLineAtX:self.width];
+    [self unlockFocus];
+    */
 }
 
 - (NSArray *)allChildren
