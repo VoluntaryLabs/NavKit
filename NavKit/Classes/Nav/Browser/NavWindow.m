@@ -8,6 +8,7 @@
 
 #import "NavWindow.h"
 #import "NSView+sizing.h"
+#import "NavColumn.h"
 
 @implementation NavWindow
 
@@ -36,7 +37,13 @@
                             styleMask:windowStyle
                               backing:bufferingType
                                 defer:deferCreation];
-
+    
+    
+    _backgroundView = [[NavColoredView alloc] initWithFrame:NSMakeRect(0, 0, contentRect.size.width, contentRect.size.height - [NavColumn actionStripHeight])];
+    [_backgroundView setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable];
+    [_backgroundView setBackgroundColor:[NSColor blackColor]];
+    [self.contentView addSubview:_backgroundView];
+    
     [self setupBrowser];
     
     // add full screen support to window
@@ -53,10 +60,27 @@
 
 - (void)setupBrowser
 {
+    _scrollView = [[NSScrollView alloc] initWithFrame:self.contentFrame];
+    [self.contentView addSubview:_scrollView];
+
+    [_scrollView setDrawsBackground:NO];
+    //[_scrollView setBackgroundColor:[NSColor redColor]];
+    [_scrollView setBorderType:NSNoBorder];
+    [_scrollView setAutohidesScrollers:NO];
+    [_scrollView setAutoresizesSubviews:YES];
+    [_scrollView setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable];
+    [_scrollView setHasHorizontalScroller:YES];
+    [_scrollView setHasVerticalScroller:NO];
+    [_scrollView setAllowsMagnification:NO];
+    [_scrollView setVerticalScrollElasticity:NSScrollElasticityNone];
+    [_scrollView setHorizontalScrollElasticity:NSScrollElasticityNone];
+    
     // add main view
     _navView = [[NavView alloc] initWithFrame:self.contentFrame];
-    [self.contentView addSubview:_navView];
-    
+    //[self.contentView addSubview:_navView];
+    [_scrollView setDocumentView:_navView];
+
+
     // setup progress indicator
     _progressIndicator = [[NSProgressIndicator alloc] initWithFrame:NSMakeRect(5, ((NSView *)self.contentView).height - 22, 16, 16)];
     [self.contentView addSubview:_progressIndicator];

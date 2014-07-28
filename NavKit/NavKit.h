@@ -17,6 +17,7 @@
 #import "NavTableCell.h"
 #import "NavTableView.h"
 #import "NavView.h"
+#import "NavVerticalScrollView.h"
 
 // cocoa categories
 

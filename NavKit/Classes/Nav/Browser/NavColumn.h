@@ -11,14 +11,15 @@
 #import "NavColoredView.h"
 #import "NavSearchField.h"
 #import "NavTableView.h"
+#import "NavVerticalScrollView.h"
 
 @interface NavColumn : NSView <NSTableViewDataSource, NSTableViewDelegate, NavSearchFieldDelegate>
 
 @property (assign, nonatomic) NavView *navView;
-@property (strong, nonatomic) NavNode * node;
+@property (strong, nonatomic) NavNode *node;
 @property (strong, nonatomic) NavSearchField *searchField;
 
-@property (strong, nonatomic) NSScrollView *scrollView;
+@property (strong, nonatomic) NavVerticalScrollView *scrollView;
 @property (strong, nonatomic) NavTableView *tableView;
 @property (strong, nonatomic) NSTableColumn *tableColumn;
 @property (strong, nonatomic) NavColoredView *documentView; // view within scrollview containing headerView and tableView
@@ -29,11 +30,12 @@
 
 @property (strong, nonatomic) NSView *actionStrip;
 @property (assign, nonatomic) BOOL isUpdating;
-@property (assign, nonatomic) CGFloat actionStripHeight;
 
-@property (strong, nonatomic) NavNode * lastSelectedChild;
+@property (strong, nonatomic) NavNode *lastSelectedChild;
 
 @property (assign, nonatomic) BOOL isInlined;
+
++ (CGFloat)actionStripHeight;
 
 - (void)didAddToNavView;
 - (void)prepareToDisplay;

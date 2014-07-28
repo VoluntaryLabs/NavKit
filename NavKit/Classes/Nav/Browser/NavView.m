@@ -71,15 +71,34 @@
     }
 
     [column didAddToNavView];
+    [self fitToColumns];
     
     return column;
+}
+
+- (void)setFrame:(NSRect)frameRect
+{
+    frameRect.size.width = self.columnsWidth;
+    [super setFrame:frameRect];
+}
+
+- (void)fitToColumns
+{
+    self.width = self.columnsWidth;
 }
 
 - (CGFloat)columnsWidth
 {
     NSView *lastColumn = self.navColumns.lastObject;
-    NSRect f = lastColumn.frame;
-    return f.origin.x + f.size.width;
+    
+    if (lastColumn)
+    {
+        CGFloat w = ((NSInteger)(lastColumn.x + lastColumn.width));
+        NSLog(@"w = %f", (float)w);
+        return w;
+    }
+    
+    return 0;
 }
 
 - (BOOL)shouldSelectNode:(NavNode *)node inColumn:inColumn

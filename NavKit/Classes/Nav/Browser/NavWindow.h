@@ -8,10 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 #import "NavView.h"
+#import "NavColoredView.h"
 
 @interface NavWindow : NSWindow
 
 @property (strong, nonatomic) NSView *splashView;
+@property (strong, nonatomic) NSScrollView *scrollView;
+@property (strong, nonatomic) NavColoredView *backgroundView;
 @property (strong, nonatomic) NavView *navView;
 @property (strong, nonatomic) NSProgressIndicator *progressIndicator;
 

@@ -17,6 +17,11 @@
 
 @implementation NavColumn
 
++ (CGFloat)actionStripHeight
+{
+    return 40.0;
+}
+
 - (BOOL)isOpaque
 {
     return NO;
@@ -25,7 +30,6 @@
 - (id)initWithFrame:(NSRect)frameRect
 {
     self = [super initWithFrame:frameRect];
-    self.actionStripHeight = 40.0;
     [self setAutoresizesSubviews:YES];
     [self setAutoresizingMask:NSViewHeightSizable /* | NSViewWidthSizable*/];
     [self setupSubviews];
@@ -39,14 +43,14 @@
 
 - (void)setupSubviews
 {
-    CGFloat h = self.actionStripHeight;
+    CGFloat h = self.class.actionStripHeight;
     self.actionStrip = [[NSView alloc] initWithFrame:NSMakeRect(0, self.height - h, self.width, h)];
     [self.actionStrip setAutoresizingMask:NSViewMinYMargin];
     [self addSubview:self.actionStrip];
     
     // scrollview
     
-    self.scrollView = [[NSScrollView alloc] initWithFrame:self.scollFrameSansStrip];
+    self.scrollView = [[NavVerticalScrollView alloc] initWithFrame:self.scollFrameSansStrip];
     [self addSubview:self.scrollView];
     [self.scrollView setHasVerticalScroller:YES];
     [self.scrollView setHasHorizontalRuler:NO];
@@ -111,7 +115,7 @@
     NSRect frame = self.frame;
     frame.origin.x = 0;
     frame.origin.y = 0;
-    frame.size.height -= self.actionStripHeight;
+    frame.size.height -= self.class.actionStripHeight;
     return frame;
 }
 
@@ -338,8 +342,25 @@
 
 - (void)fitWidthToRemainingSpace
 {
-    CGFloat w = fabs(self.navView.width - self.x);
+    //[self setWidth:850];
+    //self.contentView.width = self.width;
+    
+    CGFloat minWidth = 850; //self.node.nodeSuggestedWidth;
+    
+    if (minWidth == 0)
+    {
+        minWidth = 850;
+    }
+    
+    CGFloat w = fabs(((NSView *)self.navView.window.contentView).width - self.x);
+    
+    if (w < minWidth)
+    {
+        w = minWidth;
+    }
+    
     [self setWidth:w];
+    self.contentView.width = self.width;
 }
 
 - (void)didAddToNavView
@@ -436,7 +457,8 @@
     //aView = [[NavColoredView alloc] initWithFrame:NSMakeRect(0, 0, 100, 100)];
     //[(NavColoredView *)aView setBackgroundColor:[NSColor redColor]];
     [self setAutoresizesSubviews:YES];
-    [self setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
+    //[self setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
+    [self setAutoresizingMask:NSViewHeightSizable];
     [aView setAutoresizingMask:aView.autoresizingMask | NSViewWidthSizable];
     
     [self.scrollView removeFromSuperview];
