@@ -94,7 +94,7 @@
     if (lastColumn)
     {
         CGFloat w = ((NSInteger)(lastColumn.x + lastColumn.width));
-        NSLog(@"w = %f", (float)w);
+        //NSLog(@"w = %f", (float)w);
         return w;
     }
     
