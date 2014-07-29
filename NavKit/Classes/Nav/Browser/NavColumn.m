@@ -348,6 +348,7 @@
         
         [self setWidth:w];
     }
+    /*
     else
     {
         //[self setWidth:850];
@@ -370,6 +371,7 @@
         [self setWidth:w];
         self.contentView.width = self.width;
     }
+    */
 }
 
 - (void)didAddToNavView
@@ -385,6 +387,11 @@
     else if (self.node.nodeSuggestedWidth == 0)
     {
         [self fitWidthToRemainingSpace];
+    }
+    else
+    {
+        self.width = self.node.nodeSuggestedWidth;
+        self.contentView.width = self.width;
     }
     
     [self.tableView setBackgroundColor:self.themeDict.unselectedBgColor];
