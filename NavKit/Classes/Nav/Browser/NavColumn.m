@@ -342,25 +342,34 @@
 
 - (void)fitWidthToRemainingSpace
 {
-    //[self setWidth:850];
-    //self.contentView.width = self.width;
-    
-    CGFloat minWidth = 850; //self.node.nodeSuggestedWidth;
-    
-    if (minWidth == 0)
+    if (YES)
     {
-        minWidth = 850;
+        CGFloat w = fabs(((NSView *)self.navView.window.contentView).width - self.x);
+        
+        [self setWidth:w];
     }
-    
-    CGFloat w = fabs(((NSView *)self.navView.window.contentView).width - self.x);
-    
-    if (w < minWidth)
+    else
     {
-        w = minWidth;
+        //[self setWidth:850];
+        //self.contentView.width = self.width;
+        
+        CGFloat minWidth = 850; //self.node.nodeSuggestedWidth;
+        
+        if (minWidth == 0)
+        {
+            minWidth = 850;
+        }
+        
+        CGFloat w = fabs(((NSView *)self.navView.window.contentView).width - self.x);
+        
+        if (w < minWidth)
+        {
+            w = minWidth;
+        }
+        
+        [self setWidth:w];
+        self.contentView.width = self.width;
     }
-    
-    [self setWidth:w];
-    self.contentView.width = self.width;
 }
 
 - (void)didAddToNavView
