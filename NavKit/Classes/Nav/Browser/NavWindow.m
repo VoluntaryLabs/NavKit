@@ -17,13 +17,13 @@
     NavWindow *instance = [[NavWindow alloc]
                            initWithContentRect:NSMakeRect(0, 0, 1600, 700)
                            styleMask:  NSTitledWindowMask |
-                                       NSClosableWindowMask |
+                                       //NSClosableWindowMask |
                                        NSMiniaturizableWindowMask |
                                        NSResizableWindowMask |
                                        NSTexturedBackgroundWindowMask
                            backing:NSBackingStoreBuffered
                            defer:NO];
-    
+    [instance setReleasedWhenClosed:NO];
     return instance;
     
 }
