@@ -81,15 +81,26 @@
     [_scrollView setDocumentView:_navView];
 
 
+
+    [self setupProgress];
+}
+
+- (void)setupProgress
+{
     // setup progress indicator
-    _progressIndicator = [[NSProgressIndicator alloc] initWithFrame:NSMakeRect(5, ((NSView *)self.contentView).height - 22, 16, 16)];
+    _progressIndicator = [[NSProgressIndicator alloc] initWithFrame:NSMakeRect(20, ((NSView *)self.contentView).height - 28, 16, 16)];
     [self.contentView addSubview:_progressIndicator];
     [_progressIndicator setUsesThreadedAnimation:YES];
     [_progressIndicator setIndeterminate:YES];
     [_progressIndicator setBezeled:NO];
-    [_progressIndicator setDisplayedWhenStopped:NO];
+    [_progressIndicator setDisplayedWhenStopped:YES];
     [_progressIndicator setStyle:NSProgressIndicatorSpinningStyle];
+    [_progressIndicator setHidden:NO];
+    //[_progressIndicator startAnimation:nil];
     
+    self.progressController = [[NavProgressController alloc] init];
+    [self.progressController setProgress:_progressIndicator];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ProgressPush" object:self];
 }
 
 - (void)showSplashView
@@ -98,14 +109,14 @@
     [_splashView setFrame:self.contentFrame];
     [self.contentView addSubview:_splashView];
     [_navView setHidden:YES];
-    [_progressIndicator setHidden:YES];
+    //[_progressIndicator setHidden:NO];
 }
 
 - (void)hideSplashView
 {
     [_splashView removeFromSuperview];
     [_navView setHidden:NO];
-    [_progressIndicator setHidden:NO];
+    //[_progressIndicator setHidden:NO];
 }
 
 @end

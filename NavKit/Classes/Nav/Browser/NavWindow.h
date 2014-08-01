@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "NavView.h"
 #import "NavColoredView.h"
+#import "NavProgressController.h"
 
 @interface NavWindow : NSWindow
 
@@ -17,6 +18,7 @@
 @property (strong, nonatomic) NavColoredView *backgroundView;
 @property (strong, nonatomic) NavView *navView;
 @property (strong, nonatomic) NSProgressIndicator *progressIndicator;
+@property (strong, nonatomic) NavProgressController *progressController;
 
 + (NavWindow *)newWindow;
 

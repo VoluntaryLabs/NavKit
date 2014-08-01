@@ -16,9 +16,7 @@
     self.navWindow = [NavWindow newWindow];
     [_navWindow center];
     [_navWindow orderFront:nil];
-    
-    [self setupProgress];
-    
+        
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ProgressPop" object:self];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -63,13 +61,6 @@
     }
 }
 
-- (void)setupProgress
-{
-    // move this stuff to NavWindow
-    self.progressController = [[NavProgressController alloc] init];
-    [self.progressController setProgress:_navWindow.progressIndicator];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ProgressPush" object:self];
-}
 
 - (NavColumn *)firstNavColumn
 {

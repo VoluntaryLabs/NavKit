@@ -39,6 +39,7 @@
 
 - (void)progressPush:(NSNotification *)note
 {
+    NSLog(@"push");
     self.progressCount ++;
     [self update];
 }
@@ -47,6 +48,7 @@
 {
     if (self.progressCount > 0)
     {
+        NSLog(@"pop");
         self.progressCount --;
         [self update];
     }
@@ -61,6 +63,8 @@
 
 - (void)update
 {
+    //[self.progress startAnimation:self]; return;
+    
     if (self.progressCount)
     {
         self.useCount ++; // not pretty but simpler than managing thread
@@ -76,8 +80,13 @@
 
 - (void)startIfNeeded:(NSNumber *)startCount
 {
-    sleep(1);
-    
+    [self performSelector:@selector(startIfNeeded2:) withObject:startCount afterDelay:0.01];
+    //sleep(1);
+    //[self startIfNeeded2:startCount];
+}
+
+- (void)startIfNeeded2:(NSNumber *)startCount
+{
     if (self.progressCount && startCount.integerValue == self.useCount)
     {
         [self.progress startAnimation:self];
