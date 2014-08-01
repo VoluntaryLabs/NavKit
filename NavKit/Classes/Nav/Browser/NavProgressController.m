@@ -7,6 +7,7 @@
 //
 
 #import "NavProgressController.h"
+#import <NavKit/NavKit.h>
 
 @implementation NavProgressController
 
@@ -30,26 +31,30 @@
                                              selector:@selector(progressPop:)
                                                  name:@"ProgressPop"
                                                object:nil];
+    
+    [self performSelectorInBackground:@selector(updateFromAnimationThread)
+                           withObject:nil];
 }
 
 - (void)dealloc
 {
+    // terminate the animation thread
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)progressPush:(NSNotification *)note
 {
-    NSLog(@"push");
-    self.progressCount ++;
+    self.pushCount ++;
+    NSLog(@"push %i", (int)self.pushCount);
     [self update];
 }
 
 - (void)progressPop:(NSNotification *)note
 {
-    if (self.progressCount > 0)
+    if (self.pushCount > 0)
     {
-        NSLog(@"pop");
-        self.progressCount --;
+        self.pushCount --;
+        NSLog(@"pop %i", (int)self.pushCount);
         [self update];
     }
 }
@@ -57,40 +62,53 @@
 - (void)setProgress:(NSProgressIndicator *)progress
 {
     _progress = progress;
-    [self.progress setDisplayedWhenStopped:NO];
-    [self.progress setUsesThreadedAnimation:YES];
+    
+    [_progress setIndeterminate:YES];
+    [_progress setStyle:NSProgressIndicatorSpinningStyle];
+    [_progress setUsesThreadedAnimation:NO];
+    [_progress setBezeled:NO];
+    [_progress setDisplayedWhenStopped:YES];
+    //[_progressIndicator setHidden:NO];
+    //[_progressIndicator startAnimation:nil];
+    
+    //[self.progress setDisplayedWhenStopped:NO];
+    //[self.progress startAnimation:nil];
+    _onscreenX = _progress.x;
 }
 
 - (void)update
 {
-    //[self.progress startAnimation:self]; return;
-    
-    if (self.progressCount)
+    /*
+    if (self.pushCount)
     {
-        self.useCount ++; // not pretty but simpler than managing thread
+        [self incrementAnimation];
         
-        [self performSelectorInBackground:@selector(startIfNeeded:)
-                               withObject:[NSNumber numberWithInteger:self.useCount]];
+        if (!self.isAnimating)
+        {
+            self.isAnimating = YES;
+
+        }
     }
-    else
+    */
+}
+
+- (void)updateFromAnimationThread
+{
+    while (YES)
     {
-        [self.progress stopAnimation:self];
+        if (self.pushCount)
+        {
+            _progress.frameCenterRotation = _progress.frameCenterRotation - 360.0/16.0;
+            [_progress setNeedsDisplay:YES];
+            [_progress.window display];
+        }
+        
+        [_progress setHidden:self.pushCount == 0];
+
+        [NSThread sleepForTimeInterval:1.0/30.0];
+        [NSThread setThreadPriority:0.0];
     }
 }
 
-- (void)startIfNeeded:(NSNumber *)startCount
-{
-    [self performSelector:@selector(startIfNeeded2:) withObject:startCount afterDelay:0.01];
-    //sleep(1);
-    //[self startIfNeeded2:startCount];
-}
-
-- (void)startIfNeeded2:(NSNumber *)startCount
-{
-    if (self.progressCount && startCount.integerValue == self.useCount)
-    {
-        [self.progress startAnimation:self];
-    }
-}
 
 @end

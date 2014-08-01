@@ -90,13 +90,7 @@
     // setup progress indicator
     _progressIndicator = [[NSProgressIndicator alloc] initWithFrame:NSMakeRect(20, ((NSView *)self.contentView).height - 28, 16, 16)];
     [self.contentView addSubview:_progressIndicator];
-    [_progressIndicator setUsesThreadedAnimation:YES];
-    [_progressIndicator setIndeterminate:YES];
-    [_progressIndicator setBezeled:NO];
-    [_progressIndicator setDisplayedWhenStopped:YES];
-    [_progressIndicator setStyle:NSProgressIndicatorSpinningStyle];
-    [_progressIndicator setHidden:NO];
-    //[_progressIndicator startAnimation:nil];
+
     
     self.progressController = [[NavProgressController alloc] init];
     [self.progressController setProgress:_progressIndicator];
