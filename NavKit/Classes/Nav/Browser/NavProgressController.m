@@ -45,7 +45,7 @@
 - (void)progressPush:(NSNotification *)note
 {
     self.pushCount ++;
-    NSLog(@"push %i", (int)self.pushCount);
+    //NSLog(@"push %i", (int)self.pushCount);
     [self update];
 }
 
@@ -54,7 +54,7 @@
     if (self.pushCount > 0)
     {
         self.pushCount --;
-        NSLog(@"pop %i", (int)self.pushCount);
+        //NSLog(@"pop %i", (int)self.pushCount);
         [self update];
     }
 }
