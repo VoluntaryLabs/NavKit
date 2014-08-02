@@ -32,6 +32,7 @@
     self = [super initWithFrame:frameRect];
     [self setAutoresizesSubviews:YES];
     [self setAutoresizingMask:NSViewHeightSizable /* | NSViewWidthSizable*/];
+    //[self setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable];
     [self setupSubviews];
     return self;
 }
@@ -347,6 +348,7 @@
         CGFloat w = fabs(((NSView *)self.navView.window.contentView).width - self.x);
         
         [self setWidth:w];
+        [self setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable];
     }
     /*
     else
@@ -374,7 +376,12 @@
     */
 }
 
-- (void)didAddToNavView
+- (void)layout
+{
+    [self updateWidth];
+}
+
+- (void)updateWidth
 {
     NSView *nodeView = [self.node nodeView];
     
@@ -393,6 +400,11 @@
         self.width = self.node.nodeSuggestedWidth;
         self.contentView.width = self.width;
     }
+}
+
+- (void)didAddToNavView
+{
+    [self updateWidth];
     
     [self.tableView setBackgroundColor:self.themeDict.unselectedBgColor];
     // if using document view

@@ -78,8 +78,18 @@
 
 - (void)setFrame:(NSRect)frameRect
 {
-    frameRect.size.width = self.columnsWidth;
+    //frameRect.size.width = self.columnsWidth;
+    frameRect.size.width = ((NSView *)self.window.contentView).width;
     [super setFrame:frameRect];
+    NSLog(@"navView width %f", (float)frameRect.size.width);
+    
+    for (id view in self.subviews)
+    {
+        if ([view respondsToSelector:@selector(layout)])
+        {
+            [view layout];
+        }
+    }
 }
 
 - (void)fitToColumns
