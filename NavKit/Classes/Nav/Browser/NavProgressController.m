@@ -31,9 +31,6 @@
                                              selector:@selector(progressPop:)
                                                  name:@"ProgressPop"
                                                object:nil];
-    
-    [self performSelectorInBackground:@selector(updateFromAnimationThread)
-                           withObject:nil];
 }
 
 - (void)dealloc
@@ -68,47 +65,102 @@
     [_progress setUsesThreadedAnimation:NO];
     [_progress setBezeled:NO];
     [_progress setDisplayedWhenStopped:YES];
+    [_progress setHidden:YES];
     //[_progressIndicator setHidden:NO];
     //[_progressIndicator startAnimation:nil];
     
     //[self.progress setDisplayedWhenStopped:NO];
     //[self.progress startAnimation:nil];
-    _onscreenX = _progress.x;
 }
 
 - (void)update
 {
     /*
-    if (self.pushCount)
+    if (self.pushCount && !threadIsRunning)
     {
-        [self incrementAnimation];
-        
-        if (!self.isAnimating)
-        {
-            self.isAnimating = YES;
+        [self performSelectorInBackground:@selector(updateFromAnimationThread)
+                               withObject:nil];
 
-        }
     }
     */
+    
+    /*
+    BOOL hide = self.pushCount == 0;
+    [self.progress setHidden:hide];
+    [self.progress setNeedsDisplay:YES];
+    [self.progress.window display];
+     */
 }
+
+static BOOL threadIsRunning = NO;
 
 - (void)updateFromAnimationThread
 {
-    while (YES)
+    NSInteger fps = 30;
+    NSInteger timeoutPeriod = fps/2;
+    NSInteger timeout = timeoutPeriod;
+    NSInteger timein = timeoutPeriod;
+
+    [NSThread setThreadPriority:0.0];
+
+    if (threadIsRunning)
     {
-        if (self.pushCount)
-        {
-            _progress.frameCenterRotation = _progress.frameCenterRotation - 360.0/16.0;
-            [_progress setNeedsDisplay:YES];
-            [_progress.window display];
-        }
-        
-        [_progress setHidden:self.pushCount == 0];
+        return;
+    }
+    
+    threadIsRunning = YES;
+    
+    [_progress setHidden:NO];
+    
+    while (timein > 0)
+    {
+        [NSThread sleepForTimeInterval:1.0/30.0];
+        timein --;
+    }
+
+    while (self.pushCount && timeout > 0)
+    {
+        _progress.frameCenterRotation = _progress.frameCenterRotation - 360.0/16.0;
+        [_progress setNeedsDisplay:YES];
+        [_progress.window display];
 
         [NSThread sleepForTimeInterval:1.0/30.0];
-        [NSThread setThreadPriority:0.0];
+        
+        if (!self.pushCount)
+        {
+            timeout --;
+        }
+        else
+        {
+            timeout = timeoutPeriod;
+        }
     }
+    
+    [_progress setHidden:YES];
+    threadIsRunning = NO;
 }
+
+/*
+ - (void)updateFromAnimationThread
+ {
+ static BOOL isRunning = NO;
+ 
+ while (YES)
+ {
+ if (self.pushCount)
+ {
+ _progress.frameCenterRotation = _progress.frameCenterRotation - 360.0/16.0;
+ [_progress setNeedsDisplay:YES];
+ [_progress.window display];
+ }
+ 
+ [_progress setHidden:self.pushCount == 0];
+ 
+ [NSThread sleepForTimeInterval:1.0/30.0];
+ [NSThread setThreadPriority:0.0];
+ }
+ }
+*/
 
 
 @end
