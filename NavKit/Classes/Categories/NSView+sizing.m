@@ -193,13 +193,13 @@
 
 - (void)stackSubviewsLeftToRightWithMargin:(CGFloat)margin
 {
-    CGFloat x = 0.0;
+    NSInteger x = 0.0;
 
     for (NSView *view in self.subviews)
     {
         [view setX:x];
         
-        x += view.width + margin;
+        x += (NSInteger)(view.width + margin);
     }
 }
 
