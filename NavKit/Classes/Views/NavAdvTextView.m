@@ -112,11 +112,13 @@
 {
     if (self.uneditedTextString)
     {
+        /*
         if ([self.string hasPrefix:self.uneditedTextString])
         {
             self.string = [self.string after:self.uneditedTextString];
             [self updateTheme];
         }
+        */
         
         if ([self.string isEqualToString:@""] && self.window.firstResponder != self)
         {

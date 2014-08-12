@@ -108,7 +108,21 @@
 - (void)afterEdit
 {
     [_valueText useUneditedTextStringIfNeeded];
-    [self syncToSlot];
+    
+    
+    if (self.dataSlot.syncsWhileEditing)
+    {
+        [self syncToSlot];
+        
+        if (![self.dataSlot isValid])
+        {
+            [self.valueText setTextColor:[NSColor redColor]];
+        }
+        else
+        {
+            [self.valueText setTextColor:[NSColor blackColor]];
+        }
+    }
 }
 
 // text editing
@@ -116,13 +130,16 @@
 - (void)textDidChange:(NSNotification *)aNotification
 {
     NSTextView *aTextView = [aNotification object];
+    NSLog(@"textDidChange 0 '%@'", _valueText.string);
     
     if ([aTextView respondsToSelector:@selector(textDidChange)])
     {
         [(NavAdvTextView *)aTextView textDidChange];
     }
     
+    NSLog(@"textDidChange 1 '%@'", _valueText.string);
     [self afterEdit]; // to show on table cell
+    NSLog(@"textDidChange 2 '%@'", _valueText.string);
 }
 
 - (BOOL)control:(NSControl *)control textShouldEndEditing:(NSText *)aTextView
@@ -154,6 +171,7 @@
     
     [[aNotification object] endEditing];
     [self afterEdit];
+    [self syncToSlot];
 }
 
 - (void)drawRect:(NSRect)dirtyRect

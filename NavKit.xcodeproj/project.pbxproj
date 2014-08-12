@@ -274,7 +274,6 @@
 			isa = PBXGroup;
 			children = (
 				AA09C864192D5E7700317130 /* Mirror */,
-				AA09C832192D582D00317130 /* Browser */,
 			);
 			path = Nav;
 			sourceTree = "<group>";
@@ -299,7 +298,8 @@
 				AA38C177198322DA003CDA68 /* NavVerticalScrollView.h */,
 				AA38C178198322DA003CDA68 /* NavVerticalScrollView.m */,
 			);
-			path = Browser;
+			name = Browser;
+			path = ../Browser;
 			sourceTree = "<group>";
 		};
 		AA09C864192D5E7700317130 /* Mirror */ = {
@@ -311,6 +311,7 @@
 				AA09C86C192D5E7700317130 /* NavSlotView.m */,
 				AA09C867192D5E7700317130 /* NavDataSlotView.h */,
 				AA09C868192D5E7700317130 /* NavDataSlotView.m */,
+				AA09C832192D582D00317130 /* Browser */,
 				AA09C865192D5E7700317130 /* NavActionSlotView.h */,
 				AA09C866192D5E7700317130 /* NavActionSlotView.m */,
 			);
