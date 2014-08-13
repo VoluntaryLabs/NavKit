@@ -114,13 +114,9 @@
     {
         [self syncToSlot];
         
-        if (![self.dataSlot isValid])
+        if (self.dataSlot.canValidate)
         {
-            [self.valueText setTextColor:[NSColor redColor]];
-        }
-        else
-        {
-            [self.valueText setTextColor:[NSColor blackColor]];
+            self.valueText.isValid = [self.dataSlot isValid];
         }
     }
 }
@@ -130,17 +126,43 @@
 - (void)textDidChange:(NSNotification *)aNotification
 {
     NSTextView *aTextView = [aNotification object];
-    NSLog(@"textDidChange 0 '%@'", _valueText.string);
     
     if ([aTextView respondsToSelector:@selector(textDidChange)])
     {
         [(NavAdvTextView *)aTextView textDidChange];
     }
     
-    NSLog(@"textDidChange 1 '%@'", _valueText.string);
     [self afterEdit]; // to show on table cell
-    NSLog(@"textDidChange 2 '%@'", _valueText.string);
 }
+
+- (BOOL)textView:(NSTextView *)aTextView
+shouldChangeTextInRange:(NSRange)affectedCharRange
+replacementString:(NSString *)replacementString
+{
+    if (aTextView == self.valueText && self.dataSlot.canFormat)
+    {
+        NSString *newString = [aTextView.string stringByReplacingCharactersInRange:affectedCharRange
+                                                                    withString:replacementString];
+        
+        NSString *errorDescription;
+        id objectValue;
+        BOOL success = [self.dataSlot.formatter
+                        getObjectValue:&objectValue
+                        forString:newString
+                        errorDescription:&errorDescription];
+        
+        if (success)
+        {
+            return YES;
+        }
+        
+        return NO;
+    }
+    
+    return YES;
+}
+
+
 
 - (BOOL)control:(NSControl *)control textShouldEndEditing:(NSText *)aTextView
 {
