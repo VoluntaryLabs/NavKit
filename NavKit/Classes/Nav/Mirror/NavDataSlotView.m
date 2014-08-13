@@ -141,28 +141,20 @@ replacementString:(NSString *)replacementString
 {
     if (aTextView == self.valueText && self.dataSlot.canFormat)
     {
-        NSString *newString = [aTextView.string stringByReplacingCharactersInRange:affectedCharRange
-                                                                    withString:replacementString];
+        NSString *newString = [aTextView.string
+                               stringByReplacingCharactersInRange:affectedCharRange
+                               withString:replacementString];
         
         NSString *errorDescription;
         id objectValue;
-        BOOL success = [self.dataSlot.formatter
+        return [self.dataSlot.formatter
                         getObjectValue:&objectValue
                         forString:newString
                         errorDescription:&errorDescription];
-        
-        if (success)
-        {
-            return YES;
-        }
-        
-        return NO;
     }
     
     return YES;
 }
-
-
 
 - (BOOL)control:(NSControl *)control textShouldEndEditing:(NSText *)aTextView
 {
