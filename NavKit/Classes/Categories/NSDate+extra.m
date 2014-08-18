@@ -33,6 +33,20 @@
         
         BOOL sameYear = [messageYear isEqualToString:currentYear];
         
+ 
+        NSString *messageHour = [date
+                                 descriptionWithCalendarFormat:@"%I" timeZone:nil
+                                 locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
+        
+        if ([messageHour hasPrefix:@"0"])
+        {
+            messageHour = [messageHour stringByReplacingOccurrencesOfString:@"0" withString:@""];
+        }
+ 
+        NSString *messageMin = [date descriptionWithCalendarFormat:@"%M" timeZone:nil
+                                                      locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]].lowercaseString;
+        NSString *amPm = [date descriptionWithCalendarFormat:@"%p" timeZone:nil
+                                 locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]].lowercaseString;
         /*
          if (hours < 1)
          {
@@ -43,11 +57,12 @@
         if (days < 1)
         {
             //return [NSString stringWithFormat:@"%ihr", (int)hours];
-            return @"Today";
+            return [NSString stringWithFormat:@"%@:%@%@", messageHour, messageMin, amPm];
         }
         
         if (days < 2)
         {
+            //return [NSString stringWithFormat:@"Yesterday at %@:%@%@", messageHour, messageMin, amPm];
             return @"Yesterday";
         }
         
