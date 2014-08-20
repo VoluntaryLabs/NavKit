@@ -22,12 +22,12 @@
 {
     // eventually switch to holding a list of object/action/count we are waiting on?
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
+    [NSNotificationCenter.defaultCenter addObserver:self
                                              selector:@selector(progressPush:)
                                                  name:@"ProgressPush"
                                                object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
+    [NSNotificationCenter.defaultCenter addObserver:self
                                              selector:@selector(progressPop:)
                                                  name:@"ProgressPop"
                                                object:nil];
@@ -36,7 +36,7 @@
 - (void)dealloc
 {
     // terminate the animation thread
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [NSNotificationCenter.defaultCenter removeObserver:self];
 }
 
 - (void)progressPush:(NSNotification *)note

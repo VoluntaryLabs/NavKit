@@ -39,7 +39,7 @@
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [NSNotificationCenter.defaultCenter removeObserver:self];
 }
 
 - (void)setupSubviews
@@ -92,7 +92,7 @@
          }
         
         [self.documentView addSubview:self.tableView];
-        [[NSNotificationCenter defaultCenter] addObserver:self
+        [NSNotificationCenter.defaultCenter addObserver:self
                                                  selector:@selector(updateDocumentView:)
                                                      name:@"NSViewFrameDidChangeNotification"
                                                    object:self.tableView];
@@ -298,21 +298,21 @@
 {
     if (_node != node)
     {
-        [[NSNotificationCenter defaultCenter] removeObserver:self];
+        [NSNotificationCenter.defaultCenter removeObserver:self];
 
         _node = node;
         
-        [[NSNotificationCenter defaultCenter] addObserver:self
+        [NSNotificationCenter.defaultCenter addObserver:self
                                                  selector:@selector(nodeChanged:)
                                                      name:@"NavNodeChanged"
                                                    object:_node];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self
+        [NSNotificationCenter.defaultCenter addObserver:self
                                                  selector:@selector(nodeRemovedChild:)
                                                      name:@"NavNodeRemovedChild"
                                                    object:_node];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self
+        [NSNotificationCenter.defaultCenter addObserver:self
                                                  selector:@selector(nodeAddedChild:)
                                                      name:@"NavNodeAddedChild"
                                                    object:_node];

@@ -17,14 +17,14 @@
     [_navWindow center];
     [_navWindow orderFront:nil];
         
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ProgressPop" object:self];
+    [NSNotificationCenter.defaultCenter postNotificationName:@"ProgressPop" object:self];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
+    [NSNotificationCenter.defaultCenter addObserver:self
                                              selector:@selector(navTitleUpdate:)
                                                  name:@"NavTitleUpdate"
                                                object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
+    [NSNotificationCenter.defaultCenter addObserver:self
                                              selector:@selector(navDockTileUpdate:)
                                                  name:@"NavDocTileUpdate"
                                                object:nil];
@@ -32,7 +32,7 @@
 
 - (void)navDockTileUpdate:(NSNotification *)aNote
 {
-    NSNumber *number = [[aNote object] objectForKey:@"number"];
+    NSNumber *number = [[aNote userInfo] objectForKey:@"number"];
     
     if (number && [number integerValue] > 0)
     {

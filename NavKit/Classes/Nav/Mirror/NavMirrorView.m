@@ -52,7 +52,7 @@
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [NSNotificationCenter.defaultCenter removeObserver:self];
 }
 
 - (void)setFrame:(NSRect)frameRect
@@ -78,11 +78,11 @@
 {
     if (_node != node)
     {
-        [[NSNotificationCenter defaultCenter] removeObserver:_node];
+        [NSNotificationCenter.defaultCenter removeObserver:_node];
         
         _node = node;
         
-        [[NSNotificationCenter defaultCenter] addObserver:self
+        [NSNotificationCenter.defaultCenter addObserver:self
                                                  selector:@selector(nodeChanged:)
                                                      name:nil
                                                    object:_node];

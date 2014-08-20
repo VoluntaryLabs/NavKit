@@ -38,14 +38,14 @@
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [NSNotificationCenter.defaultCenter removeObserver:self];
 }
 
 - (void)setActionSlot:(NavActionSlot *)actionSlot
 {
     _actionSlot = actionSlot;
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
+    [NSNotificationCenter.defaultCenter addObserver:self
                                              selector:@selector(slotChanged:)
                                                  name:nil
                                                object:actionSlot];
