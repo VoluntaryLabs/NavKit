@@ -11,8 +11,6 @@
 
 - (void)applicationDidFinishLaunching: (NSNotification *)aNotification
 {
-    self.dockTile = [[NSApplication sharedApplication] dockTile];
-
     self.navWindow = [NavWindow newWindow];
     [_navWindow center];
     [_navWindow orderFront:nil];
@@ -33,15 +31,17 @@
 - (void)navDockTileUpdate:(NSNotification *)aNote
 {
     NSNumber *number = [[aNote userInfo] objectForKey:@"number"];
-    
+
+    NSDockTile *dockTile = [[NSApplication sharedApplication] dockTile];
+
     if (number && [number integerValue] > 0)
     {
-        [self.dockTile setBadgeLabel:[NSString stringWithFormat: @"%ld",
+        [dockTile setBadgeLabel:[NSString stringWithFormat: @"%ld",
                                       (long)[number integerValue]]];
     }
     else
     {
-        [self.dockTile setBadgeLabel:nil];
+        [dockTile setBadgeLabel:nil];
     }
 }
 
