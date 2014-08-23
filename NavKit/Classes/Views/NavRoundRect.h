@@ -3,7 +3,7 @@
 //  NavKit
 //
 //  Created by Steve Dekorte on 3/30/14.
-//  Copyright (c) 2014 Bitmarkets.org. All rights reserved.
+//  Copyright (c) 2014 voluntary.net. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
