@@ -814,6 +814,16 @@
     
 - (void)sendAction:(NSString *)action toNode:(NavNode *)aNode
 {
+    if (![[aNode actions] containsObject:action])
+    {
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert addButtonWithTitle:@"OK"];
+        [alert setMessageText:[NSString stringWithFormat:@"%@ action unavailable", action]];
+        [alert setInformativeText:@""];
+        [alert setAlertStyle:NSWarningAlertStyle];
+        return;
+    }
+    
     NSString *verifyMessage = [aNode verifyActionMessage:action];
     
     if (verifyMessage)
