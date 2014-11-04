@@ -61,7 +61,6 @@
     }
 }
 
-
 - (NavColumn *)firstNavColumn
 {
     return [[_navWindow.navView navColumns] firstObject];
