@@ -23,6 +23,8 @@
 //@property (strong, nonatomic) IBOutlet NSSearchField *searchField;
 @property (assign, nonatomic) CGFloat actionStripHeight;
 
+@property (assign, nonatomic) NSMutableArray *autoPaths; // basePath -> lastFullPath mapping
+
 - (BOOL)shouldSelectNode:(NavNode *)node inColumn:inColumn;
 
 - (BOOL)canHandleAction:(SEL)aSel;

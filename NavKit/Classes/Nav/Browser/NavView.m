@@ -26,7 +26,22 @@
     self.actionStripHeight = 40.0;
     [self setAutoresizesSubviews:YES];
     [self setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(selectNodeNote:)
+                                                 name:NavNodeSelectedNotification
+                                               object:nil];
     return self;
+}
+
+- (void)selectNodeNote:(NSNotification *)aNote
+{
+    NavNode *node = aNote.object;
+    
+    if (node.rememberedChildPath)
+    {
+        [self selectNodePath:node.rememberedChildPath];
+    }
 }
 
 - (void)setRootNode:(NavNode *)rootNode
@@ -141,9 +156,20 @@
     }
     
     //[self.window makeFirstResponder:inColumn];
+    [node nodePostSelected];
     
     return YES;
 }
+
+/*
+- (void)autoCompletePathIfNeeded:(NavNode *)aNode
+{
+    for (NSArray *autoPathComponents in self.autoPaths)
+    {
+        
+    }
+}
+*/
 
 - (void)clearColumns
 {

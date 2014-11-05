@@ -304,17 +304,17 @@
         
         [NSNotificationCenter.defaultCenter addObserver:self
                                                  selector:@selector(nodeChanged:)
-                                                     name:@"NavNodeChanged"
+                                                     name:NavNodeChangedNotification
                                                    object:_node];
         
         [NSNotificationCenter.defaultCenter addObserver:self
                                                  selector:@selector(nodeRemovedChild:)
-                                                     name:@"NavNodeRemovedChild"
+                                                     name:NavNodeRemovedChildNotification
                                                    object:_node];
         
         [NSNotificationCenter.defaultCenter addObserver:self
                                                  selector:@selector(nodeAddedChild:)
-                                                     name:@"NavNodeAddedChild"
+                                                     name:NavNodeAddedChildNotification
                                                    object:_node];
         
         
