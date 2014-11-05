@@ -38,9 +38,16 @@
 {
     NavNode *node = aNote.object;
     
-    if (node.rememberedChildPath)
+    if (node.rememberedChildTitlePath)
     {
-        [self selectNodePath:node.rememberedChildPath];
+        //NSArray *nodePath = [self.rootNode nodeTitlePath:node.rememberedChildTitlePath];
+        NSLog(@"node.rememberedChildTitlePath = %@", node.rememberedChildTitlePath);
+        NSMutableArray *path = [NSMutableArray arrayWithArray:node.rememberedChildTitlePath];
+        [path removeFirstObject];
+        
+        NSMutableArray *nodes = [NSMutableArray arrayWithArray:[self.rootNode nodeTitlePath:path]];
+        [nodes insertObject:self.rootNode atIndex:0];
+        [self selectNodePath:nodes];
     }
 }
 
@@ -196,19 +203,21 @@
     
     for (NavNode *node in nodes)
     {
+        /*
         if ([node isKindOfClass:[NSString class]])
         {
             [lastColumn selectItemNamed:(NSString *)node];
         }
         else
         {
+            */
             column = [self addColumnForNode:node];
             
             if (lastColumn)
             {
                 [lastColumn justSelectNode:node];
             }
-        }
+        //}
         
         lastColumn = column;
     }
