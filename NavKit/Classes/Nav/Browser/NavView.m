@@ -10,7 +10,6 @@
 #import "NavColumn.h"
 #import "NSView+sizing.h"
 #import "NavSearchField.h"
-//#import <objc/runtime.h>
 
 @implementation NavView
 
@@ -28,26 +27,30 @@
     [self setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(selectNodeNote:)
+                                             selector:@selector(selectNodeNotification:)
                                                  name:NavNodeSelectedNotification
                                                object:nil];
     return self;
 }
 
-- (void)selectNodeNote:(NSNotification *)aNote
+- (void)selectNodeNotification:(NSNotification *)aNote
 {
     NavNode *node = aNote.object;
-    
+
     if (node.rememberedChildTitlePath)
     {
-        //NSArray *nodePath = [self.rootNode nodeTitlePath:node.rememberedChildTitlePath];
-        NSLog(@"node.rememberedChildTitlePath = %@", node.rememberedChildTitlePath);
+        // ugly - change the path convention to clean this up?
+        
         NSMutableArray *path = [NSMutableArray arrayWithArray:node.rememberedChildTitlePath];
         [path removeFirstObject];
         
         NSMutableArray *nodes = [NSMutableArray arrayWithArray:[self.rootNode nodeTitlePath:path]];
         [nodes insertObject:self.rootNode atIndex:0];
-        [self selectNodePath:nodes];
+        
+        if (nodes.count)
+        {
+            [self selectNodePath:nodes];
+        }
     }
 }
 
@@ -79,7 +82,6 @@
     [self addSubview:column];
 
     [column setNavView:self];
-    //[self stackViews];
     
     [column setHeight:self.height];
     
@@ -100,10 +102,8 @@
 
 - (void)setFrame:(NSRect)frameRect
 {
-    //frameRect.size.width = self.columnsWidth;
     frameRect.size.width = ((NSView *)self.window.contentView).width;
     [super setFrame:frameRect];
-    //NSLog(@"navView width %f", (float)frameRect.size.width);
     
     for (id view in self.subviews)
     {
@@ -126,7 +126,6 @@
     if (lastColumn)
     {
         CGFloat w = ((NSInteger)(lastColumn.x + lastColumn.width));
-        //NSLog(@"w = %f", (float)w);
         return w;
     }
     
@@ -137,23 +136,25 @@
 {
     NSMutableArray *toRemove = [NSMutableArray array];
     
-    BOOL hitColumn = NO;
-    for (NavColumn *column in self.navColumns)
     {
-        if (hitColumn)
+        BOOL hitColumn = NO;
+
+        for (NavColumn *column in self.navColumns)
         {
-            [toRemove addObject:column];
-            [column removeFromSuperview];
-        }
-        
-        if (inColumn == column)
-        {
-            hitColumn = YES;
+            if (hitColumn)
+            {
+                [toRemove addObject:column];
+                [column removeFromSuperview];
+            }
+            
+            if (inColumn == column)
+            {
+                hitColumn = YES;
+            }
         }
     }
     
-    //NSLog(@"shouldSelectNode - removing old columns");
-    
+    // remove old columns
     [self.navColumns removeObjectsInArray:toRemove];
     
     if (node)
@@ -167,16 +168,6 @@
     
     return YES;
 }
-
-/*
-- (void)autoCompletePathIfNeeded:(NavNode *)aNode
-{
-    for (NSArray *autoPathComponents in self.autoPaths)
-    {
-        
-    }
-}
-*/
 
 - (void)clearColumns
 {
@@ -199,27 +190,21 @@
     [self clearColumns];
     
     NavColumn *column = nil;
-    NavColumn *lastColumn = nil;
     
-    for (NavNode *node in nodes)
     {
-        /*
-        if ([node isKindOfClass:[NSString class]])
+        NavColumn *lastColumn = nil;
+        
+        for (NavNode *node in nodes)
         {
-            [lastColumn selectItemNamed:(NSString *)node];
-        }
-        else
-        {
-            */
             column = [self addColumnForNode:node];
             
             if (lastColumn)
             {
                 [lastColumn justSelectNode:node];
             }
-        //}
-        
-        lastColumn = column;
+            
+            lastColumn = column;
+        }
     }
     
     if ([column respondsToSelector:@selector(prepareToDisplay)])
@@ -263,13 +248,6 @@
     [lastColumn handleAction:aSel];
 }
 
-/*
-- (void)reloadedColumn:(NavColumn *)aColumn
-{
-    //[self updateActionStrip];
-}
-*/
-
 - (NavNode *)lastNode
 {
     NSEnumerator *e = [self.navColumns reverseObjectEnumerator];
@@ -279,7 +257,7 @@
     {
         if ([column respondsToSelector:@selector(node)])
         {
-            id node = [column node];
+            NavNode *node = [column node];
             return node;
         }
     }
@@ -312,7 +290,6 @@
     
     [self shouldSelectNode:[inColumn selectedNode] inColumn:inColumn];
     [inColumn.window makeFirstResponder:inColumn.tableView];
-//    [inColumn.tableView becomeFirstResponder];
 }
 
 - (void)rightArrowFrom:aColumn
@@ -330,9 +307,6 @@
     {
         [inColumn selectRowIndex:0];
         [inColumn.window makeFirstResponder:inColumn.tableView];
-        
-        //[self shouldSelectNode:[inColumn nodeA] inColumn:inColumn];
-        //[inColumn.tableView becomeFirstResponder];
     }
     else
     {
