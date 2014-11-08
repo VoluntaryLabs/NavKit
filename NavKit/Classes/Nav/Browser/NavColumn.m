@@ -688,6 +688,7 @@
 - (void)delete
 {
     NavNode * node = [self selectedNode];
+
     [self sendAction:@"delete" toNode:node];
 }
 
@@ -814,18 +815,35 @@
     
 - (void)sendAction:(NSString *)action toNode:(NavNode *)aNode
 {
-    if (![[aNode actions] containsObject:action])
+    NavActionSlot *actionSlot = [aNode.navMirror actionSlotNamed:action];
+
+    //if (![[aNode actions] containsObject:action])
+    if (!actionSlot)
     {
         NSAlert *alert = [[NSAlert alloc] init];
         [alert addButtonWithTitle:@"OK"];
-        [alert setMessageText:[NSString stringWithFormat:@"%@ action unavailable", action]];
+        [alert setMessageText:[NSString stringWithFormat:@"%@ action not implemented", action]];
         [alert setInformativeText:@""];
         [alert setAlertStyle:NSWarningAlertStyle];
+        
+        [alert runModal];
         return;
     }
     
+    if (!actionSlot.isActive)
+    {
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert addButtonWithTitle:@"OK"];
+        [alert setMessageText:[NSString stringWithFormat:@"%@ action disabled", action]];
+        [alert setInformativeText:@""];
+        [alert setAlertStyle:NSWarningAlertStyle];
+        [alert runModal];
+        return;
+    }
+        
     NSString *verifyMessage = [aNode verifyActionMessage:action];
-    
+
+        
     if (verifyMessage)
     {
         NSAlert *alert = [[NSAlert alloc] init];
