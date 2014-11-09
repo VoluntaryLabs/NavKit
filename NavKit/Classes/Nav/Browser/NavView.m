@@ -44,10 +44,11 @@
         NSMutableArray *path = [NSMutableArray arrayWithArray:node.rememberedChildTitlePath];
         [path removeFirstObject];
         
-        NSMutableArray *nodes = [NSMutableArray arrayWithArray:[self.rootNode nodeTitlePath:path]];
+        NSArray *titlePath = [self.rootNode nodeMaxTitlePath:path];
+        NSMutableArray *nodes = [NSMutableArray arrayWithArray:titlePath];
         [nodes insertObject:self.rootNode atIndex:0];
         
-        if (nodes.count)
+        if (nodes.count > 1)
         {
             [self selectNodePath:nodes];
         }
