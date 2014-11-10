@@ -42,7 +42,7 @@
     
     NSImageRep *imageRep = [image bitmapImageRepresentation];
     
-    NSRect frame = NSMakeRect(0, 0, image.size.width, image.size.height);
+    //NSRect frame = NSMakeRect(0, 0, image.size.width, image.size.height);
     NSImage *targetImage = [[NSImage alloc] initWithSize:image.size];
     
     [targetImage lockFocus];
