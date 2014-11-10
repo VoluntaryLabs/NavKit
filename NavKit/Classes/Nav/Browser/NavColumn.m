@@ -14,6 +14,7 @@
 #import "NavTheme.h"
 //#import <BitMessageKit/BitMessageKit.h>
 #import <objc/runtime.h> // for associations on button to set action - should we switch to custom button?
+#import <FoundationCategoriesKit/FoundationCategoriesKit.h>
 
 @implementation NavColumn
 
@@ -779,7 +780,9 @@
         objc_setAssociatedObject(button, @"action", action, OBJC_ASSOCIATION_RETAIN);
     }
  
-    if ([self.node canSearch])
+    BOOL searchFieldUIIsHosed = [[NSProcessInfo processInfo] majorMinorOSXVersionNumber].floatValue > 10.09;
+    
+    if (!searchFieldUIIsHosed && [self.node canSearch])
     {
         _searchField = [[NavSearchField alloc] initWithFrame:NSMakeRect(0, 0, 20, buttonHeight)];
         [_searchField setSearchDelegate:self];
