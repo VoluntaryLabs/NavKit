@@ -780,9 +780,9 @@
         objc_setAssociatedObject(button, @"action", action, OBJC_ASSOCIATION_RETAIN);
     }
  
-    BOOL searchFieldUIIsHosed = [[NSProcessInfo processInfo] majorMinorOSXVersionNumber].floatValue > 10.09;
+    BOOL osxSearchFieldUIIsHosed = [[NSProcessInfo processInfo] majorMinorOSXVersionNumber].floatValue > 10.09;
     
-    if (!searchFieldUIIsHosed && [self.node canSearch])
+    if (!osxSearchFieldUIIsHosed && [self.node canSearch])
     {
         _searchField = [[NavSearchField alloc] initWithFrame:NSMakeRect(0, 0, 20, buttonHeight)];
         [_searchField setSearchDelegate:self];
