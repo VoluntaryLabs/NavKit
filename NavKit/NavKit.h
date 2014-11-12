@@ -23,7 +23,6 @@
 
 #import "NSColor+array.h"
 #import "NSColor+Hex.h"
-#import "NSDate+extra.h"
 #import "NSEvent+keys.h"
 #import "NSScrollView+extra.h"
 #import "NSTextView+extra.h"

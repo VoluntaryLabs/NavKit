@@ -58,8 +58,6 @@
 		AA86B9C918FF336700D3BDB0 /* NSColor+array.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B99918FF336700D3BDB0 /* NSColor+array.m */; };
 		AA86B9CA18FF336700D3BDB0 /* NSColor+Hex.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B99A18FF336700D3BDB0 /* NSColor+Hex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA86B9CB18FF336700D3BDB0 /* NSColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B99B18FF336700D3BDB0 /* NSColor+Hex.m */; };
-		AA86B9CC18FF336700D3BDB0 /* NSDate+extra.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B99C18FF336700D3BDB0 /* NSDate+extra.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA86B9CD18FF336700D3BDB0 /* NSDate+extra.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B99D18FF336700D3BDB0 /* NSDate+extra.m */; };
 		AA86B9CE18FF336700D3BDB0 /* NSEvent+keys.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B99E18FF336700D3BDB0 /* NSEvent+keys.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA86B9CF18FF336700D3BDB0 /* NSEvent+keys.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B99F18FF336700D3BDB0 /* NSEvent+keys.m */; };
 		AA86B9D018FF336700D3BDB0 /* NSScrollView+extra.h in Headers */ = {isa = PBXBuildFile; fileRef = AA86B9A018FF336700D3BDB0 /* NSScrollView+extra.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -192,8 +190,6 @@
 		AA86B99918FF336700D3BDB0 /* NSColor+array.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+array.m"; sourceTree = "<group>"; };
 		AA86B99A18FF336700D3BDB0 /* NSColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+Hex.h"; sourceTree = "<group>"; };
 		AA86B99B18FF336700D3BDB0 /* NSColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+Hex.m"; sourceTree = "<group>"; };
-		AA86B99C18FF336700D3BDB0 /* NSDate+extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+extra.h"; sourceTree = "<group>"; };
-		AA86B99D18FF336700D3BDB0 /* NSDate+extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+extra.m"; sourceTree = "<group>"; };
 		AA86B99E18FF336700D3BDB0 /* NSEvent+keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEvent+keys.h"; sourceTree = "<group>"; };
 		AA86B99F18FF336700D3BDB0 /* NSEvent+keys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEvent+keys.m"; sourceTree = "<group>"; };
 		AA86B9A018FF336700D3BDB0 /* NSScrollView+extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSScrollView+extra.h"; sourceTree = "<group>"; };
@@ -366,8 +362,6 @@
 				AA86B99918FF336700D3BDB0 /* NSColor+array.m */,
 				AA86B99A18FF336700D3BDB0 /* NSColor+Hex.h */,
 				AA86B99B18FF336700D3BDB0 /* NSColor+Hex.m */,
-				AA86B99C18FF336700D3BDB0 /* NSDate+extra.h */,
-				AA86B99D18FF336700D3BDB0 /* NSDate+extra.m */,
 				AA86B99E18FF336700D3BDB0 /* NSEvent+keys.h */,
 				AA86B99F18FF336700D3BDB0 /* NSEvent+keys.m */,
 				AA86B9A018FF336700D3BDB0 /* NSScrollView+extra.h */,
@@ -569,7 +563,6 @@
 				AA86B9CA18FF336700D3BDB0 /* NSColor+Hex.h in Headers */,
 				AA86B9E918FF336800D3BDB0 /* NavRoundButtonView.h in Headers */,
 				AA86B9EB18FF336800D3BDB0 /* NavTextView.h in Headers */,
-				AA86B9CC18FF336700D3BDB0 /* NSDate+extra.h in Headers */,
 				AAE31E1C18FF1C7000405754 /* NavKit.h in Headers */,
 				AA9B75EF191C1F6200F17437 /* NavRoundRect.h in Headers */,
 				AA38C179198322DA003CDA68 /* NavVerticalScrollView.h in Headers */,
@@ -740,7 +733,6 @@
 				AA09C830192D582800317130 /* NavAdvTextView.m in Sources */,
 				AA86B9F018FF336800D3BDB0 /* NavSearchField.m in Sources */,
 				AA09C870192D5E7700317130 /* NavDataSlotView.m in Sources */,
-				AA86B9CD18FF336700D3BDB0 /* NSDate+extra.m in Sources */,
 				AA09C857192D582D00317130 /* NavTableView.m in Sources */,
 				AA38C17A198322DA003CDA68 /* NavVerticalScrollView.m in Sources */,
 				AA38C16519808554003CDA68 /* NSCell+extra.m in Sources */,
