@@ -30,7 +30,7 @@
 }
 
 
-- (NSData *)jpegImageData // yeah, move this to an NSImage category
+- (NSData *)jpegImageData
 {
     NSImage *image = self;
     
