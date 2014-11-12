@@ -85,4 +85,9 @@
       nil]];
 }
 
+- (NSArray *)acceptableDragTypes
+{
+    return nil;
+}
+
 @end

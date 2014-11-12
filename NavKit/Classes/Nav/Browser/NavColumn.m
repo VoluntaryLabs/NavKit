@@ -14,6 +14,7 @@
 #import "NavTheme.h"
 //#import <BitMessageKit/BitMessageKit.h>
 #import <objc/runtime.h> // for associations on button to set action - should we switch to custom button?
+#import <FoundationCategoriesKit/FoundationCategoriesKit.h>
 
 @implementation NavColumn
 
@@ -304,17 +305,17 @@
         
         [NSNotificationCenter.defaultCenter addObserver:self
                                                  selector:@selector(nodeChanged:)
-                                                     name:@"NavNodeChanged"
+                                                     name:NavNodeChangedNotification
                                                    object:_node];
         
         [NSNotificationCenter.defaultCenter addObserver:self
                                                  selector:@selector(nodeRemovedChild:)
-                                                     name:@"NavNodeRemovedChild"
+                                                     name:NavNodeRemovedChildNotification
                                                    object:_node];
         
         [NSNotificationCenter.defaultCenter addObserver:self
                                                  selector:@selector(nodeAddedChild:)
-                                                     name:@"NavNodeAddedChild"
+                                                     name:NavNodeAddedChildNotification
                                                    object:_node];
         
         
@@ -688,6 +689,7 @@
 - (void)delete
 {
     NavNode * node = [self selectedNode];
+
     [self sendAction:@"delete" toNode:node];
 }
 
@@ -778,7 +780,9 @@
         objc_setAssociatedObject(button, @"action", action, OBJC_ASSOCIATION_RETAIN);
     }
  
-    if ([self.node canSearch])
+    BOOL osxSearchFieldUIIsHosed = [[NSProcessInfo processInfo] majorMinorOSXVersionNumber].floatValue > 10.09;
+    
+    if (!osxSearchFieldUIIsHosed && [self.node canSearch])
     {
         _searchField = [[NavSearchField alloc] initWithFrame:NSMakeRect(0, 0, 20, buttonHeight)];
         [_searchField setSearchDelegate:self];
@@ -814,18 +818,35 @@
     
 - (void)sendAction:(NSString *)action toNode:(NavNode *)aNode
 {
-    if (![[aNode actions] containsObject:action])
+    NavActionSlot *actionSlot = [aNode.navMirror actionSlotNamed:action];
+
+    //if (![[aNode actions] containsObject:action])
+    if (!actionSlot)
     {
         NSAlert *alert = [[NSAlert alloc] init];
         [alert addButtonWithTitle:@"OK"];
-        [alert setMessageText:[NSString stringWithFormat:@"%@ action unavailable", action]];
+        [alert setMessageText:[NSString stringWithFormat:@"%@ action not implemented", action]];
         [alert setInformativeText:@""];
         [alert setAlertStyle:NSWarningAlertStyle];
+        
+        [alert runModal];
         return;
     }
     
+    if (!actionSlot.isActive)
+    {
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert addButtonWithTitle:@"OK"];
+        [alert setMessageText:[NSString stringWithFormat:@"%@ action disabled", action]];
+        [alert setInformativeText:@""];
+        [alert setAlertStyle:NSWarningAlertStyle];
+        [alert runModal];
+        return;
+    }
+        
     NSString *verifyMessage = [aNode verifyActionMessage:action];
-    
+
+        
     if (verifyMessage)
     {
         NSAlert *alert = [[NSAlert alloc] init];
