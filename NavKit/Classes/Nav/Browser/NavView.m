@@ -33,6 +33,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [NSNotificationCenter.defaultCenter removeObserver:self];
+}
+
 - (void)selectNodeNotification:(NSNotification *)aNote
 {
     NavNode *node = aNote.object;

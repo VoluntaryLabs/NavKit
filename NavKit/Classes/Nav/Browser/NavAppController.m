@@ -28,6 +28,11 @@
                                                object:nil];
 }
 
+- (void)dealloc
+{
+    [NSNotificationCenter.defaultCenter removeObserver:self];
+}
+
 - (void)navDockTileUpdate:(NSNotification *)aNote
 {
     NSNumber *number = [[aNote userInfo] objectForKey:@"number"];
