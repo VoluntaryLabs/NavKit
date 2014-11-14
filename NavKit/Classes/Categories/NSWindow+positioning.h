@@ -12,7 +12,16 @@
 
 - (void)setCenterPoint:(NSPoint)newCenter;
 - (NSPoint)centerPoint;
+
 - (void)centerInFrontOfWindow:(NSWindow *)aWindow;
 - (void)centerInMainWindow;
+
+// --- width & height ---
+
+- (void)setWidth:(CGFloat)w;
+- (void)setHeight:(CGFloat)h;
+
+- (void)setMinWidth:(CGFloat)w;
+- (void)setMinHeight:(CGFloat)h;
 
 @end

@@ -9,6 +9,7 @@
 #import "NavView.h"
 #import "NavColumn.h"
 #import "NSView+sizing.h"
+#import "NSWindow+positioning.h"
 #import "NavSearchField.h"
 
 @implementation NavView
@@ -123,6 +124,14 @@
 - (void)fitToColumns
 {
     self.width = self.columnsWidth;
+    [self.window setMinWidth:self.totalSuggestedWidth];
+    
+    if (self.width < self.totalSuggestedWidth)
+    {
+        NSRect f = self.window.frame;
+        f.size.width = self.totalSuggestedWidth;
+        [self.window setFrame:f display:YES animate:YES];
+    }
 }
 
 - (CGFloat)columnsWidth
@@ -173,6 +182,21 @@
     [node nodePostSelected];
     
     return YES;
+}
+
+- (CGFloat)totalSuggestedWidth
+{
+    NSUInteger w = 0;
+    
+    for (NavColumn *column in self.navColumns)
+    {
+        w += [column node].nodeSuggestedWidth;
+    }
+    
+    return w;
+    
+    //[self.window setWidth:totalWidth];
+    //[self setWidth:totalWidth];
 }
 
 - (void)clearColumns

@@ -36,4 +36,38 @@
     [self centerInFrontOfWindow:[[NSApplication sharedApplication] mainWindow]];
 }
 
+// --- width & height ---
+
+- (void)setWidth:(CGFloat)w
+{
+    CGRect f = self.frame;
+    f.size.width = w;
+    [self setFrame:f display:YES];
+}
+
+- (void)setHeight:(CGFloat)h
+{
+    CGRect f = self.frame;
+    f.size.height = h;
+    [self setFrame:f display:YES];
+}
+
+// --- min width & min height ---
+
+
+- (void)setMinWidth:(CGFloat)w
+{
+    CGSize s = self.minSize;
+    s.width = w;
+    [self setMinSize:s];
+}
+
+- (void)setMinHeight:(CGFloat)h
+{
+    CGSize s = self.minSize;
+    s.height = h;
+    [self setMinSize:s];
+}
+
+
 @end

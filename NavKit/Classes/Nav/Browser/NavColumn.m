@@ -449,7 +449,9 @@
 {
     if (self.scrollView.superview)
     {
-        if (self.node.nodeSuggestedWidth > 0)
+        BOOL useSuggestedWidth = self.node.nodeSuggestedWidth > 0;
+        
+        if (useSuggestedWidth)
         {
             [self setMaxWidth:self.node.nodeSuggestedWidth];
         }
