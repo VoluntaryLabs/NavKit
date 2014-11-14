@@ -570,15 +570,18 @@
 
 - (BOOL)tableView:(NSTableView *)aTableView shouldSelectRow:(NSInteger)rowIndex
 {
-    NavNode * node = [self nodeForRow:rowIndex];
+    NavNode *node = [self nodeForRow:rowIndex];
 
     if (node.nodeParentInlines)
     {
         return NO;
     }
     
-    _lastSelectedChild = node;
-    [self.navView shouldSelectNode:node inColumn:self];
+    //if (_lastSelectedChild != node)
+    {
+        _lastSelectedChild = node;
+        [self.navView shouldSelectNode:node inColumn:self];
+    }
     
     return YES;
 }
