@@ -201,6 +201,13 @@
         
         x += (NSInteger)(view.width + margin);
     }
+    
+    NSView *lastView = self.subviews.lastObject;
+    
+    if (lastView)
+    {
+        [lastView setWidth:self.width - lastView.x];
+    }
 }
 
 - (void)stackSubviewsTopToBottom
