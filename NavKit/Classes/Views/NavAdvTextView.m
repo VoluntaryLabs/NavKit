@@ -142,6 +142,20 @@
     }
 }
 
+- (void)checkMaxStringLength
+{
+    if (self.maxStringLength)
+    {
+        NSUInteger max = self.maxStringLength.integerValue;
+        
+        if (self.string.length > max)
+        {
+            self.string = [self.string substringToIndex:max];
+            //self.isValid = NO;
+        }
+    }
+}
+
 - (void)updateTheme
 {
     NSString *themePath = nil;
@@ -194,6 +208,7 @@
 
 - (void)textDidChange
 {
+    [self checkMaxStringLength];
     [self useUneditedTextStringIfNeeded];
     [self updateTheme];
     [self updateSuffixView];

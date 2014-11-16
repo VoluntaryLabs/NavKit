@@ -19,6 +19,9 @@
 @property (strong, nonatomic) NavRoundRect *roundRect;
 @property (assign, nonatomic) BOOL isValid;
 
+@property (strong, nonatomic) NSNumber *maxStringLength;
+
+
 - (void)setSuffix:(NSString *)aString;
 
 - (void)useUneditedTextStringIfNeeded;
