@@ -9,10 +9,16 @@
 #import "NavSearchField.h"
 #import "NSView+sizing.h"
 
+@interface NSSearchField (undocumented)
+- (NSRect)searchTextRectForBounds:(NSRect)rect; // hack
+@end
+
+
 @implementation NavSearchField
 
 - (void)setupCollapsed
 {
+    _isExpanded = NO;
     [self setBordered:NO];
     [self setFocusRingType:NSFocusRingTypeNone];
     [self setEditable:NO];
@@ -24,6 +30,8 @@
 
 - (void)setupExpanded
 {
+    _isExpanded = YES;
+
     NSSearchFieldCell *cell = self.cell;
     cell.cancelButtonCell = nil;
     
@@ -45,16 +53,7 @@
     
     if (self)
     {
-        //if (!self.isExpanded)
-        {
-            [self setupCollapsed];
-        }
-        /*
-        else
-        {
-            [self setupExpanded];
-        }
-        */
+        [self setupCollapsed];
         
         _minWidth = 30.0;
         _maxWidth = 120.0;
@@ -67,6 +66,16 @@
 
 - (NSRect)cancelButtonRectForBounds:(NSRect)rect
 {
+    return NSMakeRect(0, 0, 0, 0);
+}
+
+- (NSRect)searchTextRectForBounds:(NSRect)rect
+{
+    if (self.isExpanded)
+    {
+        return [super searchTextRectForBounds:rect];
+    }
+    
     return NSMakeRect(0, 0, 0, 0);
 }
 

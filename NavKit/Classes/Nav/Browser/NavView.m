@@ -17,6 +17,7 @@
 - (BOOL)isOpaque
 {
     return NO;
+//    return self.alphaValue != 1.0;
 }
 
 - (id)initWithFrame:(NSRect)frameRect

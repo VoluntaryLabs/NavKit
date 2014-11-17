@@ -85,28 +85,7 @@
     [_button setFrame:NSMakeRect(0, 0, self.width, self.height)];
 }
 
-- (BOOL)showAlertIfNeeded
-{
-    if (_actionSlot.verifyMessage)
-    {
-        NSAlert *alert = [[NSAlert alloc] init];
-        [alert addButtonWithTitle:[_actionSlot.visibleName capitalizedString]];
-        [alert addButtonWithTitle:@"Cancel"];
-        //[alert setMessageText:[NSString stringWithFormat:@"%@ for \"%@\"?", _actionSlot.visibleName, _actionSlot.mirror.nodeTitle]];
-        
-        [alert setMessageText:@"Warning"];
-        [alert setInformativeText:_actionSlot.verifyMessage];
-        [alert setAlertStyle:NSWarningAlertStyle];
-        
-        if ([alert runModal] == NSAlertSecondButtonReturn)
-        {
-            // cancel
-            return NO;
-        }
-    }
-    
-    return YES;
-}
+
 
 - (void)sendAction
 {
@@ -126,10 +105,43 @@
     }
     */
     
-    if (self.showAlertIfNeeded)
+    if (_actionSlot.verifyMessage)
     {
-        [self.actionSlot sendAction];
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert addButtonWithTitle:[_actionSlot.visibleName capitalizedString]];
+        [alert addButtonWithTitle:@"Cancel"];
+        //[alert setMessageText:[NSString stringWithFormat:@"%@ for \"%@\"?", _actionSlot.visibleName, _actionSlot.mirror.nodeTitle]];
+        
+        [alert setMessageText:@"Warning"];
+        [alert setInformativeText:_actionSlot.verifyMessage];
+        [alert setAlertStyle:NSWarningAlertStyle];
+        
+        [alert beginSheetModalForWindow:self.window
+                           modalDelegate:self
+                          didEndSelector:@selector(actionAlertDidEnd:returnCode:contextInfo:)
+                             contextInfo:nil];
+        
     }
+    else
+    {
+        [self justSendAction];
+    }
+}
+
+- (void)actionAlertDidEnd:(NSAlert *)alert
+            returnCode:(NSInteger)returnCode
+           contextInfo:(void *)contextInfo
+{
+    if (returnCode == 1000)
+    {
+        [self justSendAction];
+    }
+    
+}
+
+- (void)justSendAction
+{
+    [self.actionSlot sendAction];
 }
 
 @end

@@ -11,6 +11,11 @@
 
 @implementation NSView (sizing)
 
+- (void)markNeedsDisplay
+{
+    //[self setNeedsDisplay:YES];
+}
+
 - (void)setX:(CGFloat)x
 {
     NSRect f = self.frame;
@@ -18,7 +23,7 @@
     {
         f.origin.x = x;
         self.frame = f;
-        [self setNeedsDisplay:YES];
+        [self markNeedsDisplay];
     }
 }
 
@@ -35,7 +40,7 @@
     {
         f.origin.y = y;
         self.frame = f;
-        [self setNeedsDisplay:YES];
+        [self markNeedsDisplay];
     }
 }
 
@@ -53,7 +58,7 @@
     {
         f.size.width = w;
         self.frame = f;
-        [self setNeedsDisplay:YES];
+        [self markNeedsDisplay];
     }
 }
 
@@ -65,7 +70,7 @@
     {
         f.size.height = h;
         self.frame = f;
-        [self setNeedsDisplay:YES];
+        [self markNeedsDisplay];
     }
 }
 
@@ -91,6 +96,7 @@
     for (NSView *subview in self.subviews)
     {
         CGFloat v = subview.maxX;
+        
         if (max < v)
         {
             max = v;
@@ -107,6 +113,7 @@
     for (NSView *subview in self.subviews)
     {
         CGFloat v = subview.x;
+        
         if (v < min)
         {
             min = v;
@@ -128,6 +135,7 @@
     for (NSView *subview in self.subviews)
     {
         CGFloat v = subview.maxY;
+        
         if (max < v)
         {
             max = v;
@@ -203,11 +211,6 @@
     }
     
     NSView *lastView = self.subviews.lastObject;
-    
-    if (lastView)
-    {
-        [lastView setWidth:self.width - lastView.x];
-    }
 }
 
 - (void)stackSubviewsTopToBottom
@@ -364,7 +367,6 @@
         [subview setY:subview.y + dy];
     }
 }
-
 
 /*
 - (BOOL)isOpaque

@@ -26,6 +26,7 @@
 - (BOOL)isOpaque
 {
     return NO;
+//    return self.alphaValue != 1.0;
 }
 
 - (id)initWithFrame:(NSRect)frameRect
@@ -796,7 +797,7 @@
         _searchField = [[searchFieldClass alloc] initWithFrame:NSMakeRect(0, 0, 20, buttonHeight)];
         [_searchField setSearchDelegate:self];
         [self.actionStrip addSubview:_searchField];
-        [_searchField setupExpanded];
+        //[_searchField setupExpanded];
         [_searchField setupCollapsed];
         [_searchField setToolTip:@"search"];
     }
