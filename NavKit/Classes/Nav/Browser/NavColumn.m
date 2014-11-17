@@ -253,6 +253,7 @@
     {
         [self tableView:self.tableView shouldSelectRow:rowIndex];
         [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:rowIndex] byExtendingSelection:NO];
+        [self.tableView scrollRowToVisible:rowIndex];
         _lastSelectedChild = self.selectedNode;
     }
 }
@@ -261,6 +262,7 @@
 {
     NSInteger rowIndex = [self rowForNode:aNode];
     [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:rowIndex] byExtendingSelection:NO];
+    [self.tableView scrollRowToVisible:rowIndex];
     _lastSelectedChild = aNode;
 }
 
@@ -785,11 +787,13 @@
         objc_setAssociatedObject(button, @"action", action, OBJC_ASSOCIATION_RETAIN);
     }
  
-    BOOL osxSearchFieldUIIsHosed = [[NSProcessInfo processInfo] majorMinorOSXVersionNumber].floatValue > 10.09;
+    BOOL osxSearchFieldUIIsHosed = NO; //[[NSProcessInfo processInfo] majorMinorOSXVersionNumber].floatValue > 10.09;
     
     if (!osxSearchFieldUIIsHosed && [self.node canSearch])
     {
-        _searchField = [[NavSearchField alloc] initWithFrame:NSMakeRect(0, 0, 20, buttonHeight)];
+        Class searchFieldClass = NavSearchField.class;
+        
+        _searchField = [[searchFieldClass alloc] initWithFrame:NSMakeRect(0, 0, 20, buttonHeight)];
         [_searchField setSearchDelegate:self];
         [self.actionStrip addSubview:_searchField];
         [_searchField setupExpanded];
@@ -811,6 +815,7 @@
         [self.actionStrip setWidth:self.width];
         [self.actionStrip stackSubviewsRightToLeftWithMargin:10.0];
         [self.actionStrip adjustSubviewsX:-10];
+        [self.actionStrip centerSubviewsY];
     }
 }
 
@@ -877,11 +882,22 @@
 - (void)searchForString:(NSString *)aString
 {
     //NSLog(@"searchForString '%@'", aString);
-    
     [self.node search:aString];
-    self.lastSelectedChild = nil;
-    [self reloadData];
-    [self.navView shouldSelectNode:nil inColumn:self];
+    
+    BOOL hasLastSelection = [self.node.children containsObject:self.self.lastSelectedChild];
+    if (!hasLastSelection)
+    {
+        self.lastSelectedChild = nil;
+        [self reloadData];
+        [self.navView shouldSelectNode:nil inColumn:self];
+    }
+    else
+    {
+        [self reloadData];
+        NSUInteger row = [self.tableView selectedRow];
+        [self.tableView scrollRowToVisible:row];
+        //[self.navView shouldSelectNode:self.lastSelectedChild inColumn:self];
+    }
 }
 
 - (void)selectFirstResponder

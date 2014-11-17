@@ -24,6 +24,9 @@
 
 - (void)setupExpanded
 {
+    NSSearchFieldCell *cell = self.cell;
+    cell.cancelButtonCell = nil;
+    
     [self setBordered:YES];
     [self setFocusRingType:NSFocusRingTypeExterior];
     [self setEditable:YES];
@@ -55,25 +58,33 @@
         
         _minWidth = 30.0;
         _maxWidth = 120.0;
-        
+        [self setHeight:20];
         [self setDelegate:self];
     }
     
     return self;
 }
 
+- (NSRect)cancelButtonRectForBounds:(NSRect)rect
+{
+    return NSMakeRect(0, 0, 0, 0);
+}
+
+/*
 - (void)connectCancelButton
 {
     [[[self cell] cancelButtonCell] setAction:@selector(clearSearchField:)];
     [[[self cell] cancelButtonCell] setTarget:self];
 }
+*/
 
 - (void)clearSearchField:sender
 {
     //[self selectAll:self];
     //[self deleteToEndOfLine:self];
     [self setStringValue:@""];
-    [self toggle];
+    //[self toggle];
+    //[self controlTextDidChange:nil];
 }
 
 - (void)mouseDown:(NSEvent *)event
@@ -87,18 +98,64 @@
     //if ([event type] == NSLeftMouseDown)
     {
         [self toggle];
+        //[self setNeedsDisplay:YES];
     }
 }
 
 - (void)toggle
 {
+    BOOL shouldAnimate = YES;
+    
+    if (self.isExpanded)
+    {
+        [self setStringValue:@""];
+        [self controlTextDidChange:nil];
+        //[self.window makeFirstResponder:self.superview];
+    }
+    
     self.isExpanded = !self.isExpanded;
     
-    _animationValue = 0.0;
-    [self setup];
-    
-    [self setAnimationValue:1.0]; // skip animation
-    [self timer:nil];
+    if (shouldAnimate)
+    {
+        if (YES)
+        {
+            [self setup];
+            [self stackViews];
+            
+            /*
+            _animationValue = 1.0;
+            [self layoutAmination];
+            */
+            
+            if (self.isExpanded)
+            {
+                //[self.window makeFirstResponder:self];
+                [self selectText:self];
+            }
+        }
+        /*
+        else
+        {
+            //_animationValue = 0.0;
+            [self setup];
+            [self setAnimationValue:1.0]; // skip animation
+            [self timer:nil];
+        }
+        */
+    }
+    /*
+    else
+    {
+        if (self.isExpanded)
+        {
+            [self setupExpanded];
+        }
+        else
+        {
+            [self setupCollapsed];
+        }
+    }
+    */
 }
 
 - (void)setup
@@ -109,7 +166,7 @@
     }
     else
     {
-        //[self setupCollapsed];
+        [self setupCollapsed];
     }
 }
 
@@ -123,6 +180,8 @@
     else
     {
         [self setupCollapsed];
+        //[[[self cell] cancelButtonCell] setEnabled:NO];
+        //[[[self cell] cancelButtonCell] setTarget:nil];
     }
 }
 
@@ -152,15 +211,16 @@
     {
         self.animationValue = v;
     }
-    
 }
 
 - (void)setAnimationValue:(float)animationValue
 {
     _animationValue = animationValue;
-    
-    //NSLog(@"animationValue %f", (float) animationValue);
-  
+    [self layoutAmination];
+}
+
+- (void)layoutAmination
+{
     CGFloat v = 0.0;
     
     if (!self.isExpanded)
@@ -173,11 +233,15 @@
     }
     
     [self setWidth:self.minWidth + (self.maxWidth - self.minWidth)*v];
-    [self.superview stackSubviewsRightToLeftWithMargin:10.0]; // hack
-    [self.superview adjustSubviewsX:-10]; // hack
-    [self setNeedsDisplay:YES];
+    [self stackViews];
 }
 
+- (void)stackViews
+{
+    [self.superview stackSubviewsRightToLeftWithMargin:10.0]; // hack
+    [self.superview centerSubviewsY]; // hack
+    [self setNeedsDisplay:YES];
+}
 
 - (BOOL)control:(NSControl *)control textShouldBeginEditing:(NSText *)fieldEditor
 {
