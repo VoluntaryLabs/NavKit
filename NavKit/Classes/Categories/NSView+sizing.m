@@ -13,7 +13,7 @@
 
 - (void)markNeedsDisplay
 {
-    //[self setNeedsDisplay:YES];
+    [self setNeedsDisplay:YES];
 }
 
 - (void)setX:(CGFloat)x
@@ -208,9 +208,7 @@
         [view setX:x];
         
         x += (NSInteger)(view.width + margin);
-    }
-    
-    NSView *lastView = self.subviews.lastObject;
+    }    
 }
 
 - (void)stackSubviewsTopToBottom
