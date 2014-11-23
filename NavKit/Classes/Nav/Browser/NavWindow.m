@@ -24,8 +24,20 @@
                            backing:NSBackingStoreBuffered
                            defer:NO];
     [instance setReleasedWhenClosed:NO];
-    return instance;
     
+    
+    return instance;
+}
+
+- (NSString *)windowName
+{
+    return @"NavMainWindow";
+}
+
+- (void)close
+{
+    [self saveFrameUsingName:self.windowName];
+    [super close];
 }
 
 - (id)initWithContentRect:(NSRect)contentRect
@@ -50,6 +62,8 @@
     [[NSApplication sharedApplication] setPresentationOptions:NSFullScreenWindowMask];
     [self setCollectionBehavior:NSWindowCollectionBehaviorFullScreenPrimary];
     
+    [self setFrameUsingName:[self windowName]];
+
     return self;
 }
 
@@ -79,8 +93,6 @@
     _navView = [[NavView alloc] initWithFrame:self.contentFrame];
     //[self.contentView addSubview:_navView];
     [_scrollView setDocumentView:_navView];
-
-
 
     [self setupProgress];
 }
