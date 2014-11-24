@@ -52,6 +52,7 @@
     [self setCollectionBehavior:NSWindowCollectionBehaviorFullScreenPrimary];
     
     [self setFrameUsingName:[self windowName]];
+    [self setMinSize:NSMakeSize(100, 100)];
 
     return self;
 }
