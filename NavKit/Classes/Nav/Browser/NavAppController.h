@@ -6,6 +6,7 @@
 @property (strong, nonatomic) NavNode *rootNode;
 @property (strong, nonatomic) NavWindow *navWindow;
 @property (strong, nonatomic) NSView *splashView;
+@property (assign, nonatomic) BOOL doesSupportTiles;
 
 - (void)applicationDidFinishLaunching: (NSNotification *)aNote;
 - (void)setNavTitle:(NSString *)aTitle;

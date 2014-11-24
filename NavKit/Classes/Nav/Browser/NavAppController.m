@@ -35,18 +35,21 @@
 
 - (void)navDockTileUpdate:(NSNotification *)aNote
 {
-    NSNumber *number = [[aNote userInfo] objectForKey:@"number"];
-
-    NSDockTile *dockTile = [[NSApplication sharedApplication] dockTile];
-
-    if (number && [number integerValue] > 0)
+    if (_doesSupportTiles)
     {
-        [dockTile setBadgeLabel:[NSString stringWithFormat: @"%ld",
-                                      (long)[number integerValue]]];
-    }
-    else
-    {
-        [dockTile setBadgeLabel:nil];
+        NSNumber *number = [[aNote userInfo] objectForKey:@"number"];
+
+        NSDockTile *dockTile = [[NSApplication sharedApplication] dockTile];
+
+        if (number && [number integerValue] > 0)
+        {
+            [dockTile setBadgeLabel:[NSString stringWithFormat: @"%ld",
+                                          (long)[number integerValue]]];
+        }
+        else
+        {
+            [dockTile setBadgeLabel:nil];
+        }
     }
 }
 
