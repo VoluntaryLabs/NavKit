@@ -29,17 +29,6 @@
     return instance;
 }
 
-- (NSString *)windowName
-{
-    return @"NavMainWindow";
-}
-
-- (void)close
-{
-    [self saveFrameUsingName:self.windowName];
-    [super close];
-}
-
 - (id)initWithContentRect:(NSRect)contentRect
                 styleMask:(NSUInteger)windowStyle
                   backing:(NSBackingStoreType)bufferingType
@@ -65,6 +54,18 @@
     [self setFrameUsingName:[self windowName]];
 
     return self;
+}
+
+
+- (NSString *)windowName
+{
+    return @"NavMainWindow";
+}
+
+- (void)close
+{
+    [self saveFrameUsingName:self.windowName];
+    [super close];
 }
 
 - (NSRect)contentFrame
