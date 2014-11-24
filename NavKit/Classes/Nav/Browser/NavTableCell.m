@@ -233,7 +233,7 @@
         NSDictionary *titleAttributes = self.titleAttributes;
         CGFloat fontSize = [(NSFont *)[titleAttributes objectForKey:NSFontAttributeName] pointSize];
 
-        CGFloat maxTitleWidth = hasNote ? f.size.width*.6 : f.size.width - 10.0;
+        CGFloat maxTitleWidth = hasNote ? f.size.width*.6 : f.size.width - 20.0 - leftMargin;
         
         title = [self string:title
               clippedToWidth:maxTitleWidth
@@ -308,16 +308,27 @@
 {
     NSUInteger fullLength = [s length];
     
+    // start from the max length and shorten until it fits
+    // switch to binary search and caching later
+    
+    if ([s hasPrefix:@"Used "])
+    {
+        NSLog(@"test");
+    }
+    
     while ([s length])
     {
         CGFloat width = [[[NSAttributedString alloc] initWithString:s attributes:att] size].width;
+        int lastCharacter = [s characterAtIndex:s.length-1];
+        BOOL lastCharacterIsSpace = (lastCharacter == 32);
         
-        if (width < maxWidth)
+        if (width < maxWidth && !lastCharacterIsSpace)
         {
             if ([s length] < fullLength)
             {
-                return [s stringByAppendingString:@"..."];
+                s = [s stringByAppendingString:@"..."];
             }
+            
             return s;
         }
         

@@ -24,12 +24,12 @@
     
     [NSNotificationCenter.defaultCenter addObserver:self
                                              selector:@selector(progressPush:)
-                                                 name:@"ProgressPush"
+                                                 name:ProgressPushNotification
                                                object:nil];
     
     [NSNotificationCenter.defaultCenter addObserver:self
                                              selector:@selector(progressPop:)
-                                                 name:@"ProgressPop"
+                                                 name:ProgressPopNotification
                                                object:nil];
 }
 

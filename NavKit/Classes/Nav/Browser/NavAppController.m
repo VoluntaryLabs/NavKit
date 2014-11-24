@@ -15,7 +15,7 @@
     [_navWindow center];
     [_navWindow orderFront:nil];
         
-    [NSNotificationCenter.defaultCenter postNotificationName:@"ProgressPop" object:self];
+    [NSNotificationCenter.defaultCenter postNotificationName:ProgressPopNotification object:self];
     
     [NSNotificationCenter.defaultCenter addObserver:self
                                              selector:@selector(navTitleUpdate:)

@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#define ProgressPushNotification @"ProgressPushNotification"
+#define ProgressPopNotification  @"ProgressPopNotification"
+//#define ProgressTempNotification @"ProgressTempNotification"
+
 @interface NavProgressController : NSObject
 
 @property (strong, nonatomic) IBOutlet NSProgressIndicator *progress;

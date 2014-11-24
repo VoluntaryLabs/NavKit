@@ -108,7 +108,7 @@
     
     self.progressController = [[NavProgressController alloc] init];
     [self.progressController setProgress:_progressIndicator];
-    [NSNotificationCenter.defaultCenter postNotificationName:@"ProgressPush" object:self];
+    [NSNotificationCenter.defaultCenter postNotificationName:ProgressPushNotification object:self];
 }
 
 - (void)showSplashView

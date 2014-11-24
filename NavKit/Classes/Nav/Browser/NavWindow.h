@@ -25,5 +25,4 @@
 - (void)showSplashView;
 - (void)hideSplashView;
 
-
 @end
