@@ -128,6 +128,11 @@
     return self.y + self.height;
 }
 
+- (void)setMaxY:(CGFloat)newMaxY
+{
+    self.y = newMaxY - self.height;
+}
+
 - (CGFloat)maxYOfSubviews
 {
     CGFloat max = 0;

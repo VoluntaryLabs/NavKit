@@ -19,6 +19,8 @@
     {
         _roundRect = [[NavRoundRect alloc] init];
         [_roundRect setFrame:self.bounds];
+        [self setAutoresizesSubviews:NO];
+        [self setAutoresizingMask:NSViewNotSizable];
         _isValid = YES;
     }
     
@@ -38,7 +40,8 @@
         if (!self.suffixView)
         {
             self.suffixView = [[NavTextView alloc] initWithFrame:NSMakeRect(0, 0, 600, self.height)];
-            self.suffixView.autoresizingMask = self.autoresizingMask;
+            [_suffixView setAutoresizesSubviews:NO];
+            [_suffixView setAutoresizingMask:NSViewNotSizable];
             [self.suffixView setEditable:NO];
             [self.suffixView setSelectable:NO];
             [self.superview addSubview:self.suffixView];
@@ -72,13 +75,17 @@
 {
     if (self.suffixView)
     {
+        assert(self.suffixView.superview == self.superview);
         self.suffixView.x = self.x + self.textStorage.size.width;
-        self.suffixView.y = self.y + self.height - self.suffixView.height;
+        self.suffixView.y = self.y; // + self.height - self.suffixView.height;
+        
+        //NSLog(@"y %i suffixY %i", (int)self.y, (int)self.suffixView.y);
         
         //CGFloat w = self.suffixView.textStorage.size.width;
         //[self.suffixView setWidth:w];
         
         [self.suffixView setHidden:[self.string isEqualToString:self.uneditedTextString]];
+        [self.suffixView setNeedsDisplay:YES];
     }
 }
 

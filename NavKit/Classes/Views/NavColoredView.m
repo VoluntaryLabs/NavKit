@@ -33,10 +33,8 @@
     if (self.backgroundColor)
     {
         [self.backgroundColor setFill];
-    }
-    
-    //NSRectFill(self.frame);
-    NSRectFill(dirtyRect);
+        NSRectFill(dirtyRect);
+    }    
 }
 
 @end

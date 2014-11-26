@@ -11,6 +11,8 @@
 
 @interface NavAdvTextView : NavTextView
 
+// suffix stuff is a hack - move to some sort of grouping view
+
 @property (strong, nonatomic) NSString *editedThemePath;
 @property (strong, nonatomic) NSString *uneditedTextString;
 @property (strong, nonatomic) NavTextView *suffixView;
@@ -23,6 +25,7 @@
 
 
 - (void)setSuffix:(NSString *)aString;
+- (void)updateSuffixView;
 
 - (void)useUneditedTextStringIfNeeded;
 

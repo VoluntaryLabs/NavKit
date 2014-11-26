@@ -30,6 +30,7 @@
 - (CGFloat)maxY;
 - (CGFloat)maxYOfSubviews;
 - (CGFloat)minYOfSubviews;
+- (void)setMaxY:(CGFloat)newMaxY;
 
 - (void)centerXInSuperview;
 - (void)centerYInSuperview;
