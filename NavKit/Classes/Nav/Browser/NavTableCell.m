@@ -149,17 +149,20 @@
 
 - (NSDictionary *)titleAttributes
 {
-    return [NavTheme.sharedNavTheme attributesDictForPath:[NSString stringWithFormat:@"item/%@/title", self.stateName]];
+    NSString *path = [NSString stringWithFormat:@"item/%@/title", self.stateName];
+    return [NavTheme.sharedNavTheme attributesDictForPath:path];
 }
 
 - (NSDictionary *)subtitleAttributes
 {
-    return [NavTheme.sharedNavTheme attributesDictForPath:[NSString stringWithFormat:@"item/%@/subtitle", self.stateName]];
+    NSString *path = [NSString stringWithFormat:@"item/%@/subtitle", self.stateName];
+    return [NavTheme.sharedNavTheme attributesDictForPath:path];
 }
 
 - (NSDictionary *)noteAttributes
 {
-    return [NavTheme.sharedNavTheme attributesDictForPath:[NSString stringWithFormat:@"item/%@/note", self.stateName]];
+    NSString *path = [NSString stringWithFormat:@"item/%@/note", self.stateName];
+    return [NavTheme.sharedNavTheme attributesDictForPath:path];
 }
 
 - (NSImage *)icon
