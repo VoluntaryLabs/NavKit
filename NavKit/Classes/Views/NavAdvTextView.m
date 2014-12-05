@@ -188,12 +188,14 @@
     if (self.suffixView)
     {
         [self.suffixView setThemePath:themePath];
+        /*
         NSDictionary *att = [NavTheme.sharedNavTheme attributesDictForPath:themePath];
         CGFloat width = [[[NSAttributedString alloc] initWithString:self.suffixView.string
                                                          attributes:att] size].width;
         self.suffixView.width = width + 30;
-        NSLog(@"suffix '%@' %i %i", self.suffixView.string, (int)width, (int)self.suffixView.width);
+        //NSLog(@"suffix '%@' %i %i", self.suffixView.string, (int)width, (int)self.suffixView.width);
         self.suffixView.backgroundColor = [NSColor blueColor];
+        */
         [self.suffixView setNeedsDisplay:YES];
     }
     //[self.suffixView setHidden:!self.isReady];
