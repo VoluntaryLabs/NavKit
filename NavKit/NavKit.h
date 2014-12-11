@@ -29,7 +29,7 @@
 #import "NSView+sizing.h"
 #import "NSImage+nav.h"
 #import "NSWindow+positioning.h"
-#import "NSApplication+extra.h"
+//#import "NSApplication+extra.h"
 
 // theme
 
