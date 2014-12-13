@@ -48,6 +48,9 @@
 		AA0F52C519073A3800F7370B /* reply_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0F52B619073A3800F7370B /* reply_inactive.png */; };
 		AA0F52C619073A3800F7370B /* send_active.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0F52B719073A3800F7370B /* send_active.png */; };
 		AA0F52C719073A3800F7370B /* send_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0F52B819073A3800F7370B /* send_inactive.png */; };
+		AA32A3441A3CEBE4009CDC31 /* NavWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA32A3421A3CEBE4009CDC31 /* NavWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA32A3451A3CEBE4009CDC31 /* NavWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA32A3431A3CEBE4009CDC31 /* NavWebView.m */; };
+		AA32A34B1A3CF2CB009CDC31 /* NavKit.h in Headers */ = {isa = PBXBuildFile; fileRef = AA32A34A1A3CF2CB009CDC31 /* NavKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA38C16419808554003CDA68 /* NSCell+extra.h in Headers */ = {isa = PBXBuildFile; fileRef = AA38C16219808554003CDA68 /* NSCell+extra.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA38C16519808554003CDA68 /* NSCell+extra.m in Sources */ = {isa = PBXBuildFile; fileRef = AA38C16319808554003CDA68 /* NSCell+extra.m */; };
 		AA38C179198322DA003CDA68 /* NavVerticalScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA38C177198322DA003CDA68 /* NavVerticalScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -98,7 +101,6 @@
 		AAE31DEF18FF1C0700405754 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAE31DED18FF1C0700405754 /* InfoPlist.strings */; };
 		AAE31DF118FF1C0700405754 /* NavKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE31DF018FF1C0700405754 /* NavKitTests.m */; };
 		AAE31E1B18FF1C7000405754 /* NavKit-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AAE31E0C18FF1C7000405754 /* NavKit-Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
-		AAE31E1C18FF1C7000405754 /* NavKit.h in Headers */ = {isa = PBXBuildFile; fileRef = AAE31E0D18FF1C7000405754 /* NavKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AAE31EE018FF213300405754 /* FoundationCategoriesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE31EDF18FF213300405754 /* FoundationCategoriesKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -182,6 +184,9 @@
 		AA0F52B619073A3800F7370B /* reply_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply_inactive.png; sourceTree = "<group>"; };
 		AA0F52B719073A3800F7370B /* send_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = send_active.png; sourceTree = "<group>"; };
 		AA0F52B819073A3800F7370B /* send_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = send_inactive.png; sourceTree = "<group>"; };
+		AA32A3421A3CEBE4009CDC31 /* NavWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavWebView.h; sourceTree = "<group>"; };
+		AA32A3431A3CEBE4009CDC31 /* NavWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavWebView.m; sourceTree = "<group>"; };
+		AA32A34A1A3CF2CB009CDC31 /* NavKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavKit.h; sourceTree = "<group>"; };
 		AA38C16219808554003CDA68 /* NSCell+extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCell+extra.h"; sourceTree = "<group>"; };
 		AA38C16319808554003CDA68 /* NSCell+extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCell+extra.m"; sourceTree = "<group>"; };
 		AA38C177198322DA003CDA68 /* NavVerticalScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavVerticalScrollView.h; sourceTree = "<group>"; };
@@ -233,7 +238,6 @@
 		AAE31DD718FF1C0700405754 /* NavKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NavKit-Info.plist"; sourceTree = "<group>"; };
 		AAE31DD918FF1C0700405754 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AAE31DDB18FF1C0700405754 /* NavKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NavKit-Prefix.pch"; sourceTree = "<group>"; };
-		AAE31DDC18FF1C0700405754 /* NavKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavKit.h; sourceTree = "<group>"; };
 		AAE31DE318FF1C0700405754 /* NavKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE31DE418FF1C0700405754 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AAE31DEC18FF1C0700405754 /* NavKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NavKitTests-Info.plist"; sourceTree = "<group>"; };
@@ -241,7 +245,6 @@
 		AAE31DF018FF1C0700405754 /* NavKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavKitTests.m; sourceTree = "<group>"; };
 		AAE31E0B18FF1C7000405754 /* NavKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NavKit-Info.plist"; sourceTree = "<group>"; };
 		AAE31E0C18FF1C7000405754 /* NavKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NavKit-Prefix.pch"; sourceTree = "<group>"; };
-		AAE31E0D18FF1C7000405754 /* NavKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavKit.h; sourceTree = "<group>"; };
 		AAE31ED418FF1F5F00405754 /* FoundationCategoriesKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FoundationCategoriesKit.xcodeproj; path = ../FoundationCategoriesKit/FoundationCategoriesKit.xcodeproj; sourceTree = "<group>"; };
 		AAE31EDF18FF213300405754 /* FoundationCategoriesKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FoundationCategoriesKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/NavKit-bkgnxtdsbxzywyatxkyajvixevhc/Build/Products/Debug/FoundationCategoriesKit.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -351,6 +354,7 @@
 		AA86B99618FF336700D3BDB0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				AA32A34A1A3CF2CB009CDC31 /* NavKit.h */,
 				AA09C831192D582D00317130 /* Nav */,
 				AA86B99718FF336700D3BDB0 /* Categories */,
 				AA86B9B418FF336700D3BDB0 /* Theme */,
@@ -398,6 +402,8 @@
 		AA86B9B918FF336700D3BDB0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AA32A3421A3CEBE4009CDC31 /* NavWebView.h */,
+				AA32A3431A3CEBE4009CDC31 /* NavWebView.m */,
 				AABEB75E1A3BCE77005502A4 /* NavResourceView.h */,
 				AABEB75F1A3BCE77005502A4 /* NavResourceView.m */,
 				AA09C82D192D582800317130 /* NavAdvTextView.h */,
@@ -479,7 +485,6 @@
 			isa = PBXGroup;
 			children = (
 				AAE31DFC18FF1C7000405754 /* NavKit */,
-				AAE31DDC18FF1C0700405754 /* NavKit.h */,
 				AAE31DD618FF1C0700405754 /* Supporting Files */,
 			);
 			path = NavKit;
@@ -520,7 +525,6 @@
 				AA86B99618FF336700D3BDB0 /* Classes */,
 				AAE31E0B18FF1C7000405754 /* NavKit-Info.plist */,
 				AAE31E0C18FF1C7000405754 /* NavKit-Prefix.pch */,
-				AAE31E0D18FF1C7000405754 /* NavKit.h */,
 			);
 			name = NavKit;
 			sourceTree = "<group>";
@@ -569,12 +573,13 @@
 				AA86B9CA18FF336700D3BDB0 /* NSColor+Hex.h in Headers */,
 				AA86B9E918FF336800D3BDB0 /* NavRoundButtonView.h in Headers */,
 				AA86B9EB18FF336800D3BDB0 /* NavTextView.h in Headers */,
-				AAE31E1C18FF1C7000405754 /* NavKit.h in Headers */,
 				AA9B75EF191C1F6200F17437 /* NavRoundRect.h in Headers */,
 				AA38C179198322DA003CDA68 /* NavVerticalScrollView.h in Headers */,
 				AA38C16419808554003CDA68 /* NSCell+extra.h in Headers */,
 				AA803E9A193FD9C60090E619 /* NavDescriptionView.h in Headers */,
+				AA32A34B1A3CF2CB009CDC31 /* NavKit.h in Headers */,
 				AA09C7F7192C362C00317130 /* NSImage+nav.h in Headers */,
+				AA32A3441A3CEBE4009CDC31 /* NavWebView.h in Headers */,
 				AABEB7601A3BCE77005502A4 /* NavResourceView.h in Headers */,
 				AAE31E1B18FF1C7000405754 /* NavKit-Prefix.pch in Headers */,
 			);
@@ -752,6 +757,7 @@
 				AA86B9EE18FF336800D3BDB0 /* NavColoredView.m in Sources */,
 				AA86B9CB18FF336700D3BDB0 /* NSColor+Hex.m in Sources */,
 				AA86B9E418FF336800D3BDB0 /* NavTheme.m in Sources */,
+				AA32A3451A3CEBE4009CDC31 /* NavWebView.m in Sources */,
 				AA09C84D192D582D00317130 /* NavColumn.m in Sources */,
 				AA86B9C918FF336700D3BDB0 /* NSColor+array.m in Sources */,
 				AA803E9B193FD9C60090E619 /* NavDescriptionView.m in Sources */,
