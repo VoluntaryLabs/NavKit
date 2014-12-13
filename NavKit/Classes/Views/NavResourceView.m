@@ -1,16 +1,16 @@
 //
-//  BMMessageView.m
+//  NavResourceView.m
 //  Bitmarket
 //
 //  Created by Steve Dekorte on 2/5/14.
 //  Copyright (c) 2014 voluntary.net. All rights reserved.
 //
 
-#import "NavInfoNodeView.h"
+#import "NavResourceView.h"
 #import <BitMessageKit/BitMessageKit.h>
 #import <NavKit/NavKit.h>
 
-@implementation NavInfoNodeView
+@implementation NavResourceView
 
 - (id)initWithFrame:(NSRect)frameRect
 {

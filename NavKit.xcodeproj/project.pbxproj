@@ -88,8 +88,8 @@
 		AA86B9F418FF336800D3BDB0 /* NavResizingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86B9C718FF336700D3BDB0 /* NavResizingScrollView.m */; };
 		AA9B75EF191C1F6200F17437 /* NavRoundRect.h in Headers */ = {isa = PBXBuildFile; fileRef = AA9B75ED191C1F6200F17437 /* NavRoundRect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA9B75F0191C1F6200F17437 /* NavRoundRect.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9B75EE191C1F6200F17437 /* NavRoundRect.m */; };
-		AABEB7601A3BCE77005502A4 /* NavInfoNodeView.h in Headers */ = {isa = PBXBuildFile; fileRef = AABEB75E1A3BCE77005502A4 /* NavInfoNodeView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AABEB7611A3BCE77005502A4 /* NavInfoNodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AABEB75F1A3BCE77005502A4 /* NavInfoNodeView.m */; };
+		AABEB7601A3BCE77005502A4 /* NavResourceView.h in Headers */ = {isa = PBXBuildFile; fileRef = AABEB75E1A3BCE77005502A4 /* NavResourceView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AABEB7611A3BCE77005502A4 /* NavResourceView.m in Sources */ = {isa = PBXBuildFile; fileRef = AABEB75F1A3BCE77005502A4 /* NavResourceView.m */; };
 		AACD78371905C8E3008832FB /* NavNodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACD78341905C8D7008832FB /* NavNodeKit.framework */; };
 		AAE31DD018FF1C0700405754 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE31DCF18FF1C0700405754 /* Cocoa.framework */; };
 		AAE31DE518FF1C0700405754 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE31DE418FF1C0700405754 /* XCTest.framework */; };
@@ -222,8 +222,8 @@
 		AA86B9C718FF336700D3BDB0 /* NavResizingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavResizingScrollView.m; sourceTree = "<group>"; };
 		AA9B75ED191C1F6200F17437 /* NavRoundRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavRoundRect.h; sourceTree = "<group>"; };
 		AA9B75EE191C1F6200F17437 /* NavRoundRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavRoundRect.m; sourceTree = "<group>"; };
-		AABEB75E1A3BCE77005502A4 /* NavInfoNodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavInfoNodeView.h; sourceTree = "<group>"; };
-		AABEB75F1A3BCE77005502A4 /* NavInfoNodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavInfoNodeView.m; sourceTree = "<group>"; };
+		AABEB75E1A3BCE77005502A4 /* NavResourceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavResourceView.h; sourceTree = "<group>"; };
+		AABEB75F1A3BCE77005502A4 /* NavResourceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavResourceView.m; sourceTree = "<group>"; };
 		AACD782B1905C8D7008832FB /* NavNodeKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NavNodeKit.xcodeproj; path = ../NavNodeKit/NavNodeKit.xcodeproj; sourceTree = "<group>"; };
 		AAE31DCC18FF1C0700405754 /* NavKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NavKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE31DCF18FF1C0700405754 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -398,8 +398,8 @@
 		AA86B9B918FF336700D3BDB0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AABEB75E1A3BCE77005502A4 /* NavInfoNodeView.h */,
-				AABEB75F1A3BCE77005502A4 /* NavInfoNodeView.m */,
+				AABEB75E1A3BCE77005502A4 /* NavResourceView.h */,
+				AABEB75F1A3BCE77005502A4 /* NavResourceView.m */,
 				AA09C82D192D582800317130 /* NavAdvTextView.h */,
 				AA09C82E192D582800317130 /* NavAdvTextView.m */,
 				AA9B75ED191C1F6200F17437 /* NavRoundRect.h */,
@@ -575,7 +575,7 @@
 				AA38C16419808554003CDA68 /* NSCell+extra.h in Headers */,
 				AA803E9A193FD9C60090E619 /* NavDescriptionView.h in Headers */,
 				AA09C7F7192C362C00317130 /* NSImage+nav.h in Headers */,
-				AABEB7601A3BCE77005502A4 /* NavInfoNodeView.h in Headers */,
+				AABEB7601A3BCE77005502A4 /* NavResourceView.h in Headers */,
 				AAE31E1B18FF1C7000405754 /* NavKit-Prefix.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -759,7 +759,7 @@
 				AA09C7F8192C362C00317130 /* NSImage+nav.m in Sources */,
 				AA09C84B192D582D00317130 /* NavAppController.m in Sources */,
 				AA86B9D118FF336700D3BDB0 /* NSScrollView+extra.m in Sources */,
-				AABEB7611A3BCE77005502A4 /* NavInfoNodeView.m in Sources */,
+				AABEB7611A3BCE77005502A4 /* NavResourceView.m in Sources */,
 				AA86B9D518FF336700D3BDB0 /* NSView+sizing.m in Sources */,
 				AA09C859192D582D00317130 /* NavView.m in Sources */,
 				AA09C872192D5E7700317130 /* NavMirrorView.m in Sources */,

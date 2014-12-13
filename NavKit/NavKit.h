@@ -56,5 +56,5 @@
 // views
 
 #import "NavDescriptionView.h"
-#import "NavInfoNodeView.h"
+#import "NavResourceView.h"
 
