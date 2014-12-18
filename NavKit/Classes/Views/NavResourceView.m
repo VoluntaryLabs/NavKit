@@ -7,7 +7,6 @@
 //
 
 #import "NavResourceView.h"
-#import <BitMessageKit/BitMessageKit.h>
 #import <NavKit/NavKit.h>
 
 @implementation NavResourceView
@@ -130,14 +129,6 @@
 - (void)setNavView:(id)navView
 {
     _navView = navView;
-    self.backgroundColor = self.dynamicBackgroundColor;
-}
-
-- (NSColor *)dynamicBackgroundColor
-{
-    NavColumn *column = [self.navView columnForNode:_node];
-    NavThemeDictionary  *theme = [NavTheme.sharedNavTheme themeForColumn:column.columnIndex - 1];
-    return[theme selectedBgColor];
 }
 
 - (void)setupBody
