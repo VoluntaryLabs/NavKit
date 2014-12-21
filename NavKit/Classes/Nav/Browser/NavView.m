@@ -191,7 +191,7 @@
     
     for (NavColumn *column in self.navColumns)
     {
-        w += [column node].nodeSuggestedWidth;
+        w += [column node].nodeSuggestedWidth.floatValue;
     }
     
     return w;

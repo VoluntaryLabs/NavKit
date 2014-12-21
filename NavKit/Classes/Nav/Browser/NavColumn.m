@@ -326,7 +326,7 @@
 
         if (![node nodeView])
         {
-            CGFloat w = node.nodeSuggestedWidth;
+            CGFloat w = node.nodeSuggestedWidth.floatValue;
             
             if (w)
             {
@@ -360,7 +360,7 @@
         //[self setWidth:850];
         //self.contentView.width = self.width;
         
-        CGFloat minWidth = 850; //self.node.nodeSuggestedWidth;
+        CGFloat minWidth = 850; //self.node.nodeSuggestedWidth.floatValue;
         
         if (minWidth == 0)
         {
@@ -395,13 +395,13 @@
         [nodeView setFrameSize:self.frame.size];
         [self setContentView:nodeView];
     }
-    else if (self.node.nodeSuggestedWidth == 0)
+    else if (self.node.nodeSuggestedWidth.floatValue == 0)
     {
         [self fitWidthToRemainingSpace];
     }
     else
     {
-        self.width = self.node.nodeSuggestedWidth;
+        self.width = self.node.nodeSuggestedWidth.floatValue;
         self.contentView.width = self.width;
     }
 }
@@ -452,11 +452,11 @@
 {
     if (self.scrollView.superview)
     {
-        BOOL useSuggestedWidth = self.node.nodeSuggestedWidth > 0;
+        BOOL useSuggestedWidth = self.node.nodeSuggestedWidth.floatValue > 0;
         
         if (useSuggestedWidth)
         {
-            [self setMaxWidth:self.node.nodeSuggestedWidth];
+            [self setMaxWidth:self.node.nodeSuggestedWidth.floatValue];
         }
         else
         {
