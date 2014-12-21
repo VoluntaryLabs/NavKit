@@ -44,11 +44,11 @@
 {
     NavNode *node = aNote.object;
 
-    if (node.rememberedChildTitlePath)
+    if (node.nodeRememberedChildTitlePath)
     {
         // ugly - change the path convention to clean this up?
         
-        NSMutableArray *path = [NSMutableArray arrayWithArray:node.rememberedChildTitlePath];
+        NSMutableArray *path = [NSMutableArray arrayWithArray:node.nodeRememberedChildTitlePath];
         [path removeFirstObject];
         
         NSArray *titlePath = [self.rootNode nodeMaxTitlePath:path];
