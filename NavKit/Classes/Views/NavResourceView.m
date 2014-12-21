@@ -154,7 +154,7 @@
     
     self.textView = [[NavMarginTextView alloc] initWithFrame:self.scrollView.bounds];
     [self.scrollView setDocumentView:self.textView];
-    [self.textView setDelegate:self];
+    //[self.textView setDelegate:self];
     
     [self configBody];
 }

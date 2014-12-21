@@ -228,7 +228,7 @@
     
     if (node)
     {
-        if ([node shouldSelectChildOnAdd])
+        if ([node nodeShouldSelectChildOnAdd].boolValue)
         {
             id child = [[note userInfo] objectForKey:@"child"];
             [self.tableView reloadData];
