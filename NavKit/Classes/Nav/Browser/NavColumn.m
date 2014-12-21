@@ -389,7 +389,7 @@
 {
     NSView *nodeView = [self.node nodeView];
     
-    if (nodeView && ![self.node nodeForceDisplayChildren])
+    if (nodeView && ![self.node nodeForceDisplayChildren].boolValue)
     {
         [self fitWidthToRemainingSpace];
         [nodeView setFrameSize:self.frame.size];
