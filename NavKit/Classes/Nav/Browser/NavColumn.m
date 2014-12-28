@@ -156,7 +156,7 @@
     
     if (_searchField && _searchField.stringValue.length)
     {
-        return self.node.searchResults;
+        return self.node.nodeSearchResults;
     }
     
     return self.node.children;
