@@ -10,4 +10,6 @@
 
 @interface NavVerticalScrollView : NSScrollView
 
+@property (assign, nonatomic) BOOL shouldDelegateHorizontalScroll;
+
 @end

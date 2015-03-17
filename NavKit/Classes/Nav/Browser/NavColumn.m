@@ -207,6 +207,7 @@
     [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:row] byExtendingSelection:NO];
     _lastSelectedChild = self.selectedNode;
     
+    //[self setNeedsDisplay:YES]; // new March 11 2015
     //[self selectRowIndex:row];
 }
 
@@ -238,7 +239,8 @@
         }
         else
         {
-            [self reloadData];
+            [self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+            //[self reloadData];
         }
     }
 }
@@ -559,7 +561,15 @@
     objectValueForTableColumn:(NSTableColumn *)aTableColumn
             row:(NSInteger)rowIndex
 {
-    return [[self.allChildren objectAtIndex:rowIndex] nodeTitle];
+    if (rowIndex < self.allChildren.count)
+    {
+        return [[self.allChildren objectAtIndex:rowIndex] nodeTitle];
+    }
+    else
+    {
+        NSLog(@"NavColumn: bound bug in table!");
+        return nil;
+    }
 }
 
 // table delegate
@@ -586,6 +596,7 @@
     {
         _lastSelectedChild = node;
         [self.navView shouldSelectNode:node inColumn:self];
+        [node nodeWillSelect];
     }
     
     return YES;
@@ -800,6 +811,7 @@
         //[_searchField setupExpanded];
         [_searchField setupCollapsed];
         [_searchField setToolTip:@"search"];
+        [_searchField setSearchOnReturn:[self.node nodeSearchOnReturn]];
     }
     else
     {

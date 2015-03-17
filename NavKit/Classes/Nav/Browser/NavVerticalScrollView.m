@@ -36,13 +36,13 @@
 {
     //NSLog(@"%@", theEvent);
     
-    if(theEvent.deltaY != 0)
+    if(theEvent.deltaY == 0 && self.shouldDelegateHorizontalScroll)
     {
-        [super scrollWheel:theEvent];
+        [[self nextResponder] scrollWheel:theEvent];
     }
     else
     {
-        [[self nextResponder] scrollWheel:theEvent];
+        [super scrollWheel:theEvent];
     }
     
 }

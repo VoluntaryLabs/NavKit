@@ -24,6 +24,8 @@
 @property (assign, nonatomic) CGFloat minWidth;
 @property (assign, nonatomic) CGFloat maxWidth;
 
+@property (assign, nonatomic) BOOL searchOnReturn;
+
 - (void)setupCollapsed;
 - (void)setupExpanded;
 - (void)toggle;

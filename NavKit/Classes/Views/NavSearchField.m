@@ -262,7 +262,7 @@
 {
     //NSLog(@"controlTextDidChange '%@'", self.stringValue);
     
-    if (_searchDelegate)
+    if (_searchDelegate && !self.searchOnReturn)
     {
         [_searchDelegate searchForString:self.stringValue];
     }
@@ -272,6 +272,12 @@
 - (BOOL)control:(NSControl *)control textShouldEndEditing:(NSText *)fieldEditor
 {
     //NSLog(@"textShouldEndEditing");
+    
+    if (self.searchOnReturn)
+    {
+        [_searchDelegate searchForString:self.stringValue];
+    }
+    
     return YES;
 }
 
