@@ -137,44 +137,59 @@
 }
 */
 
-- (NSString *)stateName
+- (NSString *)nodeStateName
 {
     if (!self.node.isRead)
     {
         return @"unread";
     }
     
-    return self.isSelected ? @"selected" : @"unselected";
+    if (self.isSelected )
+    {
+        return @"selected";
+    }
+    
+    if ([self.node respondsToSelector:@selector(nodeStateName)])
+    {
+        NSString *result = [(id)self.node nodeStateName];
+        
+        if (result)
+        {
+            return result;
+        }
+    }
+    
+    return @"unselected";
 }
 
 - (NSDictionary *)titleAttributes
 {
-    NSString *path = [NSString stringWithFormat:@"item/%@/title", self.stateName];
+    NSString *path = [NSString stringWithFormat:@"item/%@/title", self.nodeStateName];
     return [NavTheme.sharedNavTheme attributesDictForPath:path];
 }
 
 - (NSDictionary *)subtitleAttributes
 {
-    NSString *path = [NSString stringWithFormat:@"item/%@/subtitle", self.stateName];
+    NSString *path = [NSString stringWithFormat:@"item/%@/subtitle", self.nodeStateName];
     return [NavTheme.sharedNavTheme attributesDictForPath:path];
 }
 
 - (NSDictionary *)noteAttributes
 {
-    NSString *path = [NSString stringWithFormat:@"item/%@/note", self.stateName];
+    NSString *path = [NSString stringWithFormat:@"item/%@/note", self.nodeStateName];
     return [NavTheme.sharedNavTheme attributesDictForPath:path];
 }
 
 - (NSImage *)icon
 {
-    NSString *stateName = @"inactive";
+    NSString *nodeStateName = @"inactive";
     
     if (self.isSelected)
     {
-        stateName = @"active";
+        nodeStateName = @"active";
     }
     
-    return [self.node nodeIconForState:stateName];
+    return [self.node nodeIconForState:nodeStateName];
 }
 
 - (CGFloat)indent

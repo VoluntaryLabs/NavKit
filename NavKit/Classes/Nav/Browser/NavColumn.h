@@ -43,8 +43,9 @@
 
 - (NavNode *)selectedNode;
 - (NSInteger)columnIndex;
+- (BOOL)selectNextRow;
 
-- (void)selectRowIndex:(NSInteger)rowIndex;
+- (BOOL)selectRowIndex:(NSInteger)rowIndex; // returns YES if there was another index to select
 - (void)justSelectNode:(id)aNode;
 
 - (void)setupHeaderView:(NSView *)aView;
@@ -55,5 +56,10 @@
 - (void)searchForString:(NSString *)aString;
 
 - (void)selectFirstResponder;
+
+- (NavColumn *)previousColumn;
+- (BOOL)selectPreviousColumn;
+- (id)nextRowObject;
+
 
 @end

@@ -308,8 +308,22 @@
 }
 */
 
+- (NavColumn *)columnBeforeColumn:(NavColumn *)aColumn
+{
+    NSInteger index = [self.navColumns indexOfObject:aColumn];
+    
+    if (index == -1 || index == 0)
+    {
+        return nil;
+    }
+    
+    NavColumn *inColumn = [self.navColumns objectAtIndex:index - 1];
+    return inColumn;
+}
+
 - (void)leftArrowFrom:aColumn
 {
+    /*
     NSInteger index = [self.navColumns indexOfObject:aColumn];
     
     if (index == -1 || index == 0)
@@ -318,6 +332,9 @@
     }
     
     NavColumn *inColumn = [self.navColumns objectAtIndex:index - 1];
+    */
+    
+    NavColumn *inColumn = [self columnBeforeColumn:aColumn];
     
     [self shouldSelectNode:[inColumn selectedNode] inColumn:inColumn];
     [inColumn.window makeFirstResponder:inColumn.tableView];

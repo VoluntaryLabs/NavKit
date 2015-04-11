@@ -76,6 +76,8 @@
     [self.tableView addTableColumn:self.tableColumn];
     [self.tableView setDataSource:self];
     [self.tableView setDelegate:self];
+    [self.tableView setDoubleAction:@selector(doubleClickedCell:)];
+    [self.tableView setTarget:self];
     
     [self.tableView setHeaderView:nil];
     [self.tableView setFocusRingType:NSFocusRingTypeNone];
@@ -250,15 +252,57 @@
     [self reloadData];
 }
 
-- (void)selectRowIndex:(NSInteger)rowIndex
+- (id)nextRowObject
 {
-    if (rowIndex != -1)
+    NSInteger nextRow = [self.tableView selectedRow] + 1;
+    
+    if (nextRow < self.allChildren.count)
+    {
+        return [self.allChildren objectAtIndex:nextRow];
+    }
+    
+    return nil;
+}
+
+- (BOOL)selectNextRow
+{
+    NSInteger nextRow = [self.tableView selectedRow] + 1;
+    return [self selectRowIndex:nextRow];
+}
+
+- (NavColumn *)previousColumn
+{
+    NavColumn *prev = [self.navView columnBeforeColumn:self];
+    return prev;
+}
+
+- (BOOL)selectPreviousColumn
+{
+    NavColumn *prev = self.previousColumn;
+    
+    if (prev)
+    {
+        [self.window makeFirstResponder:prev];
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (BOOL)selectRowIndex:(NSInteger)rowIndex
+{
+    NSInteger count = [self numberOfRowsInTableView:self.tableView];
+
+    if (rowIndex != -1 && rowIndex < count)
     {
         [self tableView:self.tableView shouldSelectRow:rowIndex];
         [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:rowIndex] byExtendingSelection:NO];
         [self.tableView scrollRowToVisible:rowIndex];
         _lastSelectedChild = self.selectedNode;
+        return YES;
     }
+    
+    return NO;
 }
 
 - (void)justSelectNode:(id)aNode
@@ -490,6 +534,7 @@
 - (void)setContentView:(NSView *)aView
 {
     [(NavColumn *)aView setNavView:self.navView];
+    
     //aView = [[NavColoredView alloc] initWithFrame:NSMakeRect(0, 0, 100, 100)];
     //[(NavColoredView *)aView setBackgroundColor:[NSColor redColor]];
     [self setAutoresizesSubviews:YES];
@@ -702,6 +747,13 @@
     else
     {
         //NSLog(@"no action for event");
+        NSView *selectedNodeView = [self selectedNode].nodeView;
+        
+        if (selectedNodeView)
+        {
+            
+            [selectedNodeView keyDown:event];
+        }
     }
 }
 
@@ -916,6 +968,17 @@
 - (void)selectFirstResponder
 {
     
+}
+
+- (void)doubleClickedCell:(id)anObject
+{
+    NSUInteger rowIndex = self.tableView.clickedRow;
+    NavNode *rowNode = [self.node.children objectAtIndex:rowIndex];
+    
+    if ([rowNode respondsToSelector:@selector(nodeDoubleClick)])
+    {
+        [rowNode nodeDoubleClick];
+    }
 }
 
 @end

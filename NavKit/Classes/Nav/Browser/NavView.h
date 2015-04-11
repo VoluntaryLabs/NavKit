@@ -40,4 +40,6 @@
 - (NSInteger)indexOfColumn:(NavColumn *)aColumn;
 - (NavColumn *)columnForNode:(id)node;
 
+- (NavColumn *)columnBeforeColumn:(NavColumn *)aColumn;
+
 @end
