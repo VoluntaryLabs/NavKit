@@ -11,6 +11,8 @@
 #import "NavColoredView.h"
 #import "NavProgressController.h"
 
+#define NavWindowSetTitle @"NavWindowSetTitle"
+
 @interface NavWindow : NSWindow
 
 @property (strong, nonatomic) NSView *splashView;

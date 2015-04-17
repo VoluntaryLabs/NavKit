@@ -54,9 +54,27 @@
     [self setFrameUsingName:[self windowName]];
     [self setMinSize:NSMakeSize(300, 300)];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(setTitleNotification:)
+                                                 name:NavWindowSetTitle
+                                               object:nil];
     return self;
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)setTitleNotification:(NSNotification *)aNote
+{
+    NSString *newTitle = [[aNote userInfo] objectForKey:@"windowTitle"];
+    
+    if (newTitle)
+    {
+        [self setTitle:newTitle];
+    }
+}
 
 - (NSString *)windowName
 {
