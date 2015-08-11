@@ -8,6 +8,31 @@
 
 #import "NavVerticalScrollView.h"
 
+
+// --- this is a hack to force the scroll bars to match the style we want
+// --- without this, the system prefs or pluggin in a mouse can change the style
+
+@implementation NSScroller (StyleOverride)
+
+- (NSScrollerStyle)scrollerStyle
+{
+    return NSScrollerStyleOverlay;
+}
+
+@end
+
+@implementation NSScrollView (StyleOverride)
+
+- (BOOL)autohidesScrollers
+{
+    return YES;
+}
+
+@end
+
+// -------------------------------------------------
+
+
 @implementation NavVerticalScrollView
 
 - (id)initWithFrame:(NSRect)frame
@@ -19,6 +44,8 @@
         [self setHasVerticalScroller:YES];
         [self setHasHorizontalScroller:NO];
     }
+    
+    [self setScrollerStyle:NSScrollerStyleOverlay];
     
     return self;
 }

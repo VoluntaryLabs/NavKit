@@ -20,6 +20,8 @@
         //[self setIntercellSpacing:NSMakeSize(10, 10)];
     }
     
+    [[self enclosingScrollView] setScrollerStyle:NSScrollerStyleOverlay];
+    
     return self;
 }
 
