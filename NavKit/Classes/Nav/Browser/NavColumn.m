@@ -548,6 +548,7 @@
     
     self.contentView.frame = self.scollFrameSansStrip;
     [self addSubview:self.contentView];
+    
     [self setNeedsDisplay:YES];
     
 }
@@ -612,7 +613,7 @@
     }
     else
     {
-        NSLog(@"NavColumn: bound bug in table!");
+        NSLog(@"NavColumn: found bug in table!");
         return nil;
     }
 }
