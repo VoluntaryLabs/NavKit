@@ -229,6 +229,7 @@
 		AA9B75EE191C1F6200F17437 /* NavRoundRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavRoundRect.m; sourceTree = "<group>"; };
 		AABEB75E1A3BCE77005502A4 /* NavResourceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavResourceView.h; sourceTree = "<group>"; };
 		AABEB75F1A3BCE77005502A4 /* NavResourceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavResourceView.m; sourceTree = "<group>"; };
+		AAC23B3E1B7FE74F001F2DFD /* JSONDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONDB.h; path = ../NavNodeKit/NavNodeKit/Classes/JSONDB.h; sourceTree = "<group>"; };
 		AACD782B1905C8D7008832FB /* NavNodeKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NavNodeKit.xcodeproj; path = ../NavNodeKit/NavNodeKit.xcodeproj; sourceTree = "<group>"; };
 		AAE31DCC18FF1C0700405754 /* NavKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NavKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE31DCF18FF1C0700405754 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -442,6 +443,7 @@
 		AAE31DC218FF1C0700405754 = {
 			isa = PBXGroup;
 			children = (
+				AAC23B3E1B7FE74F001F2DFD /* JSONDB.h */,
 				AACD782B1905C8D7008832FB /* NavNodeKit.xcodeproj */,
 				AAE31ED418FF1F5F00405754 /* FoundationCategoriesKit.xcodeproj */,
 				AAE31DD518FF1C0700405754 /* NavKit */,

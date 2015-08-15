@@ -10,6 +10,8 @@
 	<string>NavKit</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>35A04E0517CEEBD5525EA0FC23993A820B308357</key>
+		<string>github.com:Voluntarynet/Bitmarkets.git</string>
 		<key>37DC2010DB38C43B485C614639C29BF85EB11897</key>
 		<string>github.com:Voluntarynet/NavNodeKit.git</string>
 		<key>9A6B58CD5208BE6D5393BF80C035522180CCFD29</key>
@@ -25,14 +27,16 @@
 	<string>NavKit.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>35A04E0517CEEBD5525EA0FC23993A820B308357</key>
+		<string>../../../../../..</string>
 		<key>37DC2010DB38C43B485C614639C29BF85EB11897</key>
 		<string>../../../NavNodeKit</string>
 		<key>9A6B58CD5208BE6D5393BF80C035522180CCFD29</key>
-		<string>../../../../../..</string>
+		<string>../../..</string>
 		<key>D10B41A2BDB0833500745D63A772EBCD5E799E05</key>
 		<string>../..</string>
 		<key>D196C8C20E8DD9EA1BCA8C3DA2BF4C27CFC08EF7</key>
-		<string>../../../..</string>
+		<string>../../..</string>
 		<key>EAAFDC9479D1EB80E5F305F4B217979549BDCF86</key>
 		<string>../../../FoundationCategoriesKit</string>
 	</dict>
@@ -48,15 +52,23 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>9A6B58CD5208BE6D5393BF80C035522180CCFD29</string>
+			<string>D196C8C20E8DD9EA1BCA8C3DA2BF4C27CFC08EF7</string>
 			<key>IDESourceControlWCCName</key>
-			<string>..</string>
+			<string></string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>D196C8C20E8DD9EA1BCA8C3DA2BF4C27CFC08EF7</string>
+			<string>9A6B58CD5208BE6D5393BF80C035522180CCFD29</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>35A04E0517CEEBD5525EA0FC23993A820B308357</string>
 			<key>IDESourceControlWCCName</key>
 			<string>..</string>
 		</dict>
