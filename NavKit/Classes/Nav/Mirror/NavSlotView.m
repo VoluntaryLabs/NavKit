@@ -52,7 +52,7 @@
 
 - (void)setSlot:(NavSlot *)aSlot
 {
-    [NSException raise:@"subclasses should override" format:nil];
+    [NSException raise:@"subclasses should override" format:@""];
 }
 
 
